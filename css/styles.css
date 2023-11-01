@@ -266,6 +266,7 @@ table tr td:first-child{
 }
 .myfa > i{
     margin-right: 10px;
+    min-width: 30px;
 }
 
 .my-li{
