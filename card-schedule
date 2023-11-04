@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <head>
-  <title>Poster - WINTER SCHOOL 2024: Generative AI</title>
+  <title>Schedule - WINTER SCHOOL 2024: Generative AI</title>
 
   <!-- Designed by Hermann Agossou - 2023(C)-->
   <meta charset="UTF-8">
@@ -121,55 +121,72 @@
   <div class="container main-body larger-text-size my-flex">
     <div class="col-1 col-lg-2 emp1">&nbsp;</div>
     <div class="col-10 col-lg-8 emp1">
-      <h1 class="h1 text-center" align="center"> Poster </h1>
+      <h1 class="h1 text-center" align="center"> Schedule (Conference Centre) </h1>
       <div>
-        <div>
-          <br>
+        <div class="col-md-12" style="margin-bottom: 20px;"></div>
 
-          <p> Poster option is only available for <strong style="color:#FF0000">students and phd-students </strong> from
-            <strong style="color:#FF0000" ;>Ecole Centrale Casablanca, EMINES and Polytechnique</strong>.
-          </p>
+        <div class="container">
+            <div class="row">
+                <style>
+                    .time-subtitle {
+                    color: green;
+                    }
+                    .speaker-subtitle {
+                    color: red;
+                    }
+                    .my-card{
+                        border: 0px;
+                    }
+                </style>        
+                <!-- Card for Monday -->
+                <h3 class="time-subtitle h3">Lundi 08 mai</h5>
 
-          <p>We would like students to submit title and abstract (10-15 lines) which will then be reviewed by a
-            committee</p>
-          <p> <strong>Only posters about Artifical Intelligence will be selected, not necessarily generative AI.</strong></p>
-          <p>Eventually, we will choose 20 posters in total all institutions combined. All doctoral
-          students / engineering students can submit.</p>
-          <p>Here's the timing
-          <ul>
-            <li>Submissions until February 10</li>
-            <li>Decision of the Committee on the 17th</li>
-            <li>Selected students have 10 days to complete their poster</li>
-          </ul>
-          </p>
+                <div class="card my-card">
+                    <div class="card-img-top-container">
+                        <img class="card-img-top" src="./img/visual/winter-school-color-crop.png" alt="Lecturer Image">
+                    </div>
+                    <div class="card my-card-body">
+                        <h4 class="card-title">Conférence d'ouverture</h4>
+                        <h6 class="card-subtitle mb-2 text-muted date-subtitle">09-09h45</h6>
+                        <h6 class="card-subtitle mb-2 speaker-subtitle">Ghita Lahlou</h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
 
-          <p><strong>Posters will be displayed in the hall</strong>, and the participants and the jury will be able to
-            exchange with the students during the breaks. </p>
-          <p>Two prizes will be awarded: the <strong>"best scientific content"</strong> and for the <strong>"most
-              innovative project"</strong>.</p>
-          <p>The prizes will be awarded on Friday, March 1st, starting at 16h20.</p>
+                <div class="card my-card">
+                    <img class="card-img-top" src="./img/visual/winter-school-color-crop.png" alt="Lecturer Image">
+                    <div class="card my-card-body">
+                        <h4 class="card-title">Conférence d'ouverture</h4>
+                        <h6 class="card-subtitle mb-2 text-muted date-subtitle">09-09h45</h6>
+                        <h6 class="card-subtitle mb-2 speaker-subtitle">Ghita Lahlou</h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
 
+                <div class="card my-card">
+                    <img class="card-img-top" src="./img/2022/firms/ecc.jpg" alt="Lecturer Image">
+                    <div class="card my-card-body">
+                        <h4 class="card-title h3">Conférence d'ouverture</h4>
+                        <h6 class="card-subtitle mb-2 h5 text-muted date-subtitle">09-09h45</h6>
+                        <h6 class="card-subtitle mb-2 h5 speaker-subtitle">Ghita Lahlou</h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
 
-          <p>What's included in your Poster?: </p>
-          <ul>
-            <li>Description of the project</li>
-            <li>Results</li>
-            <li>Value Added</li>
-            <li>Bibliography with references in the project</li>
-          </ul>
-
-          <p style="font-weight:bold">Please send the title and abstract using this <a target="_blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf76qX4s7qA27uayXdTfUjJ67HK5fKZIp5-kD4CzUgEjAGmHQ/viewform?usp=pp_url">
-              form </a> and the poster using this <a target="_blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf76qX4s7qA27uayXdTfUjJ67HK5fKZIp5-kD4CzUgEjAGmHQ/viewform?usp=pp_url">
-              form </a>!</p>
-
-
-
-          <!-- <p>Here is a <a target="_blank" href="mailto:ecc_data@centrale-casablanca.ma">sample</a> of the poster you
-            can send </p> -->
-
-        </div>
+                <div class="card my-card">
+                    <div class="card-img-top-container">
+                        <img class="card-img-top" src="./img/2022/firms/ecc.jpg" alt="Lecturer Image">
+                    </div>              
+                    <div class="card my-card-body">
+                        <h4 class="card-title h3">Conférence d'ouverture</h4>
+                        <h6 class="card-subtitle mb-2 h5 text-muted date-subtitle">09-09h45</h6>
+                        <h6 class="card-subtitle mb-2 h5 speaker-subtitle">Ghita Lahlou</h6>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+              
+            </div>
+          </div>
       </div>
     </div>
     <div class="col-1 col-lg-2 emp1">&nbsp;</div>

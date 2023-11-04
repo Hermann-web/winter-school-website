@@ -169,6 +169,10 @@ a{
 .smaller-size{
     font-size: smaller;
 }
+.time{
+    /* font-weight: bold; */
+    color: #365b6d;
+}
 
 td{
 	text-align:center;
@@ -295,6 +299,14 @@ table tr td:first-child{
     border-radius: 50%;
     filter: grayscale(100%);
     padding: 1%;
+}
+
+.my-card > div.card-img-top-container {
+    width: 100px;
+    max-height: 100%;
+    height: auto;
+    border-radius: 50%;
+    padding: 20px;
 }
 
 .my-card{
