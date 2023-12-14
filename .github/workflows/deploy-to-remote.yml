@@ -1,0 +1,37 @@
+name: deployment
+run-name: deployment
+on:
+  push:
+    branches:
+      - main  # Change this to the appropriate branch if needed
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect using SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.REMOTE_USER_PASSWORD }}
+          script: |
+            remote_path=${{ secrets.REMOTE_PATH }}
+
+            # Change directory
+            cd "$remote_path"
+
+            # Checkout the specified branch
+            branch="main"
+            git checkout $branch
+
+            # Construct repository URL with token and branch
+            url="https://hermann-web:${{ secrets.PULL_REPO_TOKEN }}@github.com/hermann-web/winter-school-website.git"
+
+            # Pull changes from the specified branch using the constructed URL
+            git pull $url $branch
+
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: End
+        run: echo "🍏 This job's status is ${{ job.status }}."
