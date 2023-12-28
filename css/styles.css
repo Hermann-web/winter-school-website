@@ -173,15 +173,20 @@ a{
     /* font-weight: bold; */
     color: #365b6d;
 }
-
-td{
-	text-align:center;
-    vertical-align: middle !important;
+.detail{
+    font-size: smaller;
+    display: block;
 }
+
 .hour{
     color:brown
 }
 
+/*table*/
+td, th{
+	text-align:center;
+    vertical-align: middle !important;
+}
 table tr td:first-child{
     line-break: normal;
 }
