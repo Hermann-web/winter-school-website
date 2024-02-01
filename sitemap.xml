@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>//ai-generative.centrale-casablanca.net/</loc>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai</loc>
       <priority>1</priority>
    </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/archives.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/contact.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/index.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/organization.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/partners.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/poster.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/prev_2022.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/prev-spring-school-2023.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/prev-techinnov-2023.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/registration.html</loc>
+   </url>
+   <url>
+      <loc>https://midas.centrale-casablanca.net/winter-school-2024-generative-ai/schedule.html</loc>
+   </url>
 </urlset>
+
