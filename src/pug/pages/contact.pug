@@ -1,0 +1,31 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Contactez-nous'
+    - var pageMainTitle = 'Contactez-nous'
+    - var pageSubTitle = "Vous avez des questions ou des commentaires ? N'hésitez pas à nous contacter via les informations ci-dessous :"
+    - var sidenavStyle = 'sb-sidenav-dark'
+
+block content
+    .container.d-flex.min-vh-100
+        .col-0.col-lg-1.emp1 &nbsp;
+        .col-12.col-lg-10.emp1.mt-3
+            
+            include includes/page-header.pug
+
+            ul.list-unstyled.text-center.mt-4
+                li.mb-3
+                    i.fas.fa-phone-alt.mr-2
+                    span.text-decoration-none Téléphone : +212 (0) 522 493 500
+                //- li.mb-3
+                //-     i.fas.fa-phone-alt.mr-2
+                //-     span.text-decoration-none Téléphone : +212 (0) xxx xxx xxx
+                //- li.mb-3
+                //-     i.fas.fa-envelope.mr-2
+                //-     a.text-decoration-none(href="mailto:xxx@centrale-casablanca.ma") xxx@centrale-casablanca.ma
+                li.mb-3
+                    i.fas.fa-envelope.mr-2
+                    a.text-decoration-none(href="mailto:contact@centrale-casablanca.ma") contact@centrale-casablanca.ma
+
+        .col-0.col-lg-1.emp1 &nbsp;

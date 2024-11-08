@@ -1,0 +1,43 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Posters'
+    - var pageMainTitle = 'Posters'
+    - var sidenavStyle = 'sb-sidenav-dark'
+    - var posterList = [{"title": "Case study: Blockchain technology in humanitarian logistics", "authors": "Khaoula Abbadi", "uter": "GI", "fname": "poster-jrecc-Khaoula-Abbadi.pdf", "status": "public"}, {"title": "Diagnosis and Prognosis of High-Speed Train Axle Bearing Fault Through Acoustic Signal Analysis (AE-DeepDiag)", "authors": "Meryem Abtane", "uter": "MIDAS", "fname": "poster-jrecc-Meryem-Abtane.pdf", "status": "public"}, {"title": "An emotional contagion model for crowd in panic situations", "authors": "Badr Afry", "uter": "MIDAS", "fname": "poster-jrecc-Badr-Afry.pdf", "status": "public"}, {"title": "Hydrogen storage in carbon nanotubes", "authors": "Ay\u00e9doun Herman Regis Agossou", "uter": "Physique", "fname": "poster-jrecc-Ayedoun-Agossou.pdf", "status": "public"}, {"title": "Terrestrial Lidar Based Object Detection and Tracking for Security and Surveillance Requirements (LISIAM)", "authors": "Hermann Agossou", "uter": "MIDAS", "fname": "poster-jrecc-Hermann-Agossou.pdf", "status": "private"}, {"title": "Ab initio modeling of kinetic segregation mechanisms in binary metal alloys", "authors": "Mohamed El Amrani", "uter": "Physique", "fname": "poster-jrecc-Mohamed-ElAmrani.pdf", "status": "public"}, {"title": "A Time Window Assignment Strategy for Dynamic Vehicle Routing Problem", "authors": "Souleymane Balde", "uter": "GI", "fname": "poster-jrecc-Souleymane-Balde.pdf", "status": "public"}, {"title": "A Multiscale Hybrid Approach for Modeling Plant Growth under Environmental Conditions and Soil Nutrient Availability", "authors": "Hassan Chini", "uter": "MIDAS", "fname": "poster-jrecc-Hassan-Chini.pdf", "status": "public"}, {"title": "Unveiling High-Performance Materials for CO2 Capture through Computational Materials Science: A DFT and MD Approach", "authors": "Oussama Darare", "uter": "Physique", "fname": "poster-jrecc-Oussama-Darare.pdf", "status": "public"}, {"title": "Crowdsourcing and resource sharing for the last mile logistics", "authors": "Oussama Dribel", "uter": "GI", "fname": "poster-jrecc-Oussama-Dribel.pdf", "status": "public"}, {"title": "Optimal Transport and Predictive Maintenance", "authors": "Imane Ennadi", "uter": "MIDAS", "fname": "poster-jrecc-Imane-Ennadi.pdf", "status": "public"}, {"title": "Rethinking Parcel Delivery: A Sustainable and Cost-effective Approach for Morocco", "authors": "Ange-Marie Gounadon", "uter": "GI", "fname": "poster-jrecc-Ange-Marie-Gounadon.pdf", "status": "private"}, {"title": "Modelling and Simulation of the Electromechanical Activity of the Heart", "authors": "Sita Kaba", "uter": "ISMEC", "fname": "poster-jrecc-Sita-Kaba.pdf", "status": "public"}, {"title": "Population Dynamics under Climate Change", "authors": "Mouad Khaznaoui", "uter": "MIDAS", "fname": "poster-jrecc-Mouad-Khaznaoui.pdf", "status": "public"}, {"title": "Diagnosis of bearing faults in High-Speed Trains in Morocco (Towards a Moroccan Railway 4.0)", "authors": "Nouhan Kourouma", "uter": "MIDAS", "fname": "poster-jrecc-Nouhan-Kourouma.pdf", "status": "public"}, {"title": "Multi-Source Information Fusion Fault Diagnosis for Rotating Machinery using Signal and Data Processing", "authors": "Iman Makrouf", "uter": "MIDAS", "fname": "poster-jrecc-Iman-Makrouf.pdf", "status": "public"}, {"title": "AI-Driven Discovery of High-Performance Solid-State Electrolytes for Li-ion Batteries", "authors": "Nisryne El Massafi", "uter": "Physique", "fname": "poster-jrecc-Nisryne-ElMassafi.pdf", "status": "public"}, {"title": "Water Extraction by Air Condensation", "authors": "Oussama Mounajjim", "uter": "Physique", "fname": "poster-jrecc-Oussama-Mounajjim.pdf", "status": "public"}, {"title": "Camera based Automatic Object-Agnostic Counting System for Production Lines in Smart Manufacturing", "authors": "Omayma Naomia", "uter": "MIDAS", "fname": "poster-jrecc-Omayma-Naomia.pdf", "status": "public"}, {"title": "Optimizing N-body collision avoidance using an AI-assisted reciprocal approach Applications in crowd dynamics and/or road traffic", "authors": "Farouk Nasri", "uter": "MIDAS", "fname": "poster-jrecc-Farouk-Nasri.pdf", "status": "public"}, {"title": "Micromechanical approach for rubber-like materials behavior", "authors": "Ayoub Ouardi", "uter": "ISMEC", "fname": "poster-jrecc-Ayoub-Ouardi.pdf", "status": "public"}, {"title": "Interference avoidance in Joint Radar and Communication Systems using Machine Learning", "authors": "Mehdi Soufiane", "uter": "MIDAS", "fname": "poster-jrecc-Mehdi-Soufiane.pdf", "status": "public"}, {"title": "Study, Design and Modelization of a Wind Turbine Conversion System Adapted to a Domestic Use", "authors": "Soukaina Tabaa", "uter": "Physique", "fname": "poster-jrecc-Soukaina-Tabaa.pdf", "status": "public"}, {"title": "Exploring Advanced Caloric Materials for Solid-State Cooling", "authors": "Hamza Zedgui", "uter": "Physique", "fname": "poster-jrecc-Hamza-Zedgui.pdf", "status": "public"}]
+
+block content
+    .container-fluid.px-4.min-vh-100
+        include includes/page-header.pug
+
+        .row(id="posters-ref")
+            //- .col-md-6
+            //-     .card.mb-4.shadow-sm
+            //-         .card-body
+            //-             h5.card-title.text-primary 
+            //-                 | Three-dimensional hyperelastic model based on a micromechanical approach for rubber-like materials.
+            //-             p
+            //-                 small.text-secondary Ayoub OUARDI, Adnane BOUKAMEL, Noureddine DAMIL,
+            //-                 span.small.text-muted UTER ISMEC
+            //-             a.btn.btn-outline-primary.mt-2(href="./assets/posters/Poster_8.pdf" target="_blank" download="Poster 8")
+            //-                 i.fas.fa-file-pdf
+            //-                 |  Télécharger le PDF
+
+            each poster in posterList
+                .col-12.col-md-6.col-xl-4.col-xxl-3
+                    .card.mb-4.shadow-sm
+                        .card-body
+                            h6.card-title.text-primary 
+                                | #{poster.title}
+                            p
+                                span.small.text-secondary #{poster.authors},
+                                span.small.text-muted UTER #{poster.uter}
+                            a.btn.btn-outline-primary.mt-2(href=poster.status === 'public' ? `assets/posters/${poster.fname}` : '#', target="_blank", class=poster.status === 'private' ? 'disabled' : '')
+                                i.fas.fa-file-pdf
+                                if poster.status === 'private'
+                                    |  Accès Limité
+                                else if poster.status === 'public'
+                                    |  Télécharger le PDF
+                                else
+                                    |  Document Indisponible

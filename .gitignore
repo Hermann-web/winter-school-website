@@ -1,0 +1,7 @@
+node_modules/
+info
+app.log
+*.htaccess
+*.infomaniak-maintenance.html
+*.user.ini
+temp/

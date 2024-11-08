@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - ./dist/:/usr/src/app/dist/
+    environment:
+      - NODE_ENV=development
+    command: >
+      bash -c "npm install &&
+              npm start"
