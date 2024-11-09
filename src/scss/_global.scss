@@ -157,12 +157,12 @@ body {
 }
 
 .hero-section .feature-hover:hover .svg-inline--fa {
-    color: var(--bs-light);  /* Change icon color on hover */
+    color: var(--bs-light) ;  /* Change icon color on hover */
 }
 
 .hero-section .feature-hover:hover p,
 .hero-section .feature-hover:hover a {
-    color: var(--bs-light); /* Change text color on hover */
+    color: var(--bs-light) !important; /* Change text color on hover */
 }
 
 
@@ -228,3 +228,36 @@ body {
 //     color: var(--bs-lighter); /* Change text color on hover */
 //     transition: color 0.3s ease;
 // }
+
+
+.timeline-item:hover {
+    background-color: rgba(var(--bs-secondary-rgb), 0.1) !important; /* Light background overlay */
+    transform: translateY(-10px); /* Slight upward movement */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item {
+    position: relative; /* Ensure the pseudo-element is positioned correctly */
+    padding-right: 20px; /* Space for the right border */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+/* Fancy right border on hover */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 5px; /* Width of the right border */
+    background: linear-gradient(180deg, #ffcc00, #ff6347); /* Fancy gradient border */
+    transition: width 0.3s ease;
+    border-radius: 0 5px 5px 0; /* Rounded corners for the border */
+    transform-origin: right;
+    transform: scaleY(0); /* Initially hidden */
+}
+
+/* Show the right border on hover */
+.timeline-item:hover::before {
+    transform: scaleY(1); /* Expands the border vertically */
+    transition: transform 0.3s ease;
+}
