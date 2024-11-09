@@ -10850,6 +10850,8 @@ textarea.form-control-lg {
   --bs-light: rgb(255, 87, 87);
   --bs-dark-rgb: 140, 82, 255;
   --bs-dark: rgb(140, 82, 255);
+  --bs-lighter-rgb: 217, 230, 232;
+  --bs-lighter: rgb(217, 230, 232);
 }
 
 .btn-primary {
@@ -10949,6 +10951,36 @@ body {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain; /* Ensures the image fits within the box without distortion */
+}
+
+/*** add some hovers ***/
+/* Hover effect for all columns except the first one */
+.features-section .feature-hover:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light background overlay */
+  transform: translateY(-10px); /* Slight upward movement */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.features-section .feature-hover:hover .svg-inline--fa {
+  color: var(--bs-secondary); /* Change icon color on hover */
+}
+
+.features-section .feature-hover:hover h3, .features-section .feature-hover:hover .h3,
+.features-section .feature-hover:hover p {
+  color: var(--bs-secondary); /* Change text color on hover */
+}
+
+/* General hover effect for all audience sections */
+.audience-section .feature-hover:hover {
+  background-color: var(--bs-secondary);
+  transform: translateY(-10px); /* Slight upward movement */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for the headings and paragraphs */
+.audience-section .feature-hover:hover h3, .audience-section .feature-hover:hover .h3,
+.audience-section .feature-hover:hover p {
+  transition: color 0.3s ease;
 }
 
 #layoutAuthentication {
