@@ -22,8 +22,8 @@ $sidenav-dark-footer-bg: $gray-800;
 $sidenav-light-bg: $gray-100;
 $sidenav-light-color: $gray-900;
 $sidenav-light-heading-color: $gray-500;
-$sidenav-light-link-color: $primary;
-$sidenav-light-link-active-color: $primary;
+$sidenav-light-link-color: var(--bs-primary);
+$sidenav-light-link-active-color: var(--bs-primary);
 $sidenav-light-icon-color: $gray-500;
 $sidenav-light-footer-bg: $gray-200;
 

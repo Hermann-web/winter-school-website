@@ -2,149 +2,49 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'Organisation'
-    - var pageMainTitle = 'Organisation de la JRECC'
-    - var pageSubTitle = "Découvrez l'équipe et les intervenants de la Journée de la Recherche à l'Ecole Centrale Casablanca"
+    - var pageTitle = 'Organizers'
+    - var pageMainTitle = 'Organizers'
+    - var pageSubTitle = "Meet the Organizers and Speakers"
     - var sidenavStyle = 'sb-sidenav-dark'
+    - var SpeakersList = [{name: "Yann LeCun", img: "yann-lecun.jpg", title: "Keynote Speaker", text: "Prof at Courant Institute NY and VP & Chief AI Scientist at Meta (ex Facebook)"},{name: "Michael Jordan", img: "default.png", title: "AI Expert", text: "Professor, Inria and MBZUAI"},{name: "Benoit Bergeret", img: "default.png", title: "Panel Moderator", text: "Executive Director of ESSEC Business School's Metalab for Data, Technology, and Society"},{name: "Eric Moulines", img: "eric-moulines.png", title: "Professor of AI", text: "Prof at Ecole Polytechnique (X) and affiliate prof UM6P"},{name: "Luciano Borges", img: "default.png", title: "Guest Speaker", text: "CEO and director of SIANA (JV ONCF and SNCF) , Moroccan Company for High-Speed Train Maintenance"}, {name: "Jawad Alaoui", img: "default.png", title: "Panelist", text: "co-founder of NORMA, a company that provides data science and machine learning solutions"}]
+    - var OrganisersList = [{name: "Mohammed ElRhabi", img: "mohammed-elrhabi.jpeg", role: "Event Coordinator", text: "Head of Master of Data Engineering & Machine Learning (DEML)"},{name: "Prof. Nicolas Cheimanoff", img: "nicolas-c.png", role: "Event Director", text: " Director of EMINES - Université Mohammed VI Polytechnique"},{name: "Speaker 3", img: "default.png", role: "Data Scientist", text: "Workshop Lead"},{name: "Eric Moulines", img: "eric-moulines.png", role: "Professor of AI", text: "Prof at Ecole Polytechnique (X) and affiliate prof UM6P"}]
 
 block content
     .container.d-flex.min-vh-100
         .col-0.col-lg-1.emp1 &nbsp;
         .col-12.col-lg-10.emp1.mt-3
             include includes/page-header.pug
-            // Comité d'honneur section
+            
+            // Speakers Section
             .m-4.bg-white.text-dark
-                h4.h4.text-primary Comité d'honneur
-                ul
-                    li 
-                        em Mme Ghita Lahlou
-                        | - Directrice Générale de 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") Ecole Centrale Casablanca (ECC)
-                    li 
-                        em Pr. Adnane Boukamel
-                        | - Directeur Adjoint de 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") Ecole Centrale Casablanca (ECC)
-                    li 
-                        em Pr. Hervé Martinez
-                        | - Directeur de la Recherche et de l'Innovation à 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") Ecole Centrale Casablanca (ECC)
-                    li 
-                        em Pr. Christophe Bidan
-                        | - Directeur des études à 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") Ecole Centrale Casablanca (ECC)
-                    li 
-                        em Pr. Fouad Riane
-                        | - Professeur responsable de l'Unité Thématique de 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") Génie Industriel (ECC)
-                    li 
-                        em Pr. Noureddine Damil
-                        | - Professeur responsable de l'Unité Thématique de 
-                        a(target="_blank" href="http://www.centrale-casablanca.ma/en/") ISMEC (ECC)
+                h2.text-dark Featured Speakers
+                .row.d-flex.justify-content-center.mt-4
+                    each speaker in SpeakersList
+                        .col-md-3.mb-4
+                            .card.shadow.border-0
+                                if speaker.img
+                                    img.card-img-top(src=`assets/speakers/${speaker.img}`, alt=speaker.name)
+                                else
+                                    img.card-img-top(src="assets/speakers/default.jpg", alt=speaker.name)
+                                .card-body
+                                    h5.card-title= speaker.name
+                                    p.card-subtitle.mb-2.text-muted= speaker.title
+                                    p.card-text= speaker.text
 
-            // Conférenciers section
+            // Organizers Section
             .m-4.bg-white.text-dark
-                h4.h4.text-primary Conférenciers
-                ul
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/ghita-lahlou-0b545a4b/") Ghita Lahlou
-                        | - Directrice Générale de l'Ecole Centrale Casablanca
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/hervé-martinez-4b457711/") Hervé Martinez
-                        | - Directeur de la Recherche et de l'Innovation, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/philippe-dufourcq-08a17317/") Philippe Dufourcq
-                        | - Professeur des Universités Centrale Supélec
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/afaf-jghamou-015b0832/") Afaf Jghamou
-                        | - Enseignante-Chercheuse, UTER Génie Industriel, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.researchgate.net/profile/Anouar-Belhboub") Anouar Belhboub
-                        | - Enseignant-Chercheur, UTER Physique, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/chafik-el-kihal-322a7914a") Chafik El Kihal
-                        | - Enseignant-Chercheur, UTER ISMEC, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/jean-pierre-llored-4972046b/") Jean-Pierre Llored
-                        | - HDR; Responsable Chaire ECDID, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/khalid-dahi-84b77615/") Khalid Dahi
-                        | - Enseignant-Chercheur, UTER MIDAS, ECC
-                    li 
-                        em 
-                            a(target="_blank" href="https://www.linkedin.com/in/aissam-jebrane-0a484517/") Aissam Jebrane
-                        | - Enseignant-Chercheur, UTER MIDAS, ECC
-
-            // Comité d'Organisation section
-            .m-4.bg-white.text-dark
-                h4.h4.text-primary Comité Scientifique et d'Organisation
-                ul
-                    li 
-                        em Chafik El Kihal
-                        | - Enseignant-Chercheur, UTER ISMEC, ECC
-                    li 
-                        em Fouad Riane
-                        | - Enseignant-Chercheur, UTER GI, ECC
-                    li 
-                        em Hamza Bouhani
-                        | - Enseignant-Chercheur, UTER Physique, ECC
-                    li 
-                        em Hervé Martinez
-                        | - Directeur de la Recherche et de l'Innovation, ECC
-                    li 
-                        em Khalid Dahi
-                        | - Enseignant-Chercheur, UTER MIDAS, ECC
-                    li 
-                        em Maha Annoukoubi
-                        | - Ingénieure de Recherche et d'Enseignement, ECC
-                    li 
-                        em Nadia Ait Labyad
-                        | - Enseignant-Chercheur, UTER Physique, ECC
-                    li 
-                        em Noureddine Damil
-                        | - Enseignant-Chercheur, UTER ISMEC, ECC
-                    li 
-                        em Zerhouni Kawtar
-                        | - Enseignant-Chercheur, UTER MIDAS, ECC
-
-            // Equipe d'Organisation section
-            .m-4.bg-white.text-dark
-                h4.h4.text-primary Equipe d'Organisation
-                ul
-                    li  
-                        span.fw-bold.text-secondary Communication :
-                        a(target="_blank" href="https://www.linkedin.com/in/salma-khayatei-houssaini-726b941b7/") Salma Khayatei Houssaini
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/maha-annoukoubi-8281b9130") Maha Annoukoubi
-                    li
-                        span.fw-bold.text-secondary Site Web :
-                        a.em(target="_blank" href="https://www.linkedin.com/in/hermann-agossou-60604917b/") Hermann Agossou
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/chafik-el-kihal-322a7914a") Chafik El Kihal
-                        | -
-                        a.em(target="_blank" href="https://www.linkedin.com/in/ayoub-ouardi-77a31714b/") Ayoub Ouardi
-                        | -
-                        a.em(target="_blank" href="https://www.linkedin.com/in/abdelouahed-mzil-77a31714b/") Abdelouahed Mzil
-                    li
-                        span.fw-bold.text-secondary Coaching du MT180 :
-                        a(target="_blank" href="https://www.linkedin.com/in/kawtar-zerhouni-26812587/") Kawtar Zerhouni
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/khalid-dahi-84b77615/") Khalid Dahi
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/afaf-jghamou-015b0832/") Afaf Jghamou
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/chafik-el-kihal-322a7914a") Chafik El Kihal
-                    li
-                        span.fw-bold.text-secondary Logistique :
-                        a(target="_blank" href="https://www.linkedin.com/in/mohamed-zeddou-07b10717b/") Mohamed Zeddou
-                        | -
-                        a(target="_blank" href="https://www.linkedin.com/in/hamza-elkaouthary-707117b/") Hamza Elkaouthary
+                h2.text-dark Meet the Organizers
+                .row.d-flex.justify-content-center.mt-4
+                    each organizer in OrganisersList
+                        .col-md-3.mb-4
+                            .card.shadow.border-0
+                                if organizer.img
+                                    img.card-img-top(src=`assets/team/${organizer.img}`, alt=organizer.name)
+                                else
+                                    img.card-img-top(src="assets/team/default.png", alt=organizer.name)
+                                .card-body
+                                    h5.card-title= organizer.name
+                                    p.card-subtitle.mb-2.text-muted= organizer.role
+                                    p.card-text= organizer.text
 
         .col-0.col-lg-1.emp1 &nbsp;

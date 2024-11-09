@@ -4,47 +4,85 @@ block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Accueil'
     - var index = true
-    - var sidenavStyle = 'sb-sidenav-light'
+    - var sidenavStyle = 'sb-sidenav-dark'
 
 block content
     .container-fluid.min-vh-100.mb-5
 
         // Hero Section - Large and Bold with Background Image
-        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="background: url('https://media.licdn.com/dms/image/v2/D4D3DAQGID0xSk1KoBg/image-scale_191_1128/image-scale_191_1128/0/1731150665321/winter_school_nextgenai_cover?e=1731758400&v=beta&t=SXmasTKJ_B0IU2SOlK-kOeKmv54bcxtPlNJO4pw3Wd8') center/cover no-repeat;")
+        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="background: url('assets/visual/flyer.png') center/cover no-repeat;")
             .col-12.text-center.py-5
-                h1 Winter Data Science School 2024
-                p 26 February - 1 March 2024 | Generative AI
-                p Conference Center at EMINES, UM6P & École Centrale Casablanca
+                br
+                br
+                br
                 .cta-buttons.mt-4
-                    a.btn.btn-primary(href="#registration") Register Now
-                    a.btn.btn-secondary.ml-3(href="#program") View Program
+                    a.btn.btn-primary(href="./registration.html") Register Now
+                    a.btn.btn-secondary.ml-3(href="./schedule.html") View Program
 
         // About Section
-        .row.about-section.mt-5
+        .row.about-section.mt-5.text-dark
             .col-12
-                h2.text-center About the Event
+                h2.text-center.text-light About the Event
                 p.text-center Our Winter Data Science School focuses on Generative AI, aiming to provide participants with deep insights into generative techniques, practical skills, and networking opportunities. The event features keynotes, panel discussions, research presentations, a hackathon, and more.
                 p.text-center Stay connected and updated by following us on 
                     a(href="#") LinkedIn.
 
         // Key Features Section
-        .row.features-section.bg-light.mt-5
-            .col-12.text-center.py-5
+        .row.features-section.text-white.bg-primary.mt-5
+            .col-12.text-center.py-5.text-light
                 h2 Key Features of the Event
             .col-4.text-center
                 h3 Keynote Presentations
                 p Learn from world-class experts in Generative AI
             .col-4.text-center
-                h3 Hackathon
-                p Join a hands-on AI challenge with top mentors
+                h3 Poster Sessions
+                p Explore the latest AI research through interactive poster sessions
             .col-4.text-center
-                h3 Networking
-                p Connect with industry leaders and innovators
+                h3 Panel Discussions
+                p Engage with experts in dynamic panel discussions on cutting-edge AI topics
+
+        // Partners Section with Multi-Item Carousel
+        .row.partners-section.mt-5
+            .col-12.text-center.text-dark
+                h2.text-light Our Partners
+                .carousel.slide#partnersCarousel(data-bs-ride="carousel")
+                    .carousel-inner.partner-logo
+                        .carousel-item.active
+                            .row
+                                .col-md-4
+                                    img(src="assets/firms/emines.png", alt="EMIBES", class="d-block mx-auto", style="height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/polytechnique.png", alt="Partner 2 Logo", class="d-block mx-auto", style="height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/meta.svg", alt="META", class="d-block mx-auto", style="height: 100px;")
+                        .carousel-item
+                            .row
+                                .col-md-4
+                                    img(src="assets/firms/siana.png", alt="SIANA", class="d-block mx-auto", style="height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/um6p.png", alt="UM6P", class="d-block mx-auto", style="height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/essec.png", alt="ESSEC Business School's Metalab for Data, Technology, and Society", title="ESSEC Business School's Metalab for Data, Technology, and Society", class="d-block mx-auto", style="height: 100px;")
+                        .carousel-item
+                            .row
+                                .col-md-4
+                                    img(src="assets/firms/mbzuai.svg", alt="MBZUAI", title="MBZUAI", class="d-block mx-auto", style="background-color: #828282;height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/ai-movement.png", alt="Ai Movement - UM6P", title="Ai Movement - UM6P", class="d-block mx-auto", style="height: 100px;")
+                                .col-md-4
+                                    img(src="assets/firms/ocp.png" alt="OCP", title="OCP", class="d-block mx-auto", style="height: 100px;")
+                    // Carousel controls
+                    a.carousel-control-prev(href="#partnersCarousel", role="button", data-bs-slide="prev")
+                        span.carousel-control-prev-icon(aria-hidden="true")
+                        span.visually-hidden Previous
+                    a.carousel-control-next(href="#partnersCarousel", role="button", data-bs-slide="next")
+                        span.carousel-control-next-icon(aria-hidden="true")
+                        span.visually-hidden Next
 
         // Registration Section
         .row.mt-5
-            .col-12.text-center
-                h2(id="registration") Registration
+            .col-12.text-center.text-dark
+                h2(id="registration").text-light Registration
                 p.text-center Registration is now open. Complete your registration to participate in this exciting event.
                 a.btn.btn-primary(href="registration-link") Register Now
 

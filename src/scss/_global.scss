@@ -94,3 +94,10 @@ body {
 .post_auteur_posters {
     font-style: italic;
 }
+.partner-logo img {
+    height: 100px;
+    max-width: 150px;
+    width: auto; /* Ensures the image maintains its aspect ratio */
+    height: auto; 
+    object-fit: contain; /* Ensures the image fits within the box without distortion */
+}

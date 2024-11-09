@@ -10907,6 +10907,15 @@ body {
   font-style: italic;
 }
 
+.partner-logo img {
+  height: 100px;
+  max-width: 150px;
+  width: auto; /* Ensures the image maintains its aspect ratio */
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensures the image fits within the box without distortion */
+}
+
 #layoutAuthentication {
   display: flex;
   flex-direction: column;
@@ -11132,7 +11141,7 @@ body {
   color: #adb5bd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link {
-  color: #0d6efd;
+  color: var(--bs-primary);
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
   color: #adb5bd;
@@ -11141,13 +11150,13 @@ body {
   color: #adb5bd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
-  color: #0d6efd;
+  color: var(--bs-primary);
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link.active {
-  color: #0d6efd;
+  color: var(--bs-primary);
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
-  color: #0d6efd;
+  color: var(--bs-primary);
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
