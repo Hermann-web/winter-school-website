@@ -95,8 +95,8 @@ body {
     font-style: italic;
 }
 .partner-logo img {
-    height: 100px;
-    max-width: 150px;
+    max-height: 9rem;
+    max-width: 12rem;
     width: auto; /* Ensures the image maintains its aspect ratio */
     height: auto; 
     object-fit: contain; /* Ensures the image fits within the box without distortion */
