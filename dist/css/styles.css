@@ -10918,6 +10918,11 @@ body {
   justify-content: center;
 }
 
+/* carousel color*/
+.carousel-control-prev, .carousel-control-next {
+  color: var(--bs-light) !important;
+}
+
 /* schedule */
 .time-header {
   color: var(--bs-secondary); /* Blue color for time */
@@ -10945,7 +10950,7 @@ body {
 
 .partner-logo img {
   max-height: min(100%, 5rem);
-  max-width: 100%;
+  max-width: 85%;
   min-height: 5rem;
   width: auto; /* Ensures the image maintains its aspect ratio */
   height: auto;
@@ -10953,7 +10958,23 @@ body {
      object-fit: contain; /* Ensures the image fits within the box without distortion */
 }
 
-/*** add some hovers ***/
+/* add some hovers */
+/* Hover effect for all columns except the first one */
+.hero-section .feature-hover:hover {
+  transform: translateY(-10px); /* Slight upward movement */
+  color: var(--bs-ligth);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-section .feature-hover:hover .svg-inline--fa {
+  color: var(--bs-light); /* Change icon color on hover */
+}
+
+.hero-section .feature-hover:hover p,
+.hero-section .feature-hover:hover a {
+  color: var(--bs-light); /* Change text color on hover */
+}
+
 /* Hover effect for all columns except the first one */
 .features-section .feature-hover:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Light background overlay */
@@ -10977,6 +10998,17 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Scale images on hover */
+.partner-logo img {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for scaling and opacity */
+}
+
+.partner-logo img:hover {
+  transform: scale(1.3); /* Increase size to 110% */
+  opacity: 0.9; /* Slight opacity change for a smoother look */
+}
+
+/* texts too long, no need i guess*/
 #layoutAuthentication {
   display: flex;
   flex-direction: column;
