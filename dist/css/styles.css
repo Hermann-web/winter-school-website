@@ -10977,12 +10977,6 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for the headings and paragraphs */
-.audience-section .feature-hover:hover h3, .audience-section .feature-hover:hover .h3,
-.audience-section .feature-hover:hover p {
-  transition: color 0.3s ease;
-}
-
 #layoutAuthentication {
   display: flex;
   flex-direction: column;
