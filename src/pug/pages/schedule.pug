@@ -3,210 +3,116 @@ extends ../layouts/dashboard.pug
 block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Programme'
-    - var pageMainTitle = 'Programme de la JRECC'
+    - var pageMainTitle = 'Schedule'
+    - var pageSubTitle = "A preliminary schedule, subject to final approval from both participants and organizers"
     - var sidenavStyle = 'sb-sidenav-dark'
 
 block content
-    .container.d-flex
-        .col-0.col-lg-1.emp1 &nbsp;
-        .col-12.col-lg-10.emp1.mt-3.card.mb-4.border-0
-            include includes/page-header.pug
-            .card-body
-                .container.timeline
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-primary.text-white.p-2.rounded-pill 09:00 - 09:15
-                        .theme-header.col-0.col-md-10.fs-5.align-self-center.text-primary Accueil des participants à l'ECC
+    .container-fluid.min-vh-100
+        .row.mt-5
+            .col-0.col-lg-1 &nbsp;
+            .col-12.col-lg-10.mt-3.card.mb-4.border-0
+                include includes/page-header.pug
+                .card-body
+                    .container.timeline
 
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 09:15 - 09:30
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Mot de Bienvenu et Discours d'Ouverture
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray Ghita Lahlou - Directrice Générale de l'Ecole Centrale Casablanca
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  09:30 - 09:50
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de la recherche à l'ECC
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray Hervé Martinez - Directeur de la Recherche et de l'Innovation
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  09:50 - 10:40
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Conférence sur les systèmes complexes
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic La complexité : une nouvelle science ?
-                                br
-                                span Philippe Dufourcq - Professeur des Universités Centrale Supelec
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  10:40 - 11:00
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - UTER Génie Industriel
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic Optimisation de routage des livraisons en ville et mise en place de pratiques participatives pour pallier les effets négatifs de la logistique urbaine
-                                br
-                                span Afaf Jghamou, Enseignante-Chercheuse, UTER GI, ECC
-                
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.bg-primary.text-white.p-2.rounded-pill.col-12.col-md-2 11:00 - 11:15
-                        .theme-header.col-0.col-md-10.fs-5.align-self-center.text-primary Pause-café
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  11:15 - 12:15
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Table Ronde 1: Recherche Partenariale
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                p.mb-2
-                                    span.fw-bold Sujet:
-                                    | Collaboration entre la recherche et le tissu socio-économique marocain 
-                                p.mb-2
-                                    span.fw-bold Modérateur: 
-                                    em Hervé Martinez
-                                    | - Professeur, Directeur de la Recherche et de l'Innovation, ECC
-                                p.mb-2
-                                    span.fw-bold Intervenants:
+                        // Day 1 - 24 February 2025
+                        h3.text-center.text-primary.mt-5 Day 1: February 24, 2025 (EMINES Conference Center)
+                        h4.text-center.text-muted Next Generation AI and Economic Applications
+                        hr
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-primary.text-white.p-2.rounded-pill 09:00 - 09:30
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-primary Welcome and Opening Speech
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 09:30 - 11:30
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary AI and Financial Applications
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Charles-Albert Lehalle, Professor, École Polytechnique (l’X)
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 09:45 - 10:45
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Generative AI: A Deep Dive into Diffusion Models
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Eric Moulines, Professor, École Polytechnique (l’X)
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 11:00 - 12:00
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary An Alternative View on AI: Collaborative Learning, Incentives, and Social Welfare
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Michael Jordan, Professor, Inria and MBZUAI
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 11:45 - 12:30
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary AI in Morocco
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span AI Movement
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-primary.text-white.p-2.rounded-pill 12:30 - 14:00
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-primary Lunch
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 14:00 - 14:50
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Diffusion Models at Work: Deep Prior for Inverse Problems
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Eric Moulines
+
+                        // Day 2 - 25 February 2025
+                        h3.text-center.text-primary.mt-5 Day 2: February 25, 2025 (EMINES Conference Center)
+                        //- h4.text-center.text-muted EMINES Conference Center
+                        h4.text-center.text-muted Next Generation AI and Economic Applications
+                        hr
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 14:00 - 16:00
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Socio-Economic Impact of Next-Generation AI
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Topics:
                                 ul
-                                    li 
-                                        em Hassan Hannache
-                                        | - Professeur affilié, MSN / UM6P, Expert R&D en technologie d'extraction et de purification
-                                    li 
-                                        em Ismail Akalay
-                                        | - CEO, SONASID
-                                    li 
-                                        em Mehdi Moukite
-                                        | - CEO, MELINT
-                                    li 
-                                        em Mohamed Sedki
-                                        | - Chef de Département Plateforme Innovation & Digital matériel, ONCF
-                                    //- li 
-                                        //- em Nicolas Richard
-                                        //- | - Directeur des Ressources Humaines, CEGELEC Maroc
-                                    li 
-                                        em Hassan Ait El Madani
-                                        | - Directeur du Partenariat et Développement, LEYTON
-                                    li 
-                                        em Fayçal El Noushi
-                                        | - CEO, Zen Networks
+                                    li Transformation of Key Economic Sectors Through AI
+                                    li Innovation and Economic Inequalities
+                                    li Impact on Entrepreneurship and Technological Innovation
+                                span Speaker: Benoit Bergeret
 
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  12:15 - 12:35
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - UTER Physique
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic Multiscale modeling of carbon-carbon supercapacitors as high-performance energy storage devices
-                                br
-                                span Anouar Belhboub, Enseignant-Chercheur, UTER Physique, ECC
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  12:35 - 12:55
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - UTER ISMEC
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic Quantum computing with error mitigation for data-driven computational mechanics
-                                br
-                                span Chafik El Kihal, Enseignant-Chercheur, UTER ISMEC, ECC
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.bg-primary.text-white.p-2.rounded-pill.col-12.col-md-2 12:55 - 14:30
-                        .theme-header.col-0.col-md-10.fs-5.align-self-center.text-primary Pause-Déjeuner (Buffet) + Session Poster
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  14:30 - 14:50
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - Chaire ECDID
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic La recherche en sciences humaines et sociales à Centrale Casablanca
-                                br
-                                span Jean-Pierre Llored, HDR; Responsable Chaire ECDID, ECC
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  14:50 - 15:10
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - UTER MIDAS
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic Electromechanical Systems Fault Diagnosis and Prognosis: Application to High-speed train wheel set bearing fault
-                                br
-                                span Khalid Dahi, Enseignant-Chercheur, UTER MIDAS, ECC
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  15:10 - 15:30
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Présentation de recherche - UTER MIDAS
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                span.fst-italic Crowd Dynamics Modeling for Epidemic Control
-                                br
-                                span Aissam Jebrane, Enseignant-Chercheur, UTER MIDAS, ECC
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  15:30 - 16:30
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Table Ronde 2: Recherche Académique
-                        .col-0.col-md-2
-                        .col-12.col-md-10.text-gray 
-                            div
-                                p.mb-2
-                                    span.fw-bold Sujet: 
-                                    | Partenariats pour la Recherche et Formation Doctorale 
-                                p.mb-2
-                                    span.fw-bold Modérateur: 
-                                    em Fouad Riane 
-                                    | - Professeur, Responsable UTER GI, ECC
-                                p.mb-2
-                                    span.fw-bold Intervenants:
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 15:00 - 16:00
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Recent Advancements in AI and Major Challenges
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Yann LeCun
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 16:10 - 17:10
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Round Table 1: Bridging Theory and Applications in Next-Generation AI
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Panelists:
                                 ul
-                                    li 
-                                        em Fouad Ghamous
-                                        |  - Professeur, MSN / UM6P, Chair de l'hydrogène, Ben Guérir
-                                    li 
-                                        em Jamal Naja
-                                        |  - Vice-président Recherche, UH1S, Settat
-                                    li 
-                                        em Said Gmouh
-                                        |  - Directeur du laboratoire LIMAT, Université Hassan II de Casablanca (UH2C)
-                                    //- li 
-                                    //-     em Zineb Edfouf
-                                    //-     |  - Représentante, UM5R Rabat & MACIR
-                                    li 
-                                        em Moha Hamlich
-                                        |  - Directeur de Laboratoire, ENSAM Casablanca
-                                    li 
-                                        em Abdelilah Hakim
-                                        |  - Directeur de Laboratoire LAMAI, Université Cadi Ayyad
-                                    li 
-                                        em Omar Cherkaoui
-                                        |  - Directeur de Recherche, ESITH
-                                    li 
-                                        em Abderahmane Farhate
-                                        |  - ESITH
-                                    //- li 
-                                    //-     em Mehdi Sebti
-                                    //-     |  - Représentant, Arts et Métiers Rabat
-                                    li 
-                                        em Mohammed Hattabi
-                                        |  - Vice President de la Formation Doctorale, Université Hassan II de Casablanca (UH2C)
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.bg-primary.text-white.p-2.rounded-pill.col-12.col-md-2 16:30 - 17:00
-                        .theme-header.col-0.col-md-10.fs-5.align-self-center.text-primary Pause-Café + Session poster
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  17:00 - 17:30
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Concours "Ma Thèse en 180 s"
-            
-                    .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
-                        .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill  17:30 - 18:00
-                        .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary Remise des prix & Clôture
+                                    li Yann LeCun
+                                    li Michael Jordan
+                                    li Eric Moulines
 
-            div
-                a.btn.btn-outline-primary.mt-2.w-100(href="./assets/visual/schedule-jrecc-june-2024.pdf" target="_blank" download="Programme-JRECC-June-2024")
-                    i.fas.fa-file-pdf
-                    |  Télécharger le programme
-        .col-0.col-md-1.emp1 &nbsp;
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-secondary.text-dark.p-2.rounded-pill 16:10 - 18:10
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-secondary AI in Motion: The Future of Mobility + Hackathon
+                            .col-0.col-md-2
+                            .col-12.col-md-10.text-gray
+                                span Luciano Borges, CEO SIANA, + Young Innovators
+
+                        .timeline-item.mt-4.d-flex.align-items-baseline.flex-column.flex-md-row.row
+                            .time-header.col-12.col-md-2.bg-primary.text-white.p-2.rounded-pill 17:15 - 18:00
+                            .theme-header.col-12.col-md-10.fs-5.align-self-center.text-primary Poster Session
+
+                        div
+                            a.btn.btn-outline-primary.mt-2.w-100(href="./assets/visual/schedule-ai-conference-2025.pdf" target="_blank" download="Next-Generation-AI-2025-Programme")
+                                i.fas.fa-file-pdf
+                                |  Download the full schedule
+            .col-0.col-md-1 &nbsp;

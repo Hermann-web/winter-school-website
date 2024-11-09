@@ -10842,14 +10842,14 @@ textarea.form-control-lg {
   }
 }
 :root {
-  --bs-secondary-rgb: 78, 196, 169;
-  --bs-primary-rgb: 1, 51, 68;
-  --bs-light-rgb: 78, 196, 169;
-  --bs-dark-rgb: 1, 51, 68;
-  --bs-light: rgb(255, 255, 255);
-  --bs-dark: rgb(1, 51, 68);
-  --bs-primary: rgb(1, 51, 68);
-  --bs-secondary: rgb(78, 196, 169);
+  --bs-primary-rgb: 114, 13, 168;
+  --bs-primary: rgb(114, 13, 168);
+  --bs-secondary-rgb: 92, 225, 230;
+  --bs-secondary: rgb(92, 225, 230);
+  --bs-light-rgb: 255, 87, 87;
+  --bs-light: rgb(255, 87, 87);
+  --bs-dark-rgb: 140, 82, 255;
+  --bs-dark: rgb(140, 82, 255);
 }
 
 html,
@@ -10868,6 +10868,12 @@ body {
 
 .sb-sidenav-dark {
   background-color: var(--bs-dark) !important;
+  height: 100%;
+}
+
+.sb-sidenav-light {
+  background-color: #ffffff !important;
+  color: var(--bs-dark) !important;
   height: 100%;
 }
 
@@ -11126,7 +11132,7 @@ body {
   color: #adb5bd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link {
-  color: #212529;
+  color: #0d6efd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
   color: #adb5bd;

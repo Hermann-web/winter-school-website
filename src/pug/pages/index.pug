@@ -4,82 +4,52 @@ block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Accueil'
     - var index = true
-    - var sidenavStyle = 'sb-sidenav-dark'
+    - var sidenavStyle = 'sb-sidenav-light'
 
 block content
-    .container.d-flex.min-vh-100
-        .col-0.col-lg-1.emp1 &nbsp;
-        .col-12.col-lg-10.emp1.mt-3
-            h1.h1.text-center(align="center").text-primary LA JOURNÉE DE LA RECHERCHE À L'ECC
-            p.h4.text-center.text-secondary Découvrez les initiatives de recherche de l'Ecole Centrale Casablanca
-            p.h5.text-center Jeudi 13 juin 2024
-            p.h6.text-center Casablanca, Maroc
+    .container-fluid.min-vh-100.mb-5
 
-            .card.mb-4.bg-white.text-dark
-                .card-body
-                    p 
-                      | Le 
-                      a.text-decoration-none(target="_blank" href="https://centrale-casablanca.ma/recherche/centre-de-recherche-systemes-complexes-et-interaction/le-centre-de-recherche/") Centre de Recherche "Systèmes Complexes et Interactions" de l'Ecole Centrale Casablanca
-                      | regroupe des enseignants-chercheurs, chercheurs associés, et doctorants de divers horizons scientifiques, et est orienté vers les sciences pour l’ingénieur. 
-                    p 
-                      | Nous collaborons avec des partenaires académiques et industriels pour mener des recherches interdisciplinaires de pointe et apporter des solutions innovantes aux défis actuels, en modélisant et en analysant les systèmes complexes et leurs interactions. 
-                      | Nos sujets de recherche couvrent des domaines variés à travers quatre Unités Thématiques d’Enseignement et de Recherche (UTER) : l’UTER MIDAS (Mathématiques, Informatique et Data Science), l’UTER Physique, l’UTER Génie Industriel, et l’UTER ISMEC (Mécanique Énergétique). 
-                    p 
-                      | Nous organisons notre première journée de recherche à l'École Centrale Casablanca (JR-ECC 2024) le 13 juin 2024.
-                      | Cette journée vise à présenter les activités de recherche de notre laboratoire, et à renforcer nos partenariats.
-                      | Rejoignez-nous pour une journée riche en présentations et discussions autour de la recherche au 
-                      a.text-decoration-none(target="_blank" href="./assets/visual/flyer-jrecc-june-2024.png") flyer 
-                      | et restez à jour en nous suivant sur
-                      a.text-decoration-none(target="_blank" href="https://www.linkedin.com/school/ecole-centrale-casablanca") LinkedIn
-                      | .
-                    p 
-                      | Le 
-                      a.text-decoration-none(href="./schedule.html") programme de la journée
-                      | inclut :
-                    ul
-                        li Une conférence générale sur notre identité scientifique commune "systèmes complexes et interactions"
-                        li Des présentations synthétiques de quelques sujets de recherches majeurs de nos UTERs
-                        li Deux tables rondes abordant respectivement les partenariats "Recherche et formation doctorale" & "Recherche avec le monde socio-économique marocain"
-                        li Un concours "Ma thèse en 180 secondes", un exercice de vulgarisation des sujets de thèses par les doctorants 
-                        li Des Posters de travaux des doctorants et stagiaires PFE Recherche, affichés sur les murs de l'école
+        // Hero Section - Large and Bold with Background Image
+        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="background: url('https://media.licdn.com/dms/image/v2/D4D3DAQGID0xSk1KoBg/image-scale_191_1128/image-scale_191_1128/0/1731150665321/winter_school_nextgenai_cover?e=1731758400&v=beta&t=SXmasTKJ_B0IU2SOlK-kOeKmv54bcxtPlNJO4pw3Wd8') center/cover no-repeat;")
+            .col-12.text-center.py-5
+                h1 Winter Data Science School 2024
+                p 26 February - 1 March 2024 | Generative AI
+                p Conference Center at EMINES, UM6P & École Centrale Casablanca
+                .cta-buttons.mt-4
+                    a.btn.btn-primary(href="#registration") Register Now
+                    a.btn.btn-secondary.ml-3(href="#program") View Program
 
-            .row
+        // About Section
+        .row.about-section.mt-5
+            .col-12
+                h2.text-center About the Event
+                p.text-center Our Winter Data Science School focuses on Generative AI, aiming to provide participants with deep insights into generative techniques, practical skills, and networking opportunities. The event features keynotes, panel discussions, research presentations, a hackathon, and more.
+                p.text-center Stay connected and updated by following us on 
+                    a(href="#") LinkedIn.
 
-                .col-lg-3.d-flex.align-items-stretch
-                    .card.mb-4.bg-light.text-dark.flex-fill
-                        .card-body
-                            h2.h2.text-center Lieu
-                            p 
-                              | Les conférences et panels de la journée de recherche auront lieu à l'Ecole Centrale Casablanca. Consultez 
-                              a.text-decoration-none(target="_blank" href="https://www.google.com/maps/dir//Ecole+Centrale+Casablanca,+Ville+Verte+C%C3%B4t%C3%A9+Lat%C3%A9ral+Est+%C3%A0+la+for%C3%AAt+Boukoura/@33.4800758,-7.6226301,17z/data=!4m16!1m6!3m5!1s0xda62dfb0bd98e83:0x6c5587c807a6f58e!2sEcole+Centrale+Casablanca!8m2!3d33.4800758!4d-7.6204414!4m8!1m0!1m5!1m1!1s0xda62dfb0bd98e83:0x6c5587c807a6f58e!2m2!1d-7.6204414!2d33.4800758!3e2") ce lien google maps
-                              |  pour la localisation.
+        // Key Features Section
+        .row.features-section.bg-light.mt-5
+            .col-12.text-center.py-5
+                h2 Key Features of the Event
+            .col-4.text-center
+                h3 Keynote Presentations
+                p Learn from world-class experts in Generative AI
+            .col-4.text-center
+                h3 Hackathon
+                p Join a hands-on AI challenge with top mentors
+            .col-4.text-center
+                h3 Networking
+                p Connect with industry leaders and innovators
 
-                .col-lg-9.d-flex.align-items-stretch
-                    .card.mb-4.bg-dark.text-white.flex-fill
-                        .card-body
-                            h2.h2.text-center Public cible
-                            p Cet événement est destiné à :
-                            ul
-                                li Étudiants en doctorat et en master
-                                li Chercheurs et universitaires
-                                li Professionnels du monde industriel intéressés par les collaborations de recherche
-                            p Les professionnels et étudiants de diverses disciplines sont chaleureusement invités.
+        // Registration Section
+        .row.mt-5
+            .col-12.text-center
+                h2(id="registration") Registration
+                p.text-center Registration is now open. Complete your registration to participate in this exciting event.
+                a.btn.btn-primary(href="registration-link") Register Now
 
-            .card.mb-4.bg-white.text-dark
-                .card-body
-                    h2.h2.text-center.text-secondary Liens utiles
-                    p Explorez davantage d'informations et de ressources :
-                    ul
-                        li 
-                            a.text-decoration-none(href="organization.html") Page d'organisation
-                            |  - Découvrez notre équipe dévouée et nos intervenants.
-                        li 
-                            a.text-decoration-none(href="schedule.html") Programme
-                            |  - Consultez le programme détaillé de l'événement.
-                        li 
-                            a.text-decoration-none(href="contact.html") Contact
-                            |  - Pour toute question ou information supplémentaire, n'hésitez pas à nous contacter.
-                        li 
-                            a.text-decoration-none(target="_blank" href="./assets/visual/flyer-jrecc-june-2024.png") Flyer (jpg)
-                            |  - Consultez le flyer pour plus de contexte sur l'évènement.
-        .col-0.col-lg-1.emp1 &nbsp;
+        //- // Footer Section
+        //- .row.bg-dark.text-white.mt-5.py-3
+        //-     .col-12.text-center
+        //-         p © 2024 Winter Data Science School - All Rights Reserved
+        //-         a.text-white(href="#contact") Contact Us for more information

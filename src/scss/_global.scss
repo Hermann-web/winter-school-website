@@ -3,22 +3,42 @@
 // 
 
 // :root {
-//   --bs-dark-rgb:78, 196, 169;
+//   --bs-dark-rgb:255, 87, 87;
 //   --bs-bg-opacity: 0.5;
 //  }
 
 :root {
-    --bs-secondary-rgb: 78, 196, 169;
-    --bs-primary-rgb: 1, 51, 68;
-    --bs-light-rgb: 78, 196, 169;
-    --bs-dark-rgb: 1, 51, 68;
-    --bs-light: rgb(255, 255, 255);
-    --bs-dark: rgb(1, 51, 68);
-    --bs-primary: rgb(1, 51, 68);
-    --bs-secondary: rgb(78, 196, 169);
+    --bs-primary-rgb: 114, 13, 168;
+    --bs-primary: rgb(114, 13, 168);
+    --bs-secondary-rgb: 92, 225, 230;
+    --bs-secondary: rgb(92, 225, 230);
+    --bs-light-rgb: 255, 87, 87;
+    --bs-light: rgb(255, 87, 87);
+    --bs-dark-rgb: 140, 82, 255;
+    --bs-dark: rgb(140, 82, 255);
     // --bs-link-color: #5b57a6;
 }
 
+
+// :root {
+//     --bs-secondary-rgb: 255, 87, 87;
+//     --bs-primary-rgb: 114, 13, 168;
+//     --bs-light-rgb: 255, 87, 87y
+//     --bs-dark-rgb: 114, 13, 168;
+    
+//     --bs-light: rgb(255, 255, 255);
+//     --bs-dark: rgb(114, 13, 168);
+//     --bs-primary: rgb(114, 13, 168); #volet
+//     --bs-secondary: rgb(255, 87, 87); #orange
+// 255, 87, 87
+    
+//     /* Removed the comment on the following line to activate the link color */
+//     // --bs-link-color: #5b57a6;
+// }
+// 255, 87, 87 (vert) --> 255, 87, 87 (orange)
+// 78, 196, 169 --> 92, 225, 230 (vert)
+// 114, 13, 168 (ancien) --> 114, 13, 168 (violet)
+// --> 140, 82, 255 (violet ligh)
 html,
 body {
     height: 100%;
@@ -36,6 +56,11 @@ body {
 
 .sb-sidenav-dark {
     background-color: var(--bs-dark) !important;
+    height: 100%;
+}
+.sb-sidenav-light {
+    background-color: #ffffff !important;
+    color: var(--bs-dark) !important;
     height: 100%;
 }
 
