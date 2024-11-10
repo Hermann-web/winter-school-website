@@ -214,20 +214,20 @@ body {
 }
 
 /* texts too long, no need i guess*/
-// .usefull-links .feature-hover:hover {
-//     background-color: var(--bs-secondary);
-//     color: var(--bs-lighter);
-//     transform: translateY(-10px); /* Slight upward movement */
-//     transition: transform 0.3s ease, background-color 0.3s ease;
-// }
+.usefull-links .feature-hover:hover {
+    background-color: var(--bs-secondary);
+    color: var(--bs-lighter);
+    transform: translateY(-10px); /* Slight upward movement */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-// /* Hover effect for the headings and paragraphs */
-// .usefull-links .feature-hover:hover h3,
-// .usefull-links .feature-hover:hover li,
-// .usefull-links .feature-hover:hover p {
-//     color: var(--bs-lighter); /* Change text color on hover */
-//     transition: color 0.3s ease;
-// }
+/* Hover effect for the headings and paragraphs */
+.usefull-links .feature-hover:hover h3,
+.usefull-links .feature-hover:hover li,
+.usefull-links .feature-hover:hover p {
+    color: var(--bs-lighter); /* Change text color on hover */
+    transition: color 0.3s ease;
+}
 
 
 .timeline-item:hover {
