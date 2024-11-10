@@ -8,15 +8,9 @@ block config
 
 block content
     .container-fluid.min-vh-100.mb-5
-        // Hero Section with YouTube Background Video, Overlay, and Practical Data
-        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(position="relative" style="height: 100vh;")
-            
-            // YouTube Background Video
-            iframe.youtube-background-video(style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" 
-                    src="https://www.youtube.com/embed/Gq9dcQBIKYY?autoplay=1&mute=1&controls=0&loop=1&modestbranding=1" 
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
-                    
-            // Dark Overlay
+
+        // Hero Section - Modern Look with Background Image, Overlay, and Practical Data
+        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="background: url('assets/visual/flyer.png') center/cover no-repeat; height: 100vh; position: relative;")
             .col-12.text-center.py-5.overlay(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);")
                 h1.mt-5.font-weight-bold Join the Winter Data Science School
                 p.lead Explore Next-Gen AI, Network with Experts, and Gain Practical Skills.
