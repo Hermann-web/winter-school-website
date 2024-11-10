@@ -8,6 +8,7 @@ block config
     - var sidenavStyle = 'sb-sidenav-dark'
     - var SpeakersList = [{name: "Yann LeCun", img: "yann-lecun.jpg", title: "Keynote Speaker", text: "Prof at Courant Institute NY and VP & Chief AI Scientist at Meta (ex Facebook)"},{name: "Michael Jordan", img: "default.png", title: "AI Expert", text: "Professor, Inria and MBZUAI"},{name: "Benoit Bergeret", img: "default.png", title: "Panel Moderator", text: "Executive Director of ESSEC Business School's Metalab for Data, Technology, and Society"},{name: "Eric Moulines", img: "eric-moulines.png", title: "Professor of AI", text: "Prof at Ecole Polytechnique (X) and affiliate prof UM6P"},{name: "Luciano Borges", img: "default.png", title: "Guest Speaker", text: "CEO and director of SIANA (JV ONCF and SNCF) , Moroccan Company for High-Speed Train Maintenance"}, {name: "Jawad Alaoui", img: "default.png", title: "Panelist", text: "co-founder of NORMA, a company that provides data science and machine learning solutions"}]
     - var OrganisersList = [{name: "Mohammed ElRhabi", img: "mohammed-elrhabi.jpeg", role: "Event Coordinator", text: "Head of Master of Data Engineering & Machine Learning (DEML)"},{name: "Prof. Nicolas Cheimanoff", img: "nicolas-c.png", role: "Event Director", text: " Director of EMINES - Université Mohammed VI Polytechnique"},{name: "Speaker 3", img: "default.png", role: "Data Scientist", text: "Workshop Lead"},{name: "Eric Moulines", img: "eric-moulines.png", role: "Professor of AI", text: "Prof at Ecole Polytechnique (X) and affiliate prof UM6P"}]
+    - var TeamMembersList = [{ name: 'Aymane Aouzal', role: 'Website Manager', text: 'John is responsible for designing and maintaining the event website, ensuring a smooth user experience for all participants.'}, { name: 'Aymane Chatit', role: 'Participant Coordinator', text: 'Jane manages participant registrations and ensures clear communication between the event team and attendees.'}, { name: 'Fatima Zahra Assmina', role: 'Logistics Coordinator', text: 'Alex oversees all logistics, including venue setup and event materials, to ensure everything runs smoothly during the event.'}, { name: 'Hafsa Rafik', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Hamza Sbiti', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Hermann Agossou', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Mouad Khaznaoui', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}]
 
 block content
     .container.d-flex.min-vh-100
@@ -17,7 +18,7 @@ block content
             
             // Speakers Section
             .m-4.bg-white.text-dark
-                h2.text-dark Featured Speakers
+                h2.text-light Featured Speakers
                 .row.d-flex.justify-content-center.mt-4
                     each speaker in SpeakersList
                         .col-md-3.mb-4
@@ -33,7 +34,7 @@ block content
 
             // Organizers Section
             .m-4.bg-white.text-dark
-                h2.text-dark Meet the Organizers
+                h2.text-light Meet the Organizers
                 .row.d-flex.justify-content-center.mt-4
                     each organizer in OrganisersList
                         .col-md-3.mb-4
@@ -46,5 +47,17 @@ block content
                                     h5.card-title= organizer.name
                                     p.card-subtitle.mb-2.text-muted= organizer.role
                                     p.card-text= organizer.text
+
+            // Additional Team Members Section
+            .m-4.bg-white.text-dark
+                h2.text-light Meet the Team Behind the Scenes
+                .row.d-flex.justify-content-center.mt-4
+                    each teamMember in TeamMembersList
+                        .col-md-3.mb-4
+                            .card.shadow.border-0
+                                .card-body
+                                    h5.card-title= teamMember.name
+                                    p.card-subtitle.mb-2.text-muted= teamMember.role
+                                    //- p.card-text= teamMember.text
 
         .col-0.col-lg-1.emp1 &nbsp;
