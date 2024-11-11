@@ -202,6 +202,19 @@ body {
 //     transition: color 0.3s ease;
 // }
 
+/* Hover effect for venue section */
+.venue-section:hover {
+    background-color: var(--bs-primary);
+    transform: translateY(-10px); /* Slight upward movement */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.venue-section:hover p,
+.venue-section:hover a {
+    color: var(--bs-lighter) !important; /* Change text color on hover */
+    transition: color 0.3s ease;
+}
+
 
 /* Scale images on hover */
 .partner-logo img {
@@ -213,10 +226,10 @@ body {
     opacity: 0.9; /* Slight opacity change for a smoother look */
 }
 
+
 /* texts too long, no need i guess*/
 .usefull-links .feature-hover:hover {
-    background-color: var(--bs-secondary);
-    color: var(--bs-lighter);
+    background-color: var(--bs-primary);
     transform: translateY(-10px); /* Slight upward movement */
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -228,7 +241,6 @@ body {
     color: var(--bs-lighter); /* Change text color on hover */
     transition: color 0.3s ease;
 }
-
 
 .timeline-item:hover {
     background-color: rgba(var(--bs-secondary-rgb), 0.1) !important; /* Light background overlay */

@@ -10998,6 +10998,19 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Hover effect for venue section */
+.venue-section:hover {
+  background-color: var(--bs-primary);
+  transform: translateY(-10px); /* Slight upward movement */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.venue-section:hover p,
+.venue-section:hover a {
+  color: var(--bs-lighter) !important; /* Change text color on hover */
+  transition: color 0.3s ease;
+}
+
 /* Scale images on hover */
 .partner-logo img {
   transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for scaling and opacity */
@@ -11010,8 +11023,7 @@ body {
 
 /* texts too long, no need i guess*/
 .usefull-links .feature-hover:hover {
-  background-color: var(--bs-secondary);
-  color: var(--bs-lighter);
+  background-color: var(--bs-primary);
   transform: translateY(-10px); /* Slight upward movement */
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
