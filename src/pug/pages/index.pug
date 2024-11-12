@@ -13,11 +13,16 @@ block content
             
             // Background Video with Image Fallback
             .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -3")
-            video.background-video(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover;object-position: center;width: 100%;height: 100%;padding:0" autoplay loop muted poster="assets/visual/flyer.png")
-                //- source(src="assets/visual/teaser.mp4" type="video/mp4")
+            video.background-video(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover; object-position: center; width: 100%; height: 100%; padding: 0" autoplay loop muted poster="assets/visual/flyer.png")
                 source(src="assets/visual/teaser.webm" type="video/webm")
+                //- source(src="assets/visual/teaser.mp4" type="video/mp4")
                 //- source(src="assets/visual/background-video.ogv" type="video/ogg")
-            
+
+            //- // Content Over Video
+            //- .overlay-content.text-center(style="z-index: 1")
+            //-     h1.text-uppercase.fw-bold Welcome to the Winter School 2025
+            //-     p.lead Join us for a journey into the future of AI and Economics.
+
             // Dark Overlay
             .background-overlay(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6);")
         
@@ -30,7 +35,7 @@ block content
                 .row.justify-content-center.mt-4
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-calendar-alt.fa-2x.mb-2
-                        p February 24-25, 2024
+                        p February 24-25, 2025
 
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-map-marker-alt.fa-2x.mb-2
