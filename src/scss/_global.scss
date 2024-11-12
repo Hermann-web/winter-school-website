@@ -165,12 +165,22 @@ body {
     color: var(--bs-light) !important; /* Change text color on hover */
 }
 
+:root {
+    --hover-text-color: rgba(255, 255, 255, 0.1);
+}
 
 /* Hover effect for all columns except the first one */
-.features-section .feature-hover:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Light background overlay */
+.hover-effect .feature-hover:hover {
     transform: translateY(-10px); /* Slight upward movement */
     transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.audience-section .feature-hover:hover {
+    background-color: var(--bs-secondary);
+}
+
+.features-section .feature-hover:hover {
+    background-color: var(--hover-text-color); /* Light background overlay */
 }
 
 .features-section .feature-hover:hover .svg-inline--fa {
@@ -183,12 +193,6 @@ body {
 }
 
 /* General hover effect for all audience sections */
-.audience-section .feature-hover:hover {
-    background-color: var(--bs-secondary);
-    transform: translateY(-10px); /* Slight upward movement */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
 // /* Hover effect for the icons */
 // .audience-section .feature-hover:hover .svg-inline--fa {
 //     color: var(--bs-lighter) !important; /* Change icon color on hover */
@@ -203,14 +207,12 @@ body {
 // }
 
 /* Hover effect for venue section */
-.venue-section:hover {
+.venue-section .feature-hover:hover {
     background-color: var(--bs-primary);
-    transform: translateY(-10px); /* Slight upward movement */
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.venue-section:hover p,
-.venue-section:hover a {
+.venue-section .feature-hover:hover p,
+.venue-section .feature-hover:hover a {
     color: var(--bs-lighter) !important; /* Change text color on hover */
     transition: color 0.3s ease;
 }
@@ -230,8 +232,6 @@ body {
 /* texts too long, no need i guess*/
 .usefull-links .feature-hover:hover {
     background-color: var(--bs-primary);
-    transform: translateY(-10px); /* Slight upward movement */
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Hover effect for the headings and paragraphs */
@@ -241,12 +241,17 @@ body {
     color: var(--bs-lighter); /* Change text color on hover */
     transition: color 0.3s ease;
 }
-
-.timeline-item:hover {
-    background-color: rgba(var(--bs-secondary-rgb), 0.1) !important; /* Light background overlay */
-    transform: translateY(-10px); /* Slight upward movement */
-    transition: transform 0.3s ease, background-color 0.3s ease;
+/* Hover effect for the headings and paragraphs */
+.usefull-links .feature-hover:hover a {
+    color: var(--bs-secondary);
 }
+
+.timeline .feature-hover:hover {
+    background-color: rgba(var(--bs-secondary-rgb), 0.1) !important; /* Light background overlay */
+}
+
+
+/* fancy bar on hover*/
 
 .timeline-item {
     position: relative; /* Ensure the pseudo-element is positioned correctly */
