@@ -1,0 +1,59 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Partners'
+    - var pageMainTitle = 'Our Partners'
+    - var pageSubTitle = 'Sponsors and Collaborators who make this event possible'
+    - var sidenavStyle = 'sb-sidenav-dark'
+    - var SponsorsList = [{ name: 'EMINES', img: 'emines.png', type: 'Title Sponsor', description: 'Leading AI research institution.' }, { name: 'OCP', img: 'ocp.png', type: 'Gold Sponsor', description: 'Global leader in phosphates and AI applications in agriculture.' }, { name: 'UM6P', img: 'um6p.png', type: 'Silver Sponsor', description: 'University at the forefront of AI education and research.' }, { name: 'SIANA', img: 'siana.png', type: 'Bronze Sponsor', description: 'Innovators in high-speed rail and transportation AI solutions.' }]
+    - var CollaboratorsList = [{ name: 'École Polytechnique (l’X)', img: 'polytechnique-rmbg.png', type: 'Academic Partner', description: 'Pioneering in AI research and education.' }, { name: 'Hub France IA', img: 'hubfrance-logo.png', type: 'Research Partner', description: 'Promoting AI research and its impact on society.' }, { name: 'OECD Network of Experts (ONE.AI)', img: 'oecd-logo.png', type: 'Research Collaborator', description: 'Global collaboration on AI policies and research.' }, { name: 'Orange EMEA', img: 'orange-logo.png', type: 'Industry Partner', description: 'Driving AI innovation in telecommunications.' }, { name: 'Amundi', img: 'amundi-logo.png', type: 'Financial Partner', description: 'AI for investment management and financial services.' }, { name: 'Telecommunications and Digital Innovation Leader', img: '', type: 'Collaborator', description: 'Leader in digital and telecommunications innovation.' }];
+block content
+    .container.d-flex.min-vh-100
+        .col-0.col-lg-1.emp1 &nbsp;
+        .col-12.col-lg-10.emp1.mt-3
+            include includes/page-header.pug
+
+            // Partners Section
+            .m-4.bg-white.text-dark
+                h2.text-light.text-center Our Valued Partners
+
+                // Sponsors Section
+                .row.d-flex.justify-content-center.mt-4
+                    h3.text-center.fw-bold.mb-3 Sponsors
+                    each sponsor in SponsorsList
+                        .col-md-3.mb-4
+                            .card.shadow.border-0
+                                if sponsor.img
+                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src=`assets/firms/${sponsor.img}`, alt=sponsor.name)
+                                else
+                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src="assets/firms/default.png", alt=sponsor.name)
+                                .card-body.text-center
+                                    h5.card-title= sponsor.name
+                                    p.card-subtitle.mb-2.text-muted= sponsor.type
+                                    p.card-text.fw-light= sponsor.description
+
+                // Collaborators Section
+                .row.d-flex.justify-content-center.mt-4
+                    h3.text-center.fw-bold.mb-3 Collaborators
+                    each collaborator in CollaboratorsList
+                        .col-md-3.mb-4
+                            .card.shadow.border-0
+                                if collaborator.img
+                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src=`assets/firms/${collaborator.img}`, alt=collaborator.name)
+                                else
+                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src="assets/firms/default.png", alt=collaborator.name)
+                                .card-body.text-center
+                                    h5.card-title= collaborator.name
+                                    p.card-subtitle.mb-2.text-muted= collaborator.type
+                                    p.card-text.fw-light= collaborator.description
+
+            // Call to Action for Partnership Inquiries
+            .row.justify-content-center.mt-5
+                .col-md-8.text-center
+                    h4.text-light Interested in Partnering with Us?
+                    p.fw-light.text-muted Get in touch to explore sponsorship opportunities or collaborations for future events.
+                    a.btn.btn-lg.btn-primary(href="mailto:partners@datasciencewinter.com") Contact Us
+
+        .col-0.col-lg-1.emp1 &nbsp;
+
