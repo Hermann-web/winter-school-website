@@ -8,14 +8,20 @@ block config
 
 block content
     .container-fluid.min-vh-100.mb-5
-        // Hero Section with Background Image
+        // Hero Section with Video Background and Image Fallback
         .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="position: relative; height: 100vh;")
             
-            // Background Image
-            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -2")
-            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6)")
+            // Background Video with Image Fallback
+            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -3")
+            video.background-video(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover;object-position: center;width: 100%;height: 100%;padding:0" autoplay loop muted poster="assets/visual/flyer.png")
+                //- source(src="assets/visual/teaser.mp4" type="video/mp4")
+                source(src="assets/visual/teaser.webm" type="video/webm")
+                //- source(src="assets/visual/background-video.ogv" type="video/ogg")
             
-            // Text Overlay (Positioned Above Image)
+            // Dark Overlay
+            .background-overlay(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6);")
+        
+            // Text Overlay (Positioned Above Video)
             .col-12.text-center.py-5.overlay(style="position: relative; z-index: 1;")
                 h1.mt-5.font-weight-bold Join the Winter Data Science School
                 p.lead Explore Next-Gen AI, Network with Experts, and Gain Practical Skills.

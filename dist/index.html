@@ -79,12 +79,14 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid min-vh-100 mb-5">
-                        <!-- Hero Section with Background Image-->
+                        <!-- Hero Section with Video Background and Image Fallback-->
                         <div class="row hero-section text-white d-flex align-items-center justify-content-center" style="position: relative; height: 100vh">
-                            <!-- Background Image-->
-                            <div class="background-image" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -2"></div>
-                            <div class="background-image" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6)"></div>
-                            <!-- Text Overlay (Positioned Above Image)-->
+                            <!-- Background Video with Image Fallback-->
+                            <div class="background-image" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -3"></div>
+                            <video class="background-video" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover; object-position: center; width: 100%; height: 100%; padding: 0" autoplay loop muted poster="assets/visual/flyer.png"><source src="assets/visual/teaser.webm" type="video/webm" /></video>
+                            <!-- Dark Overlay-->
+                            <div class="background-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6)"></div>
+                            <!-- Text Overlay (Positioned Above Video)-->
                             <div class="col-12 text-center py-5 overlay" style="position: relative; z-index: 1">
                                 <h1 class="mt-5 font-weight-bold">Join the Winter Data Science School</h1>
                                 <p class="lead">Explore Next-Gen AI, Network with Experts, and Gain Practical Skills.</p>
