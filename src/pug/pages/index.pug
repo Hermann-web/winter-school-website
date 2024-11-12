@@ -8,13 +8,18 @@ block config
 
 block content
     .container-fluid.min-vh-100.mb-5
-
-        // Hero Section - Modern Look with Background Image, Overlay, and Practical Data
-        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="background: url('assets/visual/flyer.png') center/cover no-repeat; height: 100vh; position: relative;")
-            .col-12.text-center.py-5.overlay(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);")
+        // Hero Section with Background Image
+        .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="position: relative; height: 100vh;")
+            
+            // Background Image
+            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -2")
+            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6)")
+            
+            // Text Overlay (Positioned Above Image)
+            .col-12.text-center.py-5.overlay(style="position: relative; z-index: 1;")
                 h1.mt-5.font-weight-bold Join the Winter Data Science School
                 p.lead Explore Next-Gen AI, Network with Experts, and Gain Practical Skills.
-                
+
                 // Practical Info: Date, Venue, and Contact
                 .row.justify-content-center.mt-4
                     .col-md-3.text-center.feature-hover
@@ -29,7 +34,7 @@ block content
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-phone-alt.fa-2x.mb-2
                         p info@datasciencewinter.com
-                
+
                 // Call to Action Buttons
                 .cta-buttons.mt-4
                     a.btn.btn-lg.btn-primary(href="./registration.html") Register Now
