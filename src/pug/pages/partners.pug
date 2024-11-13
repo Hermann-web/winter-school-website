@@ -32,7 +32,7 @@ block content
                                         img.card-img-top(style="height: 200px; object-position: center", src=`assets/firms/${sponsor.img}`, alt=sponsor.name, class="img-fluid mb-3")
                                         h4.text-dark.bold= sponsor.name
                                         //- p.text-muted= sponsor.type
-                                        p.text-muted sponsor.description
+                                        p.text-muted= sponsor.description
                                         //- if sponsor.url
                                         //-     a.btn.btn-primary.btn-sm(href=sponsor.url, target="_blank") Learn More
                                         
@@ -48,7 +48,7 @@ block content
                                         img.card-img-top(style="height: 50px; object-position: center", src=`assets/firms/${collaborator.img}`, alt=collaborator.name, class="img-fluid mb-3")
                                         h4.text-dark.bold= collaborator.name
                                         //- p.text-muted= collaborator.type
-                                        p.text-muted collaborator.description
+                                        p.text-muted= collaborator.description
                                         //- if collaborator.url
                                         //-     a.btn.btn-primary.btn-sm(href=collaborator.url, target="_blank") Learn More
                     //- // Optional: Carousel or grid for logos at the bottom
