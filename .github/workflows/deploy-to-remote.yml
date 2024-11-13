@@ -1,37 +1,43 @@
-name: deployment
-run-name: deployment
+name: Deploy to Another Branch
+
 on:
   push:
     branches:
-      - main  # Change this to the appropriate branch if needed
+      - main  # Trigger the action when there's a push to the main branch
+
 jobs:
-  Explore-GitHub-Actions:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Connect using SSH
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          password: ${{ secrets.REMOTE_USER_PASSWORD }}
-          script: |
-            remote_path=${{ secrets.REMOTE_PATH }}
+    - name: Checkout the repository
+      uses: actions/checkout@v3
 
-            # Change directory
-            cd "$remote_path"
+    - name: Install dependencies and build (if needed)
+      run: |
+        # Run your build steps here (if necessary)
+        npm install
+        npm run build
 
-            # Checkout the specified branch
-            branch="main"
-            git checkout $branch
+    - name: Copy files to another branch
+      run: |
+        # Configure Git user
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
-            # Construct repository URL with token and branch
-            url="https://hermann-web:${{ secrets.PULL_REPO_TOKEN }}@github.com/hermann-web/winter-school-website.git"
+        # Create a new directory for the deployment
+        git fetch origin deploy-branch
+        git checkout -b deploy-branch origin/deploy-branch || git checkout --orphan deploy-branch
 
-            # Pull changes from the specified branch using the constructed URL
-            git pull $url $branch
+        # Remove all existing files from the deploy-branch
+        rm -rf ./*
 
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: End
-        run: echo "🍏 This job's status is ${{ job.status }}."
+        # Copy the contents from the dist folder to the current directory
+        cp -r ./dist/* ./
+
+        # Add all the files to git and commit the changes
+        git add .
+        git commit -m "Deploying updated build from main"
+
+        # Push the changes to deploy-branch
+        git push origin deploy-branch --force
