@@ -1,8 +1,8 @@
-git checkout main
+git checkout dev
 git push
 
-git checkout deploy
-git reset --hard main
+git checkout main
+git reset --hard dev
 
 
 # Remove all existing files from the deploy
@@ -16,9 +16,9 @@ rm -rf dist/
 
 # Add all the files to git and commit the changes
 git add .
-git commit -m "Deploying updated build from main"
+git commit -m "Deploying updated build from dev"
 
 # Push the changes to deploy
-git push origin deploy --force
+git push origin main --force
 
-git checkout main
+git checkout dev
