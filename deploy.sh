@@ -1,9 +1,11 @@
-git checkout dev
+src_branch="main"
+deploy_branch="gh-pages"
+
+git checkout $src_branch
 git push
 
-git checkout main
-git reset --hard dev
-
+git checkout $deploy_branch
+git reset --hard $src_branch
 
 # Remove all existing files from the deploy
 # rm -rf $(find -type d -maxdepth 1 ! -name ".git" ! -name "dist" ! -name "." ! -name "..")
@@ -16,9 +18,9 @@ rm -rf dist/
 
 # Add all the files to git and commit the changes
 git add .
-git commit -m "Deploying updated build from dev"
+git commit -m "Deploying updated build from $src_branch"
 
 # Push the changes to deploy
-git push origin main --force
+git push origin $deploy_branch --force
 
-git checkout dev
+git checkout $src_branch
