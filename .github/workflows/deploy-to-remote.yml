@@ -26,10 +26,10 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
         # Create a new directory for the deployment
-        git fetch origin deploy-branch
-        git checkout -b deploy-branch origin/deploy-branch || git checkout --orphan deploy-branch
+        git fetch origin deploy
+        git checkout -b deploy origin/deploy || git checkout --orphan deploy
 
-        # Remove all existing files from the deploy-branch
+        # Remove all existing files from the deploy
         rm -rf ./*
 
         # Copy the contents from the dist folder to the current directory
@@ -39,5 +39,5 @@ jobs:
         git add .
         git commit -m "Deploying updated build from main"
 
-        # Push the changes to deploy-branch
-        git push origin deploy-branch --force
+        # Push the changes to deploy
+        git push origin deploy --force
