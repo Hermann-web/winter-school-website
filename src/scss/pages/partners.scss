@@ -1,0 +1,9 @@
+.sponsor-logo, .collaborator-logo {
+    max-width: 150px; /* Set a consistent maximum width */
+    max-height: 100px; /* Set a consistent maximum height */
+    object-fit: contain; /* Ensure the logos retain their aspect ratio */
+}
+
+.feature-hover {
+    margin-bottom: 20px; /* Adds spacing between elements */
+}

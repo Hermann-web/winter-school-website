@@ -11492,3 +11492,14 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
+
+.sponsor-logo, .collaborator-logo {
+  max-width: 150px; /* Set a consistent maximum width */
+  max-height: 100px; /* Set a consistent maximum height */
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensure the logos retain their aspect ratio */
+}
+
+.feature-hover {
+  margin-bottom: 20px; /* Adds spacing between elements */
+}
