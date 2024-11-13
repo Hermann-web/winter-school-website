@@ -2,6 +2,8 @@ src_branch="main"
 deploy_branch="gh-pages"
 
 git checkout $src_branch
+git add .
+git commit -m "updates pre build"
 git push
 
 git checkout $deploy_branch
