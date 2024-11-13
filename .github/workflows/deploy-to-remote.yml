@@ -30,8 +30,8 @@ jobs:
         git checkout -b deploy origin/deploy || git checkout --orphan deploy
 
         # Remove all existing files from the deploy
-        rm -rf $(find -type d -maxdepth 1 ! -name ".git" ! -name "dist")
-        
+        rm -rf $(find -type d -maxdepth 1 ! -name ".git" ! -name "dist" ! -name "." ! -name "..")
+
         # Copy the contents from the dist folder to the current directory
         cp -r ./dist/* ./
         rm -rf dist/
