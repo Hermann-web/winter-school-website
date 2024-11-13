@@ -32,8 +32,8 @@ jobs:
         # Remove all existing files from the deploy
         # rm -rf $(find -type d -maxdepth 1 ! -name ".git" ! -name "dist" ! -name "." ! -name "..")
         rm -r $(find -type f -maxdepth 1)
-        
-        rm -rf .github scripts src
+
+        rm -rf .github scripts src node_modules
 
         # Copy the contents from the dist folder to the current directory
         cp -r ./dist/* ./
