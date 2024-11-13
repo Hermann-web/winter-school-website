@@ -2,11 +2,10 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'Organizers'
-    - var pageMainTitle = 'Organizers'
-    - var pageSubTitle = "Meet the Organizers and Speakers"
+    - var pageTitle = 'Organizers and Team'
+    - var pageMainTitle = 'Organizers and Team'
+    - var pageSubTitle = "Meet the Organizing Committee and the Team Behind the Scenes"
     - var sidenavStyle = 'sb-sidenav-dark'
-    - var SpeakersList = [{name: "Yann LeCun", img: "yann-lecun.jpg", title: "Keynote Speaker", text: "Professor at Courant Institute NY and VP & Chief AI Scientist at Meta (ex Facebook)"},{name: "Michael I. Jordan", img: "default.png", title: "AI Expert", text: "Professor at University of California, Berkeley and MBZUAI, Researcher at Inria", url:"https://people.eecs.berkeley.edu/~jordan/"},{name: "Benoit Bergeret", img: "default.png", title: "Speaker and Panel Moderator", text: "Co-founder, Hub France IA, OECD Network of Experts (ONE.AI)"},{name: "Eric Moulines", img: "eric-moulines.png", title: "Professor of AI", text: "Ecole Polytechnique and an Adjunct Professor at Mohamed Bin Zayed University of AI (MBZUAI)"},{name: "Luciano Borges", img: "default.png", title: "Guest Speaker", text: "CEO and director of SIANA (JV ONCF & SNCF)"}, {name: "Charles-Albert Lehalle", img: "default.png", title: "AI and Financial Applications", text: "Professor, École Polytechnique"}, {name: "Jawad Alaoui", img: "default.png", title: "Panelist", text: "Co-founder of NORMA (data science and ML solutions)"}, {name: "Nabil Cherrat", img: "default.png", title: "Panelist", text: "Amundi (JV Crédit Agricole & Société Générale)"}]
     - var OrganisersList = [{name: "Prof. Mohammed ElRhabi", img: "mohammed-elrhabi.png", role: "Event Coordinator", text: "Chair"},{name: "Prof. Nicolas Cheimanoff", img: "nicolas-c.png", role: "Event Director", text: " Director of EMINES-UM6P"},{name: "Prof. Eric Moulines", img: "eric-moulines.png", role: "Professor of AI", text: "Ecole Polytechnique and an Adjunct Professor at MBZUAI"}]
     - var TeamMembersList = [{ name: 'Aymane Aouzal', role: 'Marketing and Outreach', text: 'John is responsible for designing and maintaining the event website, ensuring a smooth user experience for all participants.'}, { name: 'Aymane Chatit', role: 'Marketing and Outreach', text: 'Jane manages participant registrations and ensures clear communication between the event team and attendees.'}, { name: 'Fatima Zahra Assmina', role: 'Event Coordinator and Social Media', text: 'Alex oversees all logistics, including venue setup and event materials, to ensure everything runs smoothly during the event.'}, { name: 'Hafsa Rafik', role: 'Graphic Design and Prospection', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Hamza Sbiti', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Hermann Agossou', role: 'Website Developer', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Ismail Fathi', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}, { name: 'Mouad Khaznaoui', role: 'Marketing and Outreach', text: 'Emily leads the marketing efforts for the event, managing social media and outreach campaigns to promote the event to a wider audience.'}]
 
@@ -15,19 +14,6 @@ block content
         .col-0.col-lg-1.emp1 &nbsp;
         .col-12.col-lg-10.emp1.mt-3
             include includes/page-header.pug
-            
-            // Speakers Section
-            .m-4.bg-white.text-dark
-                h2.text-light Featured Speakers
-                .row.d-flex.justify-content-center.mt-4
-                    each speaker in SpeakersList
-                        .col-md-3.mb-4
-                            .card.shadow.border-0
-                                img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src=`assets/speakers/${speaker.img}`, alt=speaker.name)
-                                .card-body
-                                    h5.card-title= speaker.name
-                                    p.card-subtitle.mb-2.text-muted= speaker.title
-                                    p.card-text= speaker.text
 
             // Organizers Section
             .m-4.bg-white.text-dark
@@ -37,7 +23,7 @@ block content
                         .col-md-4.mb-4
                             .card.shadow.border-0
                                 if organizer.img
-                                    img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src=`assets/team/${organizer.img}`, alt=organizer.name)
+                                    img.card-img-top(style="height: 200px; object-position: top", src=`assets/team/${organizer.img}`, alt=organizer.name)
                                 else
                                     img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src="assets/team/default.png", alt=organizer.name)
                                 .card-body

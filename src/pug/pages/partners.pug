@@ -7,7 +7,7 @@ block config
     - var pageSubTitle = 'Sponsors and Collaborators who make this event possible'
     - var sidenavStyle = 'sb-sidenav-dark'
     - var SponsorsList = [{ name: 'EMINES', img: 'emines.png', type: 'Title Sponsor', description: 'Leading AI research institution.' }, { name: 'OCP', img: 'ocp.png', type: 'Gold Sponsor', description: 'Global leader in phosphates and AI applications in agriculture.' }, { name: 'UM6P', img: 'um6p.png', type: 'Silver Sponsor', description: 'University at the forefront of AI education and research.' }, { name: 'SIANA', img: 'siana.png', type: 'Bronze Sponsor', description: 'Innovators in high-speed rail and transportation AI solutions.' }]
-    - var CollaboratorsList = [{ name: 'École Polytechnique (l’X)', img: 'polytechnique-rmbg.png', type: 'Academic Partner', description: 'Pioneering in AI research and education.' }, { name: 'Hub France IA', img: 'hubfrance.png', type: 'Research Partner', description: 'Promoting AI research and its impact on society.', url:'https://www.hub-franceia.fr/' }, { name: 'OECD Network of Experts (ONE.AI)', img: 'oecd.svg', type: 'Research Collaborator', description: 'Global collaboration on AI policies and research.', url:'https://oecd.ai/en/' }, { name: 'Orange EMEA', img: 'orange.png', type: 'Industry Partner', description: 'Driving AI innovation in telecommunications.', url:'https://www.orange.com/fr/orange-afrique-et-moyen-orient' }, { name: 'Amundi', img: 'amundi.png', type: 'Financial Partner', description: 'AI for investment management and financial services.', url:'https://about.amundi.com/' }, { name: 'LightOn', img: 'lighton.svg', type: 'Collaborator', description: 'Gen AI for the firms', url:'https://www.lighton.ai/fr/home' }, { name: 'University of California, Berkeley', img: 'berkeley.svg', type: 'Collaborator', description: '...', url:'https://www.berkeley.edu/' }];
+    - var CollaboratorsList = [{ name: 'École Polytechnique (l’X)', img: 'polytechnique-rmbg.png', type: 'Academic Partner', description: 'Pioneering in AI research and education.' }, { name: 'Hub France IA', img: 'hubfrance.png', type: 'Research Partner', description: 'Promoting AI research and its impact on society.', url:'https://www.hub-franceia.fr/' }, { name: 'OECD Network of Experts (ONE.AI)', img: 'oecd.svg', type: 'Research Collaborator', description: 'Global collaboration on AI policies and research.', url:'https://oecd.ai/en/' }, { name: 'Orange EMEA', img: 'orange.png', type: 'Industry Partner', description: 'Driving AI innovation in telecommunications.', url:'https://www.orange.com/fr/orange-afrique-et-moyen-orient' }, { name: 'Amundi', img: 'amundi.png', type: 'Financial Partner', description: 'AI for investment management and financial services.', url:'https://about.amundi.com/' }, { name: 'LightOn', img: 'lighton.svg', type: 'Collaborator', description: 'Gen AI for the firms', url:'https://www.lighton.ai/fr/home' }, { name: 'University of California, Berkeley', img: 'berkeley.svg', type: 'Collaborator', description: '...', url:'https://www.berkeley.edu/' }, { name: 'ONCF', img: 'oncf.png', type: 'Bronze Sponsor', description: 'Leading railway operator in Morocco, integrating AI for efficient operations.' }, { name: 'MBZUAI', img: 'mbzuai.png', type: 'Gold Sponsor', description: 'Pioneering AI research and education in the UAE.' }, { name: 'Inria', img: 'inria.png', type: 'Silver Sponsor', description: 'French national research institute for digital science and technology.' }, { name: 'Meta', img: 'meta.svg', type: 'Title Sponsor', description: 'Global leader in AI and technology innovation.' }, { name: 'Norma', img: 'norma.png', type: 'Bronze Sponsor', description: 'Specializing in automotive parts and AI-driven manufacturing solutions.', url:'https://www.norma.dev/' }];
 
 block content
     .container.d-flex.min-vh-100
@@ -19,42 +19,56 @@ block content
             .m-4.bg-white.text-dark
                 h2.text-light.text-center Our Valued Partners
 
-                // Sponsors Section
-                .row.d-flex.justify-content-center.mt-4
-                    h3.text-center.fw-bold.mb-3 Sponsors
-                    each sponsor in SponsorsList
-                        .col-md-3.mb-4
-                            .card.shadow.border-0
-                                if sponsor.img
-                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src=`assets/firms/${sponsor.img}`, alt=sponsor.name)
-                                else
-                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src="assets/firms/default.png", alt=sponsor.name)
-                                .card-body.text-center
-                                    h5.card-title= sponsor.name
-                                    p.card-subtitle.mb-2.text-muted= sponsor.type
-                                    p.card-text.fw-light= sponsor.description
+                .container
+                    // Sponsors Section
+                    .row.justify-content-center.mt-4
+                        .col-12.text-center
+                            h3.text-primary.mb-4 Title Sponsors
+                    .row.justify-content-center
+                        each sponsor in SponsorsList
+                            .col-md-4.col-lg-3.text-center.mb-4
+                                .card.feature-hover
+                                    .card-body
+                                        img.card-img-top(style="height: 200px; object-position: center", src=`assets/firms/${sponsor.img}`, alt=sponsor.name, class="img-fluid mb-3")
+                                        h4.text-dark.bold= sponsor.name
+                                        p.text-muted= sponsor.type
+                                        p= sponsor.description
+                                        if sponsor.url
+                                            a.btn.btn-primary.btn-sm(href=sponsor.url, target="_blank") Learn More
+                                        
+                    // Collaborators Section
+                    .row.justify-content-center.mt-5
+                        .col-12.text-center
+                            h3.text-primary.mb-4 Collaborators & Partners
+                    .row.justify-content-center
+                        each collaborator in CollaboratorsList
+                            .col-md-4.col-lg-3.text-center.mb-4
+                                .card.feature-hover
+                                    .card-body
+                                        img.card-img-top(style="height: 50px; object-position: center", src=`assets/firms/${collaborator.img}`, alt=collaborator.name, class="img-fluid mb-3")
+                                        h4.text-dark.bold= collaborator.name
+                                        p.text-muted= collaborator.type
+                                        p= collaborator.description
+                                        if collaborator.url
+                                            a.btn.btn-primary.btn-sm(href=collaborator.url, target="_blank") Learn More
+                    //- // Optional: Carousel or grid for logos at the bottom
+                    //- .row.justify-content-center.mt-5
+                    //-     .col-12.text-center
+                    //-         h3.text-primary.mb-4 More Partners
+                    //- .row.justify-content-center
+                    //-     each partner in SponsorsList.concat(CollaboratorsList)
+                    //-         .col-md-3.col-lg-2.text-center.mb-4
+                    //-             .card.feature-hover
+                    //-                 .card-body
+                    //-                     img(src=`assets/firms/${partner.img}`, alt=partner.name, class="img-fluid mb-3")
+                    //-                     if partner.type
+                    //-                         p.text-muted= partner.type
+                    //-                     if partner.url
+                    //-                         a.btn.btn-outline-secondary.btn-sm(href=partner.url, target="_blank") Visit Website
 
-                // Collaborators Section
-                .row.d-flex.justify-content-center.mt-4
-                    h3.text-center.fw-bold.mb-3 Collaborators
-                    each collaborator in CollaboratorsList
-                        .col-md-3.mb-4
-                            .card.shadow.border-0
-                                if collaborator.img
-                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src=`assets/firms/${collaborator.img}`, alt=collaborator.name)
-                                else
-                                    img.card-img-top(style="height: 150px; object-fit: cover; object-position: center", src="assets/firms/default.png", alt=collaborator.name)
-                                .card-body.text-center
-                                    h5.card-title= collaborator.name
-                                    p.card-subtitle.mb-2.text-muted= collaborator.type
-                                    p.card-text.fw-light= collaborator.description
-
-            // Call to Action for Partnership Inquiries
-            .row.justify-content-center.mt-5
-                .col-md-8.text-center
-                    h4.text-light Interested in Partnering with Us?
-                    p.fw-light.text-muted Get in touch to explore sponsorship opportunities or collaborations for future events.
-                    a.btn.btn-lg.btn-primary(href="mailto:partners@datasciencewinter.com") Contact Us
-
-        .col-0.col-lg-1.emp1 &nbsp;
-
+                //- // Call to Action Section for Future Collaboration
+                //- .row.justify-content-center.mt-5
+                //-     .col-12.text-center
+                //-         h3.text-primary.mb-4 Interested in Collaborating?
+                //-         p.text-dark.mb-4 If you're interested in becoming a sponsor or collaborator, reach out to us for partnership opportunities!
+                //-         a.btn.btn-lg.btn-primary(href="contact.html") Contact Us
