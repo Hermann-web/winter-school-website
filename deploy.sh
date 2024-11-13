@@ -16,3 +16,5 @@ git commit -m "Deploying updated build from main"
 
 # Push the changes to deploy
 git push origin deploy --force
+
+git checkout main
