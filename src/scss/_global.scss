@@ -266,7 +266,7 @@ body {
     right: 0;
     height: 100%;
     width: 5px; /* Width of the right border */
-    background: linear-gradient(180deg, #ffcc00, #ff6347); /* Fancy gradient border */
+    background: linear-gradient(180deg, var(--bs-dark), var(--bs-light)); /* Fancy gradient border */
     transition: width 0.3s ease;
     border-radius: 0 5px 5px 0; /* Rounded corners for the border */
     transform-origin: right;
