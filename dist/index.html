@@ -11,10 +11,11 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+        <div class="bg-white" style="height: 56px; position: fixed; z-index: 1039; width: 100%; --bs-bg-opacity: 0.3"></div>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark p-0">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3 d-flex align-items-center h-100" href="index.html">
-                <div class="div d-md-inline-block me-2 me-md-3 my-2 my-md-0 h-75 ms-2 ms-md-3 float-start"><img class="logo img-fluid h-100 float-start" src="assets/visual/logo.png" alt="Winter School" /></div>
+                <div class="div d-md-inline-block me-2 me-md-3 my-2 my-md-0 ms-2 ms-md-5 float-start" style="height: 85%"><img class="logo img-fluid h-100 float-start" src="assets/visual/logo-cropped-bigger.png" alt="Winter School" /></div>
             </a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -79,7 +80,7 @@
                 <main>
                     <div class="container-fluid min-vh-100 mb-5">
                         <!-- Hero Section with Video Background and Image Fallback-->
-                        <div class="row hero-section text-white d-flex align-items-center justify-content-center" style="position: relative; height: 100vh">
+                        <div class="row hero-section text-white d-flex align-items-center justify-content-center" style="position: relative; height: 100vh; top: -56px">
                             <!-- Background Video with Image Fallback-->
                             <div class="background-image" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/flyer.png') center/cover no-repeat; z-index: -3"></div>
                             <video class="background-video" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover; object-position: center; width: 100%; height: 100%; padding: 0" autoplay loop muted poster="assets/visual/flyer.png"><source src="assets/visual/teaser.webm" type="video/webm" /></video>
