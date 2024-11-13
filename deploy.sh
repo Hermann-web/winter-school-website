@@ -25,4 +25,4 @@ git commit -m "Deploying updated build from $src_branch"
 # Push the changes to deploy
 git push origin $deploy_branch --force
 
-# git checkout $src_branch
+git checkout $src_branch
