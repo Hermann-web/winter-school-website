@@ -11503,3 +11503,15 @@ body {
 .feature-hover {
   margin-bottom: 20px; /* Adds spacing between elements */
 }
+
+.conf-title {
+  color: var(--bs-dark) !important;
+}
+
+.conf-time {
+  color: var(--bs-secondary) !important;
+}
+
+.speaker-name {
+  color: var(--bs-primary) !important;
+}
