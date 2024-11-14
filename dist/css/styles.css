@@ -10907,6 +10907,10 @@ body {
   height: 100%;
 }
 
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+  color: var(--bs-secondary) !important;
+}
+
 .sb-sidenav-light {
   background-color: #ffffff !important;
   color: var(--bs-dark) !important;
