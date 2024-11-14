@@ -11105,7 +11105,7 @@ body {
 
 /* General hover effect for all audience sections */
 .team-section .feature-hover:hover {
-  background: linear-gradient(90deg, var(--bs-lighter), var(--bs-secondary)) !important;
+  background: linear-gradient(45deg, var(--bs-lighter), var(--bs-secondary)) !important;
 }
 
 .partners-section .feature-hover:hover {
