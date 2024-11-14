@@ -12,7 +12,7 @@ git reset --hard $src_branch
 # Remove all existing files from the deploy
 # rm -rf $(find -type d -maxdepth 1 ! -name ".git" ! -name "dist" ! -name "." ! -name "..")
 rm -rf .github scripts src
-rm -r $(find -type f -maxdepth 1 ! -name ".gitignore")
+rm -r $(find -type f -maxdepth 1 ! -name ".gitignore" ! -name "CNAME")
 
 # Copy the contents from the dist folder to the current directory
 cp -r ./dist/* ./
