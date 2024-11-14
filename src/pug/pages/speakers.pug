@@ -18,15 +18,21 @@ block content
             // Speakers Section
             .m-4.bg-white.text-dark
                 //- h2.text-light Featured Speakers
-                .row.d-flex.justify-content-center.mt-4
+                .row.speaker-section.hover-effect.d-flex.justify-content-center.mt-4
                     each speaker in SpeakersList
                         .col-md-3.mb-4
-                            .card.shadow.border-0
-                                img.card-img-top(style="height: 200px; object-position: top", src=`assets/speakers/${speaker.img}`, alt=speaker.name)
+                            .card.shadow.border-0.feature-hover.px-1.py-1
+                                if speaker.img && speaker.img !== 'default.png'
+                                    // If image is defined and not 'default.png', show the image without background color
+                                    img.card-img-top(style="height: 200px; object-position: top;", src=`assets/speakers/${speaker.img}`, alt=speaker.name)
+                                else
+                                    // If no image or image is 'default.png', apply background color
+                                    img.card-img-top.img-default(style="height: 200px; object-position: top", src=`assets/speakers/default.png`, alt=speaker.name)
                                 .card-body
                                     h5.card-title= speaker.name
                                     p.card-subtitle.mb-2.text-muted= speaker.title
                                     p.card-text= speaker.text
+
 
             //- // Additional Panelists Section (if you have panelists)
             //- .m-4.bg-white.text-dark

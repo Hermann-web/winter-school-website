@@ -18,10 +18,10 @@ block content
             // Organizers Section
             .m-4.bg-white.text-dark
                 h2.text-light Organizing and Scientific Committee
-                .row.d-flex.justify-content-center.mt-4
+                .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
                     each organizer in OrganisersList
                         .col-md-4.mb-4
-                            .card.shadow.border-0
+                            .card.shadow.border-0.feature-hover
                                 if organizer.img
                                     img.card-img-top(style="height: 200px; object-position: top", src=`assets/team/${organizer.img}`, alt=organizer.name)
                                 else
@@ -34,10 +34,10 @@ block content
             // Additional Team Members Section
             .m-4.bg-white.text-dark
                 h2.text-light And the Team Behind the Scenes
-                .row.d-flex.justify-content-center.mt-4
+                .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
                     each teamMember in TeamMembersList
                         .col-md-3.mb-4
-                            .card.shadow.border-0
+                            .card.shadow.border-0.feature-hover
                                 .card-body
                                     h5.card-title= teamMember.name
                                     //- p.card-subtitle.mb-2.text-muted= teamMember.role

@@ -11081,6 +11081,38 @@ body {
      object-fit: contain;
 }
 
+/* General hover effect for all speaker sections */
+.speaker-section .feature-hover:hover {
+  background-color: var(--bs-primary) !important;
+}
+
+/* Hover effect for the icons */
+.speaker-section .feature-hover:hover .img-default {
+  background-color: var(--bs-lighter) !important;
+}
+
+/* Hover effect for the headings and paragraphs */
+.speaker-section .feature-hover:hover p {
+  color: var(--bs-lighter); /* Change text color on hover */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for the headings and paragraphs */
+.speaker-section .feature-hover:hover h5, .speaker-section .feature-hover:hover .h5 {
+  color: var(--bs-secondary); /* Change text color on hover */
+  transition: color 0.3s ease;
+}
+
+/* General hover effect for all audience sections */
+.team-section .feature-hover:hover {
+  background: linear-gradient(90deg, var(--bs-lighter), var(--bs-secondary)) !important;
+}
+
+.partners-section .feature-hover:hover {
+  background: linear-gradient(180deg, var(--bs-white), var(--bs-lighter)) !important;
+  border: none;
+}
+
 #layoutAuthentication {
   display: flex;
   flex-direction: column;
