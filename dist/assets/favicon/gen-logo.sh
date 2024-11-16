@@ -8,3 +8,4 @@ convert logo.png -resize 144x144! logo-144x144.png
 convert logo.png -resize 152x152! logo-152x152.png
 convert logo.png -resize 180x180! logo-180x180.png
 convert logo.png -resize 256x256! logo-256x256.png
+convert logo.png -resize 512x512! logo-512x512.png
