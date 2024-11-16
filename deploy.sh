@@ -2,6 +2,7 @@ src_branch="main"
 deploy_branch="gh-pages"
 
 git checkout $src_branch
+npm run build
 git add .
 git commit -m "updates pre build"
 git push
