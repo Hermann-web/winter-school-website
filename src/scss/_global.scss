@@ -81,6 +81,13 @@ body {
     color: var(--bs-dark);
 }
 
+#layoutSidenav_content {
+    background-color: rgba(var(--bs-lighter-rgb), 0.15);
+    z-index: 0;
+}
+.card {
+    background-color: rgba(var(--bs-lighter-rgb), 0.15);
+}
 
 .smaller {
     font-size: 0.5rem;
