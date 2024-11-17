@@ -10895,12 +10895,12 @@ body {
 }
 
 #layoutSidenav_content {
-  background-color: rgba(var(--bs-lighter-rgb), 0.15);
+  background: radial-gradient(circle, rgba(var(--bs-dark-rgb), 0.15) 0%, var(--bs-white) 100%);
   z-index: 0;
 }
 
 .card {
-  background-color: rgba(var(--bs-lighter-rgb), 0.15);
+  background-color: unset;
 }
 
 .smaller {
