@@ -310,8 +310,12 @@ body {
 }
 
 /* Hover effect for the headings and paragraphs */
-.speaker-section .feature-hover:hover p {
-    color: var(--bs-lighter); /* Change text color on hover */
+.speaker-section .feature-hover:hover p.card-text {
+    color: var(--bs-lighter) !important; /* Change text color on hover */
+    transition: color 0.3s ease;
+}
+.speaker-section .feature-hover:hover p.card-subtitle {
+    color: var(--bs-secondary) !important; /* Change text color on hover */
     transition: color 0.3s ease;
 }
 /* Hover effect for the headings and paragraphs */
