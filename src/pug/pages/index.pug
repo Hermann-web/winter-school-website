@@ -2,7 +2,7 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'Accueil'
+    - var pageTitle = 'Home'
     - var index = true
     - var sidenavStyle = 'sb-sidenav-dark'
 
@@ -48,8 +48,8 @@ block content
 
                 // Call to Action Buttons
                 .cta-buttons.mt-4
-                    a.btn.btn-lg.btn-primary(href="./registration.html") Register Now
-                    a.btn.btn-lg.btn-outline-secondary.ml-3(href="./schedule.html") View Program
+                    a.btn.btn-lg.btn-primary(target="_blank", href="./registration.html") Register Now
+                    a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="./schedule.html") View Program
 
         // About Section with Sleek Design and Icons
         .row.about-section.mt-5.text-dark
@@ -58,7 +58,7 @@ block content
                 p.text-center Our Winter Data Science School focuses on Next-Gen AI. We aim to provide deep insights into the latest techniques, foster networking, and offer practical skills.
                 p.text-center.mb-4 Stay connected through LinkedIn!
                 div.d-flex.justify-content-center
-                    a.btn.btn-outline-secondary(href="https://www.linkedin.com/company/winter-school-generative-ai/") LinkedIn
+                    a.btn.btn-outline-secondary(target="_blank", href="https://www.linkedin.com/company/winter-school-generative-ai/") LinkedIn
 
         // Key Features Section - Grid Layout with Icons and Descriptions
         .row.features-section.hover-effect.text-white.bg-primary.mt-5
@@ -179,8 +179,8 @@ block content
                 
                 // Call to Action Buttons with Emphasis
                 .cta-buttons.mt-4
-                    a.btn.btn-lg.btn-primary(href="./registration.html") Register Now
-                    a.btn.btn-lg.btn-outline-secondary.ml-3(href="./schedule.html") View Program
+                    a.btn.btn-lg.btn-primary(target="_blank", href="./registration.html") Register Now
+                    a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="./schedule.html") View Program
 
                 //- // Additional Info
                 //- p.mt-3.text-center.font-italic Limited spots available! Secure your place today.
