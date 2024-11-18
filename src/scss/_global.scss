@@ -329,6 +329,7 @@ body {
 .team-section .feature-hover-scale {
     transition: background-color 0.3s ease;
 }
+.team-section .feature-hover:hover,
 .team-section .feature-hover-scale:hover {
     background: linear-gradient(45deg, var(--bs-lighter), var(--bs-secondary)) !important;
 }
