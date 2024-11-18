@@ -10895,7 +10895,7 @@ body {
 }
 
 #layoutSidenav_content {
-  background: radial-gradient(circle, rgba(var(--bs-dark-rgb), 0.15) 0%, var(--bs-white) 100%);
+  background: radial-gradient(circle, rgba(var(--bs-light-rgb), 0.000000005) 0%, var(--bs-white) 100%);
   z-index: 0;
 }
 
@@ -10912,7 +10912,7 @@ body {
 }
 
 .sb-sidenav-dark {
-  background: linear-gradient(270deg, rgba(var(--bs-light-rgb), 0.15) 0%, rgba(var(--bs-dark-rgb), 0.5) 20%, rgba(var(--bs-dark-rgb), 1) 90%) !important;
+  background: linear-gradient(270deg, rgba(var(--bs-light-rgb), 0.000000005) 0%, rgba(var(--bs-dark-rgb), 0.5) 19%, rgba(var(--bs-dark-rgb), 1) 90%) !important;
   height: 100%;
 }
 
