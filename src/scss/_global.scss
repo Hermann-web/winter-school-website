@@ -326,9 +326,20 @@ body {
 
 
 /* General hover effect for all audience sections */
-.team-section .feature-hover:hover {
+.team-section .feature-hover-scale {
+    transition: background-color 0.3s ease;
+}
+.team-section .feature-hover-scale:hover {
     background: linear-gradient(45deg, var(--bs-lighter), var(--bs-secondary)) !important;
 }
+.team2-section .feature-hover-scale img {
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+.team2-section .feature-hover-scale:hover img {
+    // height: min(300px, 100%) !important;
+    transform: scale(1.05); /* Optional for a slight zoom effect */
+}
+
 
 .partners-section .feature-hover:hover {
     background: linear-gradient(180deg, var(--bs-white), var(--bs-lighter)) !important;
