@@ -4,7 +4,7 @@ block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Programme'
     - var pageMainTitle = 'Schedule'
-    - var pageSubTitle = "A preliminary schedule, subject to final approval from both speakers and organizers"
+    //- - var pageSubTitle = "A preliminary schedule, subject to final approval from both speakers and organizers"
     - var sidenavStyle = 'sb-sidenav-dark'
 
 block content
@@ -14,6 +14,9 @@ block content
             .col-12.col-lg-10.mt-3.card.mb-4.border-0
                 include includes/page-header.pug
                 .card-body
+                    p.text-muted.mb-3.small
+                        span(style="color: #FF6347") * 
+                        | To be confirmed
                     .container.table-responsive
                         table.table.table-bordered.table-hover.text-center
                             thead
@@ -61,13 +64,16 @@ block content
                                             span.speaker-name.text-secondary Michael Jordan,
                                             span.text-muted Professor at University of California, Berkeley and MBZUAI, Researcher at Inria
                                     td
-                                        span.conf-title.fss-5.text-dark.fww-bold Data and Digital Transformation @ Retail
+                                        span.conf-title.fss-5.text-dark.fww-bold Data and Digital Transformation @ Carrefour
                                         br
-                                        span.conf-time.text-muted.p-2 11:00 - 11:45
+                                        span.conf-time.text-muted.p-2 11:00 - 12:00
                                         br
                                         span(style="font-size:small")
-                                            span.speaker-name.text-secondary Guest, 
-                                            span.text-muted Executive Director of E-Commerce, Data and Digital Transformation, Retail
+                                            span.speaker-name.text-secondary 
+                                                | Emmanuel Grenier
+                                                span(style="color: #FF6347", title="To be confirmed") *
+                                                | ,
+                                            span.text-muted Executive Director of E-Commerce, Data and Digital Transformation, Carrefour
 
                                 tr
                                     td(colspan="2")
@@ -144,8 +150,10 @@ block content
                                         ul.list-unstyled.text-center.text-muted(style="font-size:small")
                                             li 
                                                 | E-Commerce, Data and Digital Transformation in Retail, 
-                                                span.speaker-name Guest,
-                                                | Retail
+                                                span.speaker-name Emmanuel Grenier
+                                                span(style="color: #FF6347", title="To be confirmed") *
+                                                | ,
+                                                | Carrefour
                                             li 
                                                 | AI Consulting and Development Firm, 
                                                 span.speaker-name Jawad Alaoui, 
@@ -154,9 +162,6 @@ block content
                                                 | Telecommunications and Digital Innovation Leader, 
                                                 span.speaker-name Jean-François Thomas, 
                                                 | Orange EMEA
-                                            //- li 
-                                            //-     | Asset Management and Financial Technology Expert, 
-                                            //-     span.speaker-name Guest
                                             li 
                                                 | Digital Transformation, Innovation and R&D in the railway industry, 
                                                 span.speaker-name Mohamed Sedki, 
