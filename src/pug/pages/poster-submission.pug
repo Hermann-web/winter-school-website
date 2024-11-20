@@ -1,0 +1,120 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Poster Submissions'
+    - var pageMainTitle = 'Poster Submissions'
+    - var pageSubTitle = 'Showcase Your Research at the Winter Data Science School 2025!'
+    - var sidenavStyle = 'sb-sidenav-dark'
+
+block content
+    .container.d-flex.min-vh-100
+        .col-0.col-lg-1.emp1 &nbsp;
+        .col-12.col-lg-10.emp1.mt-3
+            include includes/page-header.pug
+
+            // Submission Details Section
+            .row.submission-details.text-dark.mt-5.hover-effect
+                .col-12.text-center
+                    p The Winter Data Science School 2025 invites participants to submit posters showcasing their **Research or Innovation in AI**. 
+                    p.text-muted Posters should highlight innovative research, real-world applications, or groundbreaking methodologies in AI.
+
+                    .row.justify-content-center.mt-4
+                        .col-md-6.text-center.feature-hover
+                            i.fa-solid.fa-calendar-days.fa-3x.mb-3(style="color: #ff6347;") // Calendar icon
+                            h3 Submission Deadline
+                            p All submissions must be received by 
+                                span.text-primary January 31, 2025.
+
+                        .col-md-6.text-center.feature-hover
+                            i.fa-solid.fa-award.fa-3x.mb-3(style="color: #28a745;") // Award icon
+                            h3 Selection Process
+                            p A jury will evaluate all posters based on **innovation**, **scientific rigor**, and **relevance to AI**, and 
+                                span.text-primary 15 posters 
+                                | will be selected for the event.
+
+                    .row.justify-content-center.mt-4
+                        .col-md-8.text-center.feature-hover
+                            i.fa-solid.fa-chalkboard-teacher.fa-3x.mb-3(style="color: #6610f2;") // Presentation icon
+                            h3 Poster Session
+                            p Selected posters will be printed at no cost and displayed during the poster session, providing opportunities for in-depth discussions and networking with attendees.
+
+                    .row.justify-content-center.mt-4
+                        .col-md-6.text-center.feature-hover
+                            i.fa-solid.fa-download.fa-3x.mb-3(style="color: #007bff;") // Download icon
+                            h3 Download the Template
+                            p 
+                                | Use our 
+                                a(target="_blank", href="assets/templates/winter-school-poster-template.pptx") template 
+                                | to ensure consistent formatting and build a visually engaging design summarizing your work.
+
+                        .col-md-6.text-center.feature-hover
+                            i.fa-solid.fa-paper-plane.fa-3x.mb-3(style="color: #007bff;") // Submission icon
+                            h3 How to Submit
+                            p Submissions are accepted via the Google Form. Ensure all required fields are completed before submitting.
+
+                    .row.justify-content-center.mt-4
+                        .col-md-8.text-center.feature-hover
+                            i.fa-solid.fa-file-alt.fa-3x.mb-3(style="color: #6610f2;") // Requirements icon
+                            h3 Submission Requirements
+                            p Your poster must:
+                            ul.text-start.list-unstyled.d-flex.align-items-center.flex-column
+                                li Include authors' names and affiliations.
+                                li Clearly present objectives, methods, and results.
+                                li Highlight key bibliography/references.
+                                li Be submitted using the provided template.
+
+            //- // Important Notes Section
+            //- .row.important-notes.text-dark.mt-5
+            //-     .col-12.text-center
+            //-         h2.text-primary.mb-4 Important Notes
+            //-         ul.text-start.list-unstyled
+            //-             li Ensure your submission adheres to the provided guidelines to avoid disqualification.
+            //-             li Selected participants will be notified by 
+            //-                 span.text-primary February 15, 2025.
+            //-             li Poster presentations will be evaluated during the event for potential awards.
+
+            //- // FAQ Section
+            //- .row.faq.text-dark.mt-5
+                .col-12.text-center
+                    h2.text-primary.mb-4 Frequently Asked Questions (FAQ)
+                    .accordion(id="faqAccordion")
+                        .accordion-item.mb-3
+                            h2.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq1", aria-expanded="false", aria-controls="faq1")
+                                    | What is the size requirement for the posters?
+                            .accordion-collapse.collapse#faq1
+                                .accordion-body
+                                    | Posters will be printed on A1-sized sheets. Ensure the resolution is sufficient for large-format printing.
+
+                        .accordion-item.mb-3
+                            h2.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq2", aria-expanded="false", aria-controls="faq2")
+                                    | Can I submit more than one poster?
+                            .accordion-collapse.collapse#faq2
+                                .accordion-body
+                                    | Yes, participants can submit multiple posters as long as each is unique and meets the requirements.
+
+                        .accordion-item.mb-3
+                            h2.accordion-header
+                                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq3", aria-expanded="false", aria-controls="faq3")
+                                    | How will I know if my poster is selected?
+                            .accordion-collapse.collapse#faq3
+                                .accordion-body
+                                    | Selected participants will receive an email confirmation by February 15, 2025.
+
+            // Call to Action
+            .row.call-to-action.text-dark.mt-5
+                .col-12.text-center
+                    h2.text-primary.mb-4 Ready to Submit?
+                    p.text-dark Don’t miss this opportunity to share your research at the Winter Data Science School 2025.
+                    .cta-buttons.mt-4
+                        a.btn.btn-primary.btn-lg(target="_blank", href="assets/templates/winter-school-poster-template.pptx") Download Template (PPTX)
+                        a.btn.btn-success.btn-lg(target="_blank", href="https://forms.gle/example-google-form-link") Submit Your Poster
+
+            // Optional Contact Us Section
+            .row.contact-us.text-dark.mt-5
+                .col-12.text-center
+                    h2.text-primary.mb-4 Have Questions?
+                    p.text-dark Reach out to us for any queries or additional information.
+                    a.btn.btn-outline-secondary.btn-lg(target="_blank", href="mailto:contact@winterschool.com") Contact Us

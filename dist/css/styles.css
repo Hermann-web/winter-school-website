@@ -11002,6 +11002,22 @@ body {
   background-color: var(--bs-secondary);
 }
 
+.submission-details .feature-hover:hover {
+  background-color: var(--bs-secondary);
+}
+
+.submission-details .feature-hover:hover h3, .submission-details .feature-hover:hover .h3 {
+  color: var(--bs-white);
+}
+
+.submission-details .feature-hover:hover p {
+  color: var(--bs-lighter);
+}
+
+.submission-details .feature-hover:hover .svg-inline--fa {
+  color: var(--bs-lighter); /* Change icon color on hover */
+}
+
 .features-section .feature-hover:hover {
   background-color: var(--hover-text-color); /* Light background overlay */
 }
