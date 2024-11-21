@@ -201,13 +201,13 @@ body {
     background-color: var(--bs-secondary);
 }
 .submission-details .feature-hover:hover h3 {
-    color: var(--bs-white);
+    color: var(--bs-primary);
 }
-.submission-details .feature-hover:hover p {
-    color: var(--bs-lighter);
-}
+// .submission-details .feature-hover:hover p {
+//     color: var(--bs-lighter);
+// }
 .submission-details .feature-hover:hover .svg-inline--fa {
-    color: var(--bs-lighter) ;  /* Change icon color on hover */
+    color: var(--bs-white) !important;  /* Change icon color on hover */
 }
 
 .features-section .feature-hover:hover {
@@ -215,7 +215,7 @@ body {
 }
 
 .features-section .feature-hover:hover .svg-inline--fa {
-    color: var(--bs-secondary);  /* Change icon color on hover */
+    color: var(--bs-white);  /* Change icon color on hover */
 }
 
 .features-section .feature-hover:hover h3,

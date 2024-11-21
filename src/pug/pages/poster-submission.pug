@@ -4,7 +4,7 @@ block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Poster Submissions'
     - var pageMainTitle = 'Poster Submissions'
-    - var pageSubTitle = 'Showcase Your Research at the Winter Data Science School 2025!'
+    - var pageSubTitle = 'Showcase Your Research at the Winter School: Next-Generation AI and Economic Applications!'
     - var sidenavStyle = 'sb-sidenav-dark'
 
 block content
@@ -16,9 +16,20 @@ block content
             // Submission Details Section
             .row.submission-details.text-dark.mt-5.hover-effect
                 .col-12.text-center
-                    p The Winter Data Science School 2025 invites participants to submit posters showcasing their **Research or Innovation in AI**. 
-                    p.text-muted Posters should highlight innovative research, real-world applications, or groundbreaking methodologies in AI.
+                    p The Winter School: Next-Generation AI and Economic Applications invites participants to submit posters. 
+                    p.text-muted Posters should highlight innovative research, real-world applications, or groundbreaking methodologies in AI, particularly in economic and societal contexts.
 
+                    .row.justify-content-center.mt-4
+                        .col-md-8.text-center.feature-hover
+                            i.fa-solid.fa-list-alt.fa-3x.mb-3(style="color: #ff4500;") // Topics icon
+                            h3 Topics of Interest
+                            p We encourage submissions that explore:
+                            ul.text-start.list-unstyled.d-flex.align-items-center.flex-column
+                                li AI and Machine Learning
+                                li Data Science and Big Data
+                                li Industrial Applications of AI
+                                li Economic and Societal Impact of AI
+                    
                     .row.justify-content-center.mt-4
                         .col-md-6.text-center.feature-hover
                             i.fa-solid.fa-calendar-days.fa-3x.mb-3(style="color: #ff6347;") // Calendar icon
@@ -29,15 +40,23 @@ block content
                         .col-md-6.text-center.feature-hover
                             i.fa-solid.fa-award.fa-3x.mb-3(style="color: #28a745;") // Award icon
                             h3 Selection Process
-                            p A jury will evaluate all posters based on **innovation**, **scientific rigor**, and **relevance to AI**, and 
+                            p A prestigious jury of experts will evaluate all posters based on **innovation**, **scientific rigor**, and **relevance to AI and its applications**. 
                                 span.text-primary 15 posters 
                                 | will be selected for the event.
 
                     .row.justify-content-center.mt-4
                         .col-md-8.text-center.feature-hover
+                            i.fa-solid.fa-gift.fa-3x.mb-3(style="color: #28a745;") // Gift icon
+                            h3 Waived Registration Fees
+                            p 
+                                span.text-primary Selected posters 
+                                | will benefit from waived Winter School registration fees, providing you complimentary access to the event and its exclusive sessions.
+
+                    .row.justify-content-center.mt-4
+                        .col-md-8.text-center.feature-hover
                             i.fa-solid.fa-chalkboard-teacher.fa-3x.mb-3(style="color: #6610f2;") // Presentation icon
                             h3 Poster Session
-                            p Selected posters will be printed at no cost and displayed during the poster session, providing opportunities for in-depth discussions and networking with attendees.
+                            p Selected posters will be printed at no cost and displayed during the poster session, providing opportunities for in-depth discussions and networking with distinguished attendees, including AI pioneers like Yann LeCun and Michael Jordan.
 
                     .row.justify-content-center.mt-4
                         .col-md-6.text-center.feature-hover
@@ -65,7 +84,6 @@ block content
                                 li Include authors' names and affiliations.
                                 li Clearly present objectives, methods, and results.
                                 li Highlight key bibliography/references.
-                                li Be submitted using the provided template.
 
             //- // Important Notes Section
             //- .row.important-notes.text-dark.mt-5
@@ -105,12 +123,13 @@ block content
                             .accordion-collapse.collapse#faq3
                                 .accordion-body
                                     | Selected participants will receive an email confirmation by February 15, 2025.
+                                li Strictly adhere to the provided template.
 
             // Call to Action
             .row.call-to-action.text-dark.mt-5
                 .col-12.text-center
                     h2.text-primary.mb-4 Ready to Submit?
-                    p.text-dark Don’t miss this opportunity to share your research at the Winter Data Science School 2025.
+                    p.text-dark Don’t miss this opportunity to Showcase your poster at a cutting-edge AI event, gain valuable feedback from AI thought leaders and expand your professional network in Ben Guerir, Morocco.
                     .cta-buttons.mt-4
                         a.btn.btn-primary.btn-lg(target="_blank", href="assets/templates/winter-school-poster-template.pptx") Download Template (PPTX)
                         a.btn.btn-success.btn-lg(target="_blank", href="https://forms.gle/KFGKimvtXKmbazKh8") Submit Your Poster
