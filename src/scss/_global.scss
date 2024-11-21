@@ -210,6 +210,14 @@ body {
     color: var(--bs-white) !important;  /* Change icon color on hover */
 }
 
+.jury-showcase .feature-hover-scale {
+    transition: background-color 0.3s ease;
+}
+.jury-showcase .feature-hover:hover,
+.jury-showcase .feature-hover-scale:hover {
+    background: linear-gradient(45deg, var(--bs-lighter), var(--bs-secondary)) !important;
+}
+
 .features-section .feature-hover:hover {
     background-color: var(--hover-text-color); /* Light background overlay */
 }
