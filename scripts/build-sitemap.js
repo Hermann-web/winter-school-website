@@ -42,7 +42,7 @@ function generateSitemap() {
         );
     });
 
-    // Generate sitemap entries
+    // Generate sitemap entries for HTML files
     const urls = htmlFiles.map(file => {
         const relativePath = upath.relative(distPath, file);
         const url = `${baseUrl}/${relativePath.replace(/\\/g, '/')}`;
@@ -57,6 +57,13 @@ function generateSitemap() {
     <priority>${priority}</priority>
   </url>`;
     });
+
+    // Add a special entry for the favicon.ico
+    urls.push(`  <url>
+    <loc>${baseUrl}/favicon.ico</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <priority>0.5</priority>
+  </url>`);
 
     // Construct the sitemap
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>

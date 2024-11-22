@@ -12,7 +12,8 @@ module.exports = function renderAssets() {
     const filesToCopyInMainDir = [
         'favicon.ico',
         'robots.txt',
-        // 'sitemap.xml', // Example file for SEO
+        'sitemap.xml', // Example file for SEO
+        'site.webmanifest', // Example file for SEO
         // 'manifest.json', // Example file for PWA
     ];
 
