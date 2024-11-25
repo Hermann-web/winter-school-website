@@ -6,7 +6,7 @@ block config
     - var pageMainTitle = 'Poster Submissions'
     - var pageSubTitle = 'Showcase Your Research at the Winter School: Next-Generation AI and Economic Applications!'
     - var sidenavStyle = 'sb-sidenav-dark'
-    - var JuryMembersList = [{ name: 'Jawad Alaoui', img: "jawad-alaoui.jpg", text: 'Co-founder and CTO of NORMA'},{ name: 'Athmane Bakhta', img: "athmane-bakthta.jpeg", text: 'PhD, Expert in Data Science & R&D'},{ name: 'Omar Layachi', img: "omar-layachi.jpeg", text: 'Co-Director of Founder Institute Morocco'}]
+    - var JuryMembersList = [{ name: 'Jawad Alaoui', img: "jawad-alaoui.jpg", text: 'Co-founder and CTO of NORMA'}, { name: 'Omar Layachi', img: "omar-layachi.jpeg", text: 'Co-Director of Founder Institute Morocco'}, { name: 'Athmane Bakhta', img: "athmane-bakthta.jpeg", text: 'PhD, Expert in Data Science & R&D'}]
 
 block content
     .container.d-flex.min-vh-100
@@ -41,7 +41,12 @@ block content
                         .col-md-6.text-center.feature-hover.pt-1
                             i.fa-solid.fa-award.fa-3x.mb-3(style="color: #28a745;") // Award icon
                             h3 Selection Process
-                            p A prestigious jury of experts will evaluate all posters based on **innovation**, **scientific rigor**, and **relevance to AI and its applications**. 
+                            p 
+                                | A prestigious jury of experts will evaluate all posters based on 
+                                span.fw-bold innovation,
+                                span.fw-bold scientific rigor
+                                span and
+                                span.fw-bold relevance to AI and its applications. 
                                 span.text-primary 15 posters 
                                 | will be selected for the event.
 
@@ -92,7 +97,7 @@ block content
                     h2.text-primary.mb-4 Meet the Jury
                     .row.team-section.hover-effect.justify-content-center.mt-4
                         each teamMember in JuryMembersList
-                            .col-md-3.text-center
+                            .col-md-4.text-center
                                 .card.shadow.border-0.feature-hover
                                     if teamMember.img
                                         img.card-img-top.rounded-circle(
