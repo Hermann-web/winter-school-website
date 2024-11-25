@@ -6,6 +6,7 @@ block config
     - var pageMainTitle = 'Poster Submissions'
     - var pageSubTitle = 'Showcase Your Research at the Winter School: Next-Generation AI and Economic Applications!'
     - var sidenavStyle = 'sb-sidenav-dark'
+    - var JuryMembersList = [{ name: 'Jawad Alaoui', img: "jawad-alaoui.jpg", text: 'Co-founder and CTO of NORMA'},{ name: 'Athmane Bakhta', img: "athmane-bakthta.jpeg", text: 'PhD, Expert in Data Science & R&D'},{ name: 'Omar Layachi', img: "omar-layachi.jpeg", text: 'Co-Director of Founder Institute Morocco'}]
 
 block content
     .container.d-flex.min-vh-100
@@ -86,31 +87,23 @@ block content
                                 li Highlight key bibliography/references.
             
             // Jury Section
-            .row.jury-showcase.text-dark.mt-5
+            .row.text-dark.mt-5
                 .col-12.text-center
                     h2.text-primary.mb-4 Meet the Jury
-                    //- p.text-dark This is your chance to present your work to a distinguished panel of global experts.
-
-                    .row.justify-content-center.mt-4
-                        .col-md-4.text-center
-                            .card.shadow-sm.feature-hover
-                                .card-body
-                                    //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
-                                    h4.card-title.text-dark Jawad ALAOUI
-                                    p.card-text.text-muted CEO of NORMA
-                        .col-md-4.text-center
-                            .card.shadow-sm.feature-hover
-                                .card-body
-                                    //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
-                                    h4.card-title.text-dark Omar Layachi
-                                    p.card-text.text-muted Co-Director Morocco of Founder Institute Morocco
-                        .col-md-4.text-center
-                            .card.shadow-sm.feature-hover
-                                .card-body
-                                    //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
-                                    h4.card-title.text-dark Athmane BAKHTA
-                                    p.card-text.text-muted PhD, Expert in Data Science & R&D
-
+                    .row.team-section.hover-effect.justify-content-center.mt-4
+                        each teamMember in JuryMembersList
+                            .col-md-3.text-center
+                                .card.shadow.border-0.feature-hover
+                                    if teamMember.img
+                                        img.card-img-top.rounded-circle(
+                                            style="height: min(150px,80%); width: auto; object-fit: cover; margin: 0 auto;", 
+                                            src=`assets/team/${teamMember.img}`, 
+                                            alt=teamMember.name
+                                        )
+                                        .card-body
+                                            //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
+                                            h4.card-title.text-dark= teamMember.name
+                                            p.card-text.text-muted= teamMember.text
             //- // Important Notes Section
             //- .row.important-notes.text-dark.mt-5
             //-     .col-12.text-center
