@@ -5,7 +5,7 @@ const sh = require('shelljs');
 
 function generateSitemap() {
     const distPath = upath.resolve(upath.dirname(__filename), '../dist');
-    const baseUrl = 'https://www.next-genai-xemines.com'; // Replace with your actual website URL
+    const baseUrl = 'https://next-genai-xemines.com'; // Replace with your actual website URL
     const sitemapPath = upath.join(distPath, 'sitemap.xml');
 
     // Dictionary for filenames and their priorities
