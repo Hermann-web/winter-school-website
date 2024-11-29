@@ -45,7 +45,7 @@ function generateSitemap() {
     // Generate sitemap entries for HTML files
     const urls = htmlFiles.map(file => {
         const relativePath = upath.relative(distPath, file);
-        const url = `${baseUrl}/${relativePath.replace(/\\/g, '/')}`;
+        const url = (upath.basename(file) === 'index.html') ? `${baseUrl}/` : `${baseUrl}/${relativePath.replace(/\\/g, '/')}`;
 
         // Get priority from dictionary or use default
         const fileName = upath.basename(file);
