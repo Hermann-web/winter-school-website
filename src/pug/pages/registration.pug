@@ -54,6 +54,50 @@ block content
 
                     p.mt-4.text-muted Transportation, meals, and accommodation are the responsibility of participants. 
 
+            // Accommodation and Meals Section
+            .row.justify-content-center.mt-4
+                .col-md-10
+                    h3.text-light.fw-bold Accommodation and Meal Costs
+                    table.table.table-bordered.text-dark.mt-4
+                        thead
+                            tr
+                                th Scope
+                                th.text-center Day Before (Sunday)
+                                th.text-center Day 1 (Monday)
+                                th.text-center Day 2 (Tuesday)
+                        tbody
+                            tr
+                                td Overnight Stay (Single, including Breakfast)
+                                td.text-center 271 Dhs
+                                td.text-center 271 Dhs
+                                td.text-center -
+                            tr
+                                td Dinner
+                                td.text-center 63 Dhs
+                                td.text-center 63 Dhs
+                                td.text-center -
+                            tr
+                                td Lunch
+                                td.text-center -
+                                td.text-center 63 Dhs
+                                td.text-center 63 Dhs
+                            tr
+                                td.fw-bold Subtotal
+                                td.text-center 334 Dhs
+                                td.text-center 397 Dhs
+                                td.text-center 63 Dhs
+                            tr
+                                td.fw-bold Total
+                                td.text-center(colspan=3) 794 Dhs
+
+                    p.mt-3.text-muted Accommodation is available at a rate of 271 Dhs per night, including breakfast. Meals can be pre-booked at a cost of 63 Dhs per meal. 
+
+                    p.fw-light.mt-4.text-dark.fw-bold Please note:
+                    ul.text-dark
+                        li Accommodation is limited and will be allocated on a first-come, first-served basis.
+                        li Meals are optional but must be booked in advance.
+                        li The total cost for the three-day event, including all accommodation and meals, is 794 Dhs.
+
             //- // Accommodation Section
             //- .row.justify-content-center.mt-4
             //-     .col-md-10
@@ -64,25 +108,27 @@ block content
             //-         h3.text-light.fw-bold Meals
             //-         p There are several restaurants on campus. For meals, you can either pay via credit card at on-campus facilities or use cash at the canteen to purchase tickets.
 
-            //- // Payment Details Section
-            //- .row.justify-content-center.mt-4
-            //-     .col-md-10
-            //-         h3.text-light.fw-bold Payment Details
-            //-         p Please make sure to complete your payment for the registration fee and accommodation (if needed) in advance. You can use the following details for the bank transfer:
-            //-         ul
-            //-             li Account Name: Winter Data Science School
-            //-             li Bank: XYZ Bank
-            //-             li IBAN: ABCDEFG123456789
-            //-             li SWIFT: XYZBABC
-            //-             li Reference: Your Full Name + Event Fee/Accommodation
+            // Payment Details Section
+            .row.justify-content-center.mt-4
+                .col-md-10
+                    h3.text-light.fw-bold Payment Details
+                    //- p Please make sure to complete your payment for the registration fee and accommodation (if needed) in advance. You can use the following details for the bank transfer:
+                    //- ul
+                    //-     li Account Name: Winter Data Science School
+                    //-     li Bank: XYZ Bank
+                    //-     li IBAN: ABCDEFG123456789
+                    //-     li SWIFT: XYZBABC
+                    //-     li Reference: Your Full Name + Event Fee/Accommodation
 
-            //-         p After payment, please send your proof of payment to:
-            //-         ul
-            //-             li Email: 
-            //-                 a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
-            //-             li Include in your email: Your full name, proof of payment, and any special requests regarding accommodation.
+                    //- p After payment, please send your proof of payment to:
+                    //- ul
+                    //-     li Email: 
+                    //-         a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
+                    //-     li Include in your email: Your full name, proof of payment, and any special requests regarding accommodation.
 
-            //-         p.fw-light.mt-3.text-muted Please note that your registration is only confirmed after we receive your payment and you receive a confirmation email with your badge details.
+                    p.fw-light.mt-3.text-muted Please note that your registration is only confirmed after we receive your payment and you receive a confirmation email with your badge details.
+                    p.mt-3.text-muted Download the bank details for your payment here: 
+                    a.btn.btn-outline-primary(target="_blank", href="/assets/pdf/rib-winter-school.pdf") Download RIB PDF
 
             // Call to Action Buttons Section
             .row.justify-content-center.mt-4
