@@ -10899,6 +10899,15 @@ body {
   z-index: 0;
 }
 
+.event-name {
+  width: 30%; /* Adjust width for large screens */
+}
+
+.date-header {
+  width: 30%; /* Allocate remaining space for date */
+  display: flex;
+}
+
 .card {
   background-color: unset;
 }
