@@ -96,6 +96,24 @@ body {
     display: flex;
 }
 
+// accordion
+.accordion-item {
+    color: var(--bs-accordion-color, var(--bs-primary));
+    background-color: transparent;
+}
+
+.accordion {
+  --bs-accordion-color: gray;
+  --bs-accordion-bg: var(--bs-white);
+  --bs-accordion-border-color: var(--bs-secondary);
+  --bs-accordion-btn-color: var(--bs-primary);
+  --bs-accordion-btn-bg: transparent;
+  --bs-accordion-btn-focus-border-color: var(--bs-dark);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-secondary-rgb), 0.25);
+  --bs-accordion-active-color: var(--bs-primary);
+  --bs-accordion-active-bg: var(--bs-lighter);
+}
+
 .card {
     background-color: unset;
 }

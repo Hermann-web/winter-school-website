@@ -210,41 +210,236 @@ block content
                 //- // Additional Info
                 //- p.mt-3.text-center.font-italic Limited spots available! Secure your place today.
 
-    .row.usefull-links.hover-effect.mt-5.text-dark.mb-5
-        .col-md-2
-        .col-md-8.text-center.text-dark.card.feature-hover
-            .card-body
-                h2.text-light.mb-4 Useful Links
-                .mb-4.text-dark
-                p Explore more information and resources:
-                ul.list-unstyled
-                    li
-                        a.text-decoration-none(href="registration.html", target="_blank") Registration
-                        |  - Register now to secure your spot at the Winter School.
-                    li
-                        a.text-decoration-none(href="./schedule.html", target="_blank") Program
-                        |  - Check the detailed schedule of the Next-Gen AI Winter School.
-                    li
-                        a.text-decoration-none(href="./speakers.html", target="_blank") Program
-                        |  - Discover the experts leading our discussions.
-                    li
-                        a.text-decoration-none(href="./organization.html", target="_blank") Organization Page
-                        |  - Learn about our dedicated team organizing the event.
-                    li
-                        a.text-decoration-none(href="./posters.html", target="_blank") Posters
-                        |  - Discover the latest AI research through our poster presentations.
-                    li
-                        a.text-decoration-none(href="./contact.html", target="_blank") Contact
-                        |  - Have questions about the Winter Data Science School 2025 ? Feel free to contact us.
-                    //- li
-                    //-     a.text-decoration-none(target="_blank", href="./assets/visual/flyer-winter-school-feb-2025.png") Flyer (jpg)
-                    //-     |  - View the flyer for more context on the Winter School.
-        .col-md-2
-    
+        .row.usefull-links.hover-effect.mt-5.text-dark.mb-5
+            .col-md-2
+            .col-md-8.text-center.text-dark.card.feature-hover
+                .card-body
+                    h2.text-light.mb-4 Useful Links
+                    .mb-4.text-dark
+                    p Explore more information and resources:
+                    ul.list-unstyled
+                        li
+                            a.text-decoration-none(href="registration.html", target="_blank") Registration
+                            |  - Register now to secure your spot at the Winter School.
+                        li
+                            a.text-decoration-none(href="./schedule.html", target="_blank") Program
+                            |  - Check the detailed schedule of the Next-Gen AI Winter School.
+                        li
+                            a.text-decoration-none(href="./speakers.html", target="_blank") Program
+                            |  - Discover the experts leading our discussions.
+                        li
+                            a.text-decoration-none(href="./organization.html", target="_blank") Organization Page
+                            |  - Learn about our dedicated team organizing the event.
+                        li
+                            a.text-decoration-none(href="./posters.html", target="_blank") Posters
+                            |  - Discover the latest AI research through our poster presentations.
+                        li
+                            a.text-decoration-none(href="./contact.html", target="_blank") Contact
+                            |  - Have questions about the Winter Data Science School 2025 ? Feel free to contact us.
+                        //- li
+                        //-     a.text-decoration-none(target="_blank", href="./assets/visual/flyer-winter-school-feb-2025.png") Flyer (jpg)
+                        //-     |  - View the flyer for more context on the Winter School.
+            .col-md-2
+        
 
         // Map Section
         .row.justify-content-center.mt-4
             .col-md-10.px-4
                 h3.fw-bold.text-center Find Us
                 iframe(width="100%" height="400" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3375.47251621621!2d-7.938516925242573!3d32.21844137390208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdaf7a3f90f200f3%3A0x45ee66ce93fdf2cb!2sEmines%20%E2%80%93%20School%20Of%20Industrial%20Management!5e0!3m2!1sen!2sus!4v1731409876490!5m2!1sen!2sus")
-                    .iframe-caption.text-center.mt-2 Text/Map of the event location.
+                    .iframe-caption.text-center.mt-2 Text/Map of the event location on Next Generation AI.
+
+
+        .row.faq-section.mt-5.text-dark
+            .col-12.text-center.text-dark.bg-transparent
+                h2.text-light.mb-4 Frequently Asked Questions (FAQ)
+                .accordion(id="faqAccordion")
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq1", aria-expanded="false", aria-controls="faq1")
+                                | When and where is the Winter School taking place?
+                        .accordion-collapse.collapse#faq1
+                            .accordion-body
+                                | The Winter Data Science School will be held on 24-25 February 2025 at Mohammed VI Polytechnic University in Ben Guerir, Morocco.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq2", aria-expanded="false", aria-controls="faq2")
+                                | What are the check-in and check-out times for accommodations?
+                        .accordion-collapse.collapse#faq2
+                            .accordion-body
+                                ul.list-unstyled
+                                    li Check-in: After 14:00 GMT+1 on Sunday, 23rd February, or Monday, 24th February.
+                                    li Check-out: Before 12:00 GMT+1 on your departure day.
+
+                    //- .accordion-item.mb-3
+                    //-     .accordion-header
+                    //-         button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq3", aria-expanded="false", aria-controls="faq3")
+                    //-             | Is this program suitable for beginners in Generative AI?
+                    //-     .accordion-collapse.collapse#faq3
+                    //-         .accordion-body
+                    //-             | Yes, the program is designed for participants at various levels, including beginners. It offers an opportunity to deepen your knowledge and engage with peers and experts in the field.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq4", aria-expanded="false", aria-controls="faq4")
+                                | How can I confirm my eligibility for a registration fee exemption?
+                        .accordion-collapse.collapse#faq4
+                            .accordion-body
+                                | If you are unsure about your eligibility, email us with proof of enrollment or details about your institution.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq5", aria-expanded="false", aria-controls="faq5")
+                                | Can I pay only for accommodations or only for meals?
+                        .accordion-collapse.collapse#faq5
+                            .accordion-body
+                                | Yes, accommodations and meals are optional, and you can choose specific services. The registration form allows you to specify your preferences.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq6", aria-expanded="false", aria-controls="faq6")
+                                | Are accommodations guaranteed?
+                        .accordion-collapse.collapse#faq6
+                            .accordion-body
+                                | We are confident that accommodations and meals will be available for participants who confirm payment within the week. If there are changes, we will update availability on the website.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq7", aria-expanded="false", aria-controls="faq7")
+                                | How do I submit my supporting documents as payment proof ?
+                        .accordion-collapse.collapse#faq7
+                            .accordion-body
+                                | Send your proof of payment via email to finalize your registration.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq8", aria-expanded="false", aria-controls="faq8")
+                                | How will I know if my poster is selected?
+                        .accordion-collapse.collapse#faq8
+                            .accordion-body
+                                | Selected participants will receive an email confirmation by February 15, 2025.
+
+                    .accordion-item.mb-3
+                        .accordion-header
+                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq9", aria-expanded="false", aria-controls="faq9")
+                                | Who should I contact for further assistance about the upcoming winter school ?
+                        .accordion-collapse.collapse#faq9
+                            .accordion-body
+                                | For any additional questions or concerns, feel free to reach out to the Winter School Organizing Team at 
+                                a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
+
+
+        //- section.faq
+            h2 FAQ
+            p Below you will find answers to the most frequently asked questions about the Winter Data Science School.
+
+            // Registration and Fees
+            .faq-category
+                h3 Registration and Fees
+
+                .faq-item
+                h4 Q: How much is the registration fee for PhD students?
+                p The registration fee for PhD students is **300 MAD**, but this does not include meals or accommodation.
+
+                .faq-item
+                h4 Q: Are there any exemptions for registration fees?
+                p Yes, PhD students from specific partner institutions, such as INPT and EMI, are eligible for free registration.
+                p Please check if your institution qualifies. Proof of enrollment (e.g., student card or enrollment certificate) is required.
+
+                .faq-item
+                h4 Q: Can I register without completing the online form?
+                p While the form is not mandatory, it helps us organize your preferences for meals, accommodations, and other options.
+                p a(href="https://forms.gle/3vsyCLUrvvWU4tFj7", target="_blank") Register here
+
+            // Payment and Confirmation
+            .faq-category
+                h3 Payment and Confirmation
+
+                .faq-item
+                h4 Q: How can I make a payment?
+                p You can pay via bank transfer. Payment details for both Moroccan and international participants are listed on our website under the 
+                p a(href="https://next-genai-xemines.com/registration.html", target="_blank") Payment Details section.
+
+                .faq-item
+                h4 Q: Can I pay using a mobile application?
+                p Yes, if your mobile application supports bank transfers, you can use it to make the payment. Please attach proof of payment when confirming your registration.
+
+                .faq-item
+                h4 Q: What if I have trouble accessing the international bank details link?
+                p The issue with the international bank details link has been resolved. The details are now accessible on our website, and they can also be provided via email upon request.
+
+                .faq-item
+                h4 Q: Will I receive a confirmation after payment?
+                p Yes, once your payment and supporting documents are received and verified, you will receive an email confirming your participation. A separate email will follow with final confirmation of your accommodations and meals, if applicable.
+
+            // Meals and Accommodation
+            .faq-category
+                h3 Meals and Accommodation
+
+                .faq-item
+                h4 Q: What is the cost for meals and accommodation?
+                p The total cost for meals and accommodations is **794 MAD**, which includes:
+                ul
+                    li Two overnight stays with breakfast (24th-25th and 25th-26th February)
+                    li Lunch (25th and 26th February)
+                    li Dinner (24th and 25th February)
+
+                .faq-item
+                h4 Q: Can I pay only for accommodations or only for meals?
+                p Yes, accommodations and meals are optional, and you can choose specific services. The registration form allows you to specify your preferences.
+
+                .faq-item
+                h4 Q: Are accommodations guaranteed?
+                p We are confident that accommodations and meals will be available for participants who confirm payment within the week. If there are changes, we will update availability on the website.
+
+                .faq-item
+                h4 Q: Can I request to share a room with a colleague or friend?
+                p While we understand such requests, accommodating them during the planning phase is challenging due to logistics. You can make such requests at the reception desk upon arrival, and they will assist based on availability.
+
+            // Event Information
+            .faq-category
+                h3 Event Information
+
+                .faq-item
+                h4 Q: When and where is the Winter School taking place?
+                p The Winter School will be held on **24-25 February 2025** at Mohammed VI Polytechnic University in Ben Guerir, Morocco.
+
+                .faq-item
+                h4 Q: What are the check-in and check-out times for accommodations?
+                ul
+                    li Check-in: After **14:00 GMT+1** on Sunday, 23rd February, or Monday, 24th February.
+                    li Check-out: Before **12:00 GMT+1** on your departure day.
+
+                .faq-item
+                h4 Q: Is this program suitable for beginners in Generative AI?
+                p Yes, the program is designed for participants at various levels, including beginners. It offers an opportunity to deepen your knowledge and engage with peers and experts in the field.
+
+            // Cancellations and Modifications
+            .faq-category
+                h3 Cancellations and Modifications
+
+                .faq-item
+                h4 Q: Can I modify my reservations after submitting the form?
+                p Yes, you can update your reservation details by re-submitting the form and notifying us via email. Please notify us at least two weeks before the event for logistical purposes.
+
+                .faq-item
+                h4 Q: Will I get a refund if I cancel my reservation?
+                p If your cancellation impacts the logistics (e.g., meals or accommodations), notify us at least two weeks before the event to process a refund or adjustment.
+
+            // Additional Questions
+            .faq-category
+                h3 Additional Questions
+
+                .faq-item
+                h4 Q: How can I confirm my eligibility for a registration fee exemption?
+                p If you are unsure about your eligibility, email us with proof of enrollment or details about your institution.
+
+                .faq-item
+                h4 Q: How do I submit my supporting documents?
+                p Send your proof of payment, student card, or enrollment certificate via email to finalize your registration.
+
+                .faq-item
+                h4 Q: Who should I contact for further assistance?
+                p For any additional questions or concerns, feel free to reach out to the Winter School Organizing Team at 
+                p a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
