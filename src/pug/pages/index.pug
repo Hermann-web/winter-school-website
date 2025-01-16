@@ -214,6 +214,85 @@ block content
                 //- // Additional Info
                 //- p.mt-3.text-center.font-italic Limited spots available! Secure your place today.
 
+
+        // Sleek Speaker Testimonials Section
+        .section.speakers-testimonials.py-5.bg-lighter.mt-5
+            .container
+                // Section Header
+                .row.justify-content-center.text-center.mb-5
+                    .col-lg-8
+                        h2.mb-4.text-light Insights from AI Pioneers, Economic Visionaries, and Thought Leaders
+                        //- p.text-muted Lead insights and inspiration from the top AI visionaries and thought leaders.
+
+                // Speaker Cards Grid
+                .row.g-4
+
+                    // Speaker 1 - Michael I. Jordan
+                    .col-md-6.col-lg-3.text-center
+                        .card.shadow-sm.border-0.h-100.position-relative
+                            .card-body
+                                img(src="assets/speakers/michael-jordan-crop.jpeg", alt="Michael I. Jordan", class="img-fluid rounded-circle mb-3", style="width: 120px; height: 120px; object-fit: cover; transition: transform 0.3s ease; &:hover {transform: scale(1.1);}")
+                                p.h5.font-weight-bold Michael I. Jordan
+                                p.text-muted.small Prof. at UC Berkeley and MBZUAI, Researcher at Inria
+                                p.text-info.small.font-italic Upcoming Speaker at Winter School
+                                // Hover Text
+                                .hover-text.position-absolute.w-100.h-100.top-0.start-0.bg-dark.text-white.d-flex.flex-column.align-items-center.justify-content-space-around.transition-opacity.small
+                                    p.text-center.px-2.py-1.my-1.text-secondary Michael I. Jordan, Upcoming Speaker at Winter School
+                                    p.text-center.px-3 "Intelligence—we don’t really know what it is, but it doesn’t just have to do with the human brain or mind. Markets are intelligent in ways that we aren’t individually [...] we don’t realize that we could create brand-new kinds of collectives that could be really amazing, instead of trying to replace a single human being with this computer."
+                                    br
+                                    small.font-italic.text-mute.px-1.py-1.my-1 — As shared in Berkeley News, “How AI Fails Us, and How Economics Can Help”
+
+                    // Speaker 2 - Yann LeCun
+                    .col-md-6.col-lg-3.text-center
+                        .card.shadow-sm.border-0.h-100.position-relative
+                            .card-body
+                                img(src="assets/speakers/yann-lecun-.png", alt="Yann LeCun", class="img-fluid rounded-circle mb-3", style="width: 120px; height: 120px; object-fit: cover; transition: transform 0.3s ease; &:hover {transform: scale(1.1);}")
+                                p.h5.font-weight-bold Yann LeCun
+                                p.text-muted.small Prof. at Courant Institute NY, VP & Chief AI Scientist at Meta (ex Facebook) and Turing Award in 2019
+                                p.text-info.small.font-italic Keynote Speaker at TechInnov Days 2023
+                                // Hover Text
+                                .hover-text.position-absolute.w-100.h-100.top-0.start-0.bg-dark.text-white.d-flex.flex-column.align-items-center.justify-content-space-around.transition-opacity.small
+                                    p.text-center.px-2.py-2.my-2.text-secondary Yann LeCun, Keynote Speaker at TechInnov Days 2023
+                                    p.text-center.px-3 "I’m really humbled and really happy to meet so many young people who are enthusiastic about learning technology and doing research in AI. The potential and impact of what they can do here in Morocco and more generally in Africa is enormous."
+                                    small.font-italic.text-mute.px-1.py-1.my-1 — About his participation in TechInnov Days 2023
+
+                    // Speaker 3 - Amal El Fallah-Seghrouchni
+                    .col-md-6.col-lg-3.text-center
+                        .card.shadow-sm.border-0.h-100.position-relative
+                            .card-body
+                                img(src="assets/speakers/amal-el-fallah.png", alt="Amal El Fallah-Seghrouchni", class="img-fluid rounded-circle mb-3", style="width: 120px; height: 120px; object-fit: cover; transition: transform 0.3s ease; &:hover {transform: scale(1.1);}")
+                                p.h5.font-weight-bold Amal El Fallah-Seghrouchni
+                                p.text-muted.small Delegate Minister within the Moroccan Government, Executive President of Ai Movement UM6P, Member of the COMEST - UNESCO
+                                //- Delegate Minister, Moroccan Government
+                                p.text-info.small.font-italic Speaker at Spring School 3DM
+                                // Hover Text
+                                .hover-text.position-absolute.w-100.h-100.top-0.start-0.bg-dark.text-white.d-flex.flex-column.align-items-center.justify-content-space-around.transition-opacity.small
+                                    p.text-center.px-2.py-2.my-2.text-secondary Amal El Fallah-Seghrouchni, Speaker at Spring School 3DM
+                                    p.text-center.px-3 "The Spring School is going to be very interesting [...] I think the people who will be presenting are of very high caliber, both nationally and internationally. It's a great opportunity to exchange knowledge and approaches. Now in Morocco, we really have to encourage this kind of training because there is a real need for it."
+                                    small.font-italic.text-mute.px-1.py-1.my-1 — Her opinion about the Spring school 3DM
+
+                    // Sponsor - Luciano Borges
+                    .col-md-6.col-lg-3.text-center
+                        .card.shadow-sm.border-0.h-100.position-relative
+                            .card-body
+                                img(src="assets/speakers/luciano-borges.png", alt="Luciano Borges", class="img-fluid rounded-circle mb-3", style="width: 120px; height: 120px; object-fit: cover; transition: transform 0.3s ease; &:hover {transform: scale(1.1);}")
+                                p.h5.font-weight-bold Luciano Borges
+                                p.text-muted.small Chief Executive Officer and Director of SIANA (JV ONCF & SNCF)
+                                //- CEO & Director, SIANA (JV ONCF & SNCF)
+                                //- p.text-info.small.font-italic Sponsor for the Winter School
+                                p.text-info.small.font-italic Sponsor for the Spring School
+                                // Hover Text
+                                .hover-text.position-absolute.w-100.h-100.top-0.start-0.bg-dark.text-white.d-flex.flex-column.align-items-center.justify-content-space-around.transition-opacity.small
+                                    p.text-center.px-2.py-2.my-2.text-secondary Luciano Borges, Sponsor for the Spring School
+                                    p.text-center.px-3 "The decision to co-organize the Spring School on data-driven decision-making was deliberate and strategic [...] Since launching this initiative, we have worked to align it with ONCF’s overall new strategy. Today, we’re scaling this approach to place data-driven insights within the global context of the rail industry."
+                // Link to Speaker Details Page
+                .row.justify-content-center.mt-4
+                    .col-auto
+                        // Call to Action Buttons
+                        .cta-buttons.mt-4
+                            a.btn.btn-lg.btn-primary(target="_blank", href="./registration.html") Register Here
+                            a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="./schedule.html") Our Speakers
+
         .row.usefull-links.hover-effect.mt-5.text-dark.mb-5
             .col-md-2
             .col-md-8.text-center.text-dark.card.feature-hover
@@ -223,13 +302,13 @@ block content
                     p Explore more information and resources:
                     ul.list-unstyled
                         li
-                            a.text-decoration-none(href="registration.html", target="_blank") Registration Details
+                            a.text-decoration-none(href="./registration.html", target="_blank") Registration Details
                             |  - Register now to secure your spot at the Winter School.
                         li
                             a.text-decoration-none(href="./schedule.html", target="_blank") Program
                             |  - Check the detailed schedule of the Next-Gen AI Winter School.
                         li
-                            a.text-decoration-none(href="./speakers.html", target="_blank") Our Speakers
+                            a.text-decoration-none(href="./speakers.html", target="_blank") Speakers & Panelists
                             |  - Discover the experts leading our discussions.
                         li
                             a.text-decoration-none(href="./organization.html", target="_blank") Organization Page

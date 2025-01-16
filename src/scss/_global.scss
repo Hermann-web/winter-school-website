@@ -12,6 +12,8 @@
     --bs-primary: rgb(114, 13, 168);
     --bs-secondary-rgb: 92, 225, 230;
     --bs-secondary: rgb(92, 225, 230);
+    --bs-info-rgb: 92, 225, 230;
+    --bs-info: rgb(92, 225, 230);
     --bs-light-rgb: 255, 87, 87;
     --bs-light: rgb(255, 87, 87);
     --bs-dark-rgb: 140, 82, 255;
@@ -114,6 +116,10 @@ body {
   --bs-accordion-active-bg: var(--bs-lighter);
 }
 
+.accordion-header:hover{
+    --bs-accordion-btn-color: var(--bs-secondary);
+}
+
 .card {
     background-color: unset;
 }
@@ -144,12 +150,14 @@ body {
     justify-content: center;
 }
 
-// .accordion-button:not(.collapsed) {
-//     color: var(--bs-primary);
-// }
-// .accordion-item {
-//     background-color: transparent;
-// }
+/* testimonies */
+.hover-text {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.card:hover .hover-text {
+    opacity: 1;
+}
 
 /* carousel color*/
 .carousel-control-prev, .carousel-control-next {
