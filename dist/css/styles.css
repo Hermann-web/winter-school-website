@@ -11194,6 +11194,15 @@ body {
   background: linear-gradient(45deg, var(--bs-lighter), var(--bs-secondary)) !important;
 }
 
+.team-section .card-body h6, .team-section .card-body .h6 {
+  min-height: 2.5rem;
+  max-height: 4rem;
+}
+
+.team-section .card-body p {
+  min-height: 4.5rem;
+}
+
 .team2-section .feature-hover-scale img {
   transition: height 0.3s ease, transform 0.3s ease;
 }
