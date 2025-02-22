@@ -1,8 +1,0 @@
-# Robots.txt file for a clean static website
-
-# Allow all crawlers to index the entire site
-User-agent: *
-Disallow:
-
-# Provide the sitemap location
-Sitemap: https://www.next-genai-xemines.com/sitemap.xml
