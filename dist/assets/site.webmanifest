@@ -1,0 +1,19 @@
+{
+    "name": "Winter Data Science School",
+    "short_name": "Data Science School",
+    "icons": [
+      {
+        "src": "/assets/favicon/logo-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/favicon/logo-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#720da8",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
