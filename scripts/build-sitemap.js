@@ -20,14 +20,14 @@ function generateSitemap() {
         'partners.html': 0.5,
         // Posters may contain critical research or insights, especially for academic or professional events.
         'posters.html': 0.6,
-        // When easyto use, Registration is crucial for event participation. Attendees need quick and easy access to this page.
+        // // When easyto use, Registration is crucial for event participation. Attendees need quick and easy access to this page.
         'registration-form.html': 0.1,
         // Registration confirmation or follow-up processes remain essential. Keep its priority high.
-        'registration.html': 0.8,
+        'registration.html': 0.1, // registration is closed, after event
         // The event schedule is a key resource for attendees. Elevating its priority slightly highlights its importance.
         'schedule.html': 0.9,
         // Speaker profiles are often a draw for attendees. Ensuring good visibility boosts engagement.
-        'speakers.html': 0.7,
+        'speakers.html': 0.7, 
     };
 
     // Default priority for pages not listed in the dictionary
