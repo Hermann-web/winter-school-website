@@ -43,18 +43,16 @@ block content
 
                 // Call to Action Buttons
                 .cta-buttons.mt-4
-                    a.btn.btn-lg.btn-primary(target="_blank", href="#") Register Now
+                    a.btn.btn-lg.btn-primary(target="_blank", href="./registration.html") Register Now
                     a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="./schedule.html") View Program
 
         // About Section with Sleek Design and Icons
         .row.about-section.mt-5.text-dark
             .col-12
-                h2.text-center.text-light.mb-4 About the Winter School
-                p.text-center Our Winter Data Science School focuses on Next Generation AI and its Economic Applications. We aim to provide deep insights into the latest techniques, foster networking, and offer practical skills.
-                p Over two days, participants will engage in expert-led sessions, including Charles-Albert Lehalle on AI in finance, and presentations by Michael Jordan and Yann LeCun, offering valuable insights into the transformation of AI products and its societal impact.
-                p.text-center.mb-4 Stay connected through LinkedIn!
-                div.d-flex.justify-content-center
-                    a.btn.btn-outline-secondary(target="_blank", href="https://www.linkedin.com/company/winter-school-generative-ai/") LinkedIn
+                h2.text-center.text-light.mb-4 About the AI & Health Spring School
+                p.text-center In continuation to our Winter School on Next Generation AI, the 2026 Spring School will focus on artificial intelligence applied to health.
+                p.text-center From March 23 to 25, 2026, in Ben Guerir, this edition offers a program mixing conferences, round tables and also practical workshops.
+                p.text-center The target audience includes engineering students, researchers, health professionals, and innovative companies.
 
         // Key Features Section - Grid Layout with Icons and Descriptions
         .row.features-section.hover-effect.text-white.bg-primary.mt-5
@@ -103,21 +101,12 @@ block content
             .col-12.feature-hover
                 h2.text-center.text-light.mb-4 Venue
                 p.text-center.text-dark.mb-4 
-                    | Mark your calendar! The Next-Gen AI Winter School will take place on February 24-25, 2025, in the main room of the Conference Center at
-                    span.fw-bold 
-                        a.text-decoration-none(target="_blank", href="https://www.google.com/maps/dir//EMINES+%E2%80%93+SCHOOL+OF+INDUSTRIAL+MANAGEMENT,+Ben+Guerir/@32.2184221,-8.0059827,12z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0xdaf7a3f90f200f3:0x45ee66ce93fdf2cb!2m2!1d-7.935942!2d32.2184414!3e2") EMINES, UM6P: Université Mohammed VI Polytechnique, Ben Guerir
-
-        //-             .col-md-6.text-center
-        //-                 a(href="https://www.google.com/maps/dir//Ecole+Centrale+Casablanca,+Ville+Verte+C%C387c807a6f58e!2m2!1d-7.6204414!2d33.4800758!3e2" target="_blank")
-        //-                     img(src="assets/images/google-map.png", alt="Google Maps", class="img-fluid", style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;")
-        //-                     p.text-muted.mt-2 View on Google Maps
-
-        //- // Optional: Add a Background Image to the Venue Section for a Dynamic Look
-        //- .row.venue-section.bg-light.mt-5.text-dark
-        //-     .col-12.text-center.pt-5.pb-5(style="background: url('assets/visual/venue-background.jpg') center/cover no-repeat;")
-        //-         h2.text-center.text-light.mb-4 Venue Details
-        //-         p.text-center.text-light A truly immersive experience at one of the top innovation hubs in Morocco. 
-
+                    | The Spring School will take place at
+                    //- | . Accommodation is available at 250 DHS (breakfast included), with drivers and shuttles arranged for your convenience.
+                    br
+                    span.fw-bold
+                        a.text-decoration-none(target="_blank", href="https://goo.gl/maps/9mUYbUYZV7rNht5N8") Ben Guerir, Morocco
+                    | More informations are yet to come
 
         // Partners Section with Carousel and Modern Controls
         .row.partners-section.mt-5(style="height: 25vh; overflow: hidden;")
@@ -128,55 +117,11 @@ block content
                         .carousel-item.active
                             .row
                                 .col-4.d-flex
-                                    img(src="assets/firms/emines.png", alt="EMINES", class="d-block mx-auto")
+                                    img(src="assets/firms/emines.png", alt="EMINES (UM6P)", class="d-block mx-auto")
                                 .col-4.d-flex
-                                    img(src="assets/firms/ocp.png", alt="OCP", class="d-block mx-auto")
+                                    img(src="assets/firms/polytechnique.png", alt="École Polytechnique (l'X)", class="d-block mx-auto")
                                 .col-4.d-flex
-                                    img(src="assets/firms/polytechnique.png", alt="Ecole Polytechnique (l'X)", class="d-block mx-auto")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/norma-horizontal-noir.png", alt="NORMA", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/meta.svg", alt="META", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/siana.png", alt="SIANA", class="d-block mx-auto")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/essec.png", alt="ESSEC", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/ai-movement.png", alt="Ai Movement", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/hubfrance.png", alt="Hub France AI", class="d-block mx-auto")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/lighton.svg", alt="LightOn", class="d-block mx-auto", style="background-color: rgb(45, 64, 78)")
-                                .col-4.d-flex
-                                    img(src="assets/firms/berkeley.svg", alt="University of California, Berkeley", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/mbzuai.svg", alt="MBZUAI", class="d-block mx-auto", style="background-color: #828282")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/inria.png", alt="INRIA", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/orange.png", alt="Orange EMEA", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/um6p.png", alt="UM6P", class="d-block mx-auto")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/founder-institute.png", alt="Founder Institute", class="d-block mx-auto")
-                                .col-4.d-flex
-                                    img(src="assets/firms/oecd.svg", alt="OECD Network of Experts (ONE.AI)", class="d-block mx-auto", style="background-color:#142f4e")
-                                .col-4.d-flex
-                                    img(src="assets/firms/oncf.png", alt="ONCF", class="d-block mx-auto")
-                        .carousel-item.partner-logo
-                            .row
-                                .col-4.d-flex
-                                    img(src="assets/firms/emsi.png", alt="EMSI", class="d-block mx-auto")
+                                    img(src="assets/firms/emsi.png", alt="Groupe EMSI – Honoris United Universities", class="d-block mx-auto")
                     .carousel-control-prev(href="#partnersCarousel", role="button", data-bs-slide="prev")
                         span.carousel-control-prev-icon(aria-hidden="true")
                         span.visually-hidden Previous
@@ -184,21 +129,140 @@ block content
                         span.carousel-control-next-icon(aria-hidden="true")
                         span.visually-hidden Next
 
-
         // Registration Section with Call to Action
         .row.registration-section.mt-5.text-dark
             .col-12.text-center.text-dark
                 h2(id="registration").text-light.mb-4 Registration
-                p.text-center.mb-4 Registration is now open. Don't miss your chance to participate in this premier event on Next Generation AI !
+                p.text-center.mb-4 The deadline for participant selection is set for xx xx, 2026. Register now to guarantee your spot.
                 
                 // Call to Action Buttons with Emphasis
                 .cta-buttons.mt-4
                     a.btn.btn-lg.btn-primary(target="_blank", href="#") Register Now
-                    a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="./schedule.html") View Program
+                    a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="#") View Program
 
-                //- // Additional Info
-                //- p.mt-3.text-center.font-italic Limited spots available! Secure your place today.
+        //- // Speakers Section with Key International Guests
+        //- .section.speakers-testimonials.py-5.bg-lighter.mt-5
+        //-     .container
+        //-         // Section Header
+        //-         .row.justify-content-center.text-center.mb-5
+        //-             .col-lg-8
+        //-                 h2.mb-4.text-light Key International Speakers & AI Health Experts
+        //-                 p.text-muted Leading researchers, startup founders, and industry pioneers in AI & Health.
 
+        //-         // International Speakers Grid
+        //-         .row.g-4.mb-5
+        //-             .col-12.text-center.mb-3
+        //-                 h3.text-light International Guests
+
+        //-             // Joelle Barral - DeepMind
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-primary.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 2rem;")
+        //-                             | JB
+        //-                         p.h5.font-weight-bold Joelle Barral
+        //-                         p.text-muted.small DeepMind
+        //-                         p.text-info.small.font-italic International Guest
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/joellebarral/?originalSubdomain=fr", target="_blank") LinkedIn
+
+        //-             // Nikos Paragios
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-success.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 2rem;")
+        //-                             | NP
+        //-                         p.h5.font-weight-bold Nikos Paragios
+        //-                         p.text-muted.small CentraleSupélec, TheraPanacea
+        //-                         p.text-info.small.font-italic International Guest
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/prof-nikos-paragios-20777869/", target="_blank") LinkedIn
+
+        //-             // Eric Xing
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-warning.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 2rem;")
+        //-                             | EX
+        //-                         p.h5.font-weight-bold Eric Xing
+        //-                         p.text-muted.small MBZUAI
+        //-                         p.text-info.small.font-italic International Guest
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/eric-xing-b34a0b/", target="_blank") LinkedIn
+
+        //-         // AI & Health Startups Section
+        //-         .row.g-4.mb-5
+        //-             .col-12.text-center.mb-3
+        //-                 h3.text-light AI & Health Startups
+
+        //-             // Alex Lebrun - Nabla
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-info.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 2rem;")
+        //-                             | AL
+        //-                         p.h5.font-weight-bold Alex Lebrun
+        //-                         p.text-muted.small Nabla
+        //-                         p.text-success.small.font-italic AI & Health Startup
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/alexandrelebrun/", target="_blank") LinkedIn
+
+        //-             // Ahmed El Bahri - Ziwig BioTech
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-secondary.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 2rem;")
+        //-                             | AEB
+        //-                         p.h5.font-weight-bold Ahmed El Bahri
+        //-                         p.text-muted.small Ziwig BioTech
+        //-                         p.text-success.small.font-italic AI & Health Startup
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/ahmed-el-bahri-69746b30/", target="_blank") LinkedIn
+
+        //-             // Fatima-Zahra Assmina - SANAMED
+        //-             .col-md-6.col-lg-4.text-center
+        //-                 .card.shadow-sm.border-0.h-100.position-relative
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-danger.d-flex.align-items-center.justify-content-center(style="width: 120px; height: 120px; color: white; font-size: 1.5rem;")
+        //-                             | FZA
+        //-                         p.h5.font-weight-bold Fatima-Zahra Assmina
+        //-                         p.text-muted.small SANAMED
+        //-                         p.text-success.small.font-italic AI & Health Startup
+        //-                         .mt-2
+        //-                             a.btn.btn-sm.btn-outline-primary(href="https://www.linkedin.com/in/fatima-zahra-assmina-0747b8224/", target="_blank") LinkedIn
+
+        //-         // Link to Speaker Details Page
+        //-         .row.justify-content-center.mt-4
+        //-             .col-auto
+        //-                 .cta-buttons.mt-4
+        //-                     a.btn.btn-lg.btn-primary(target="_blank", href="#") Register Here
+        //-                     a.btn.btn-lg.btn-outline-secondary.ml-3(target="_blank", href="#") All Speakers
+
+        //- // Organizing Committee Section
+        //- .row.committee-section.mt-5.text-dark
+        //-     .col-12
+        //-         h2.text-center.text-light.mb-4 Organizing Committee
+                
+        //-         // Chairs
+        //-         .row.justify-content-center.mb-4
+        //-             .col-12.text-center.mb-3
+        //-                 h3.text-light Chairs
+        //-             .col-md-6.text-center.feature-hover
+        //-                 .card.shadow-sm.border-0.h-100
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-primary.d-flex.align-items-center.justify-content-center(style="width: 80px; height: 80px; color: white; font-size: 1.5rem;")
+        //-                             | EM
+        //-                         p.h5.font-weight-bold Eric Moulines
+        //-                         p.text-muted.small X, MBZUAI, Academy of Sciences
+        //-                         p.text-info.small.font-italic Chair
+        //-             .col-md-6.text-center.feature-hover
+        //-                 .card.shadow-sm.border-0.h-100
+        //-                     .card-body
+        //-                         .placeholder-avatar.rounded-circle.mx-auto.mb-3.bg-success.d-flex.align-items-center.justify-content-center(style="width: 80px; height: 80px; color: white; font-size: 1.5rem;")
+        //-                             | MT
+        //-                         p.h5.font-weight-bold Mohamed Tabaa
+        //-                         p.text-muted.small Research Director EMSI
+        //-                         p.text-info.small.font-italic Chair
 
         // Sleek Speaker Testimonials Section
         .section.speakers-testimonials.py-5.bg-lighter.mt-5
@@ -219,7 +283,7 @@ block content
                                 img(src="assets/speakers/michael-jordan-crop.jpeg", alt="Michael I. Jordan", class="img-fluid rounded-circle mb-3", style="width: 120px; height: 120px; object-fit: cover; transition: transform 0.3s ease; &:hover {transform: scale(1.1);}")
                                 p.h5.font-weight-bold Michael I. Jordan
                                 p.text-muted.small Prof. at UC Berkeley, Researcher at Inria
-                                p.text-info.small.font-italic Upcoming Speaker at Winter School
+                                p.text-info.small.font-italic Speaker at Winter School on Next Generation AI
                                 // Hover Text
                                 .hover-text.position-absolute.w-100.h-100.top-0.start-0.bg-dark.text-white.d-flex.flex-column.align-items-center.justify-content-space-around.transition-opacity.small
                                     p.text-center.px-2.py-1.my-1.text-secondary Michael I. Jordan, Upcoming Speaker at Winter School
@@ -287,26 +351,18 @@ block content
                     p Explore more information and resources:
                     ul.list-unstyled
                         li
-                            a.text-decoration-none(href="#", target="_blank") Registration Details
-                            |  - Register now to secure your spot at the Winter School.
+                            a.text-decoration-none(href="registration.html", target="_blank") Registration
+                            |  - Registration details for the Spring School.
                         li
-                            a.text-decoration-none(href="./schedule.html", target="_blank") Program
-                            |  - Check the detailed schedule of the Next-Gen AI Winter School.
+                            a.text-decoration-none(href="schedule.html", target="_blank") Preliminary Program
+                            |  - Check the detailed program of the AI & Health Spring School.
                         li
-                            a.text-decoration-none(href="./speakers.html", target="_blank") Speakers & Panelists
+                            a.text-decoration-none(href="speakers.html", target="_blank") Speakers
                             |  - Discover the experts leading our discussions.
                         li
-                            a.text-decoration-none(href="./organization.html", target="_blank") Organization Page
-                            |  - Learn about our dedicated team organizing the event.
-                        li
-                            a.text-decoration-none(href="./posters.html", target="_blank") Posters Info
-                            |  - Discover the latest AI research through our poster presentations.
-                        li
-                            a.text-decoration-none(href="./contact.html", target="_blank") Contact Us
-                            |  - Have questions about the Winter Data Science School 2025 ? Feel free to contact us.
-                        //- li
-                        //-     a.text-decoration-none(target="_blank", href="./assets/visual/flyer-winter-school-feb-2025.png") Flyer (jpg)
-                        //-     |  - View the flyer for more context on the Winter School.
+                            a.text-decoration-none(href="contact.html", target="_blank") Contact
+                            |  - Have questions about the Spring School 2026? Feel free to contact us.
+                        
             .col-md-2
         
 
@@ -315,7 +371,7 @@ block content
             .col-md-10.px-4
                 h3.fw-bold.text-center.text-light Find Us
                 iframe(width="100%" height="400" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3375.47251621621!2d-7.938516925242573!3d32.21844137390208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdaf7a3f90f200f3%3A0x45ee66ce93fdf2cb!2sEmines%20%E2%80%93%20School%20Of%20Industrial%20Management!5e0!3m2!1sen!2sus!4v1731409876490!5m2!1sen!2sus")
-                    .iframe-caption.text-center.mt-2 Text/Map of the event location on Next Generation AI.
+                    .iframe-caption.text-center.mt-2 Text/Map of the event location on AI for Health.
 
 
         .row.faq-section.mt-5.text-dark
@@ -337,7 +393,7 @@ block content
                         .accordion-collapse.collapse#faq2
                             .accordion-body
                                 ul.list-unstyled
-                                    li Check-in: After 14:00 GMT+1 on Sunday, 23rd February, or Monday, 24th February.
+                                    li Check-in: After 14:00 GMT+1 on Sunday, 22nd February, or Monday, 23rd February.
                                     li Check-out: Before 12:00 GMT+1 on your departure day.
 
                     //- .accordion-item.mb-3
@@ -364,13 +420,13 @@ block content
                             .accordion-body
                                 | Yes, accommodations and meals are optional, and you can choose specific services. The registration form allows you to specify your preferences.
 
-                    .accordion-item.mb-3
-                        .accordion-header
-                            button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq6", aria-expanded="false", aria-controls="faq6")
-                                | Are accommodations guaranteed?
-                        .accordion-collapse.collapse#faq6
-                            .accordion-body
-                                | We are confident that accommodations and meals will be available for participants who confirm payment within the deadline. If there are changes, we will update availability on the website.
+                    //- .accordion-item.mb-3
+                    //-     .accordion-header
+                    //-         button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#faq6", aria-expanded="false", aria-controls="faq6")
+                    //-             | Are accommodations guaranteed?
+                    //-     .accordion-collapse.collapse#faq6
+                    //-         .accordion-body
+                    //-             | We are confident that accommodations and meals will be available for participants who confirm payment within the deadline. If there are changes, we will update availability on the website.
 
                     .accordion-item.mb-3
                         .accordion-header
@@ -379,7 +435,7 @@ block content
                         .accordion-collapse.collapse#faq7
                             .accordion-body
                                 | Send your proof of payment via email to 
-                                a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
+                                a(href="mailto:xxxx@xxxx.com") xxxx@xxxx.com
                                 | to finalize your registration.
 
                     .accordion-item.mb-3
@@ -397,7 +453,7 @@ block content
                         .accordion-collapse.collapse#faq9
                             .accordion-body
                                 | For any additional questions or concerns, feel free to reach out to the Winter School Organizing Team at 
-                                a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com.
+                                a(href="mailto:xxxx@xxxx.com") xxxx@xxxx.com.
 
                     //- .accordion-item.mb-3
                     //-     .accordion-header
@@ -454,7 +510,7 @@ block content
                         .accordion-collapse.collapse#faq16
                             .accordion-body
                                 | Payment details can be found on our
-                                a(href="#") registration page.
+                                a(href="registration.html") registration page.
 
 
 
@@ -570,4 +626,4 @@ block content
                 .faq-item
                 h4 Q: Who should I contact for further assistance?
                 p For any additional questions or concerns, feel free to reach out to the Winter School Organizing Team at 
-                p a(href="mailto:winterschooldatascience@gmail.com") winterschooldatascience@gmail.com
+                p a(href="mailto:xxxx@xxxx.com") xxxx@xxxx.com

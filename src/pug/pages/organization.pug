@@ -2,13 +2,14 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'Organizers and Team'
-    - var pageMainTitle = 'Organizers and Team'
-    - var pageSubTitle = "Meet the Organizing Committee and the Team Behind the Scenes"
+    - var pageTitle = 'Chairs & Committees'
+    - var pageMainTitle = 'Chairs & Committees'
+    - var pageSubTitle = "Meet the Leadership and Organizing Bodies of the Event"
     - var sidenavStyle = 'sb-sidenav-dark'
-    - var OrganisersList = [{name: "Prof. Mohammed ElRhabi", img: "mohammed-elrhabi.png", role: "Event Coordinator", text: "Chair, Director of the EMSI Group, Honoris Universities"},{name: "Prof. Eric Moulines", img: "eric-moulines.png", role: "Professor of AI", text: "Ecole Polytechnique and an Adjunct Professor at MBZUAI"},{name: "Prof. Nicolas Cheimanoff", img: "nicolas-c.png", role: "Event Director", text: " Director of EMINES-UM6P"}]
-    - var TeamMembersList=[{name:'Aymane Aouzal',img:'aymane-aouzal.jpg',role:'Mail Automation & Outreach',text:'Aymane automates email processes to send personalized code promotions efficiently while supporting outreach efforts.'},{name:'Aymane Chatit',img:'aymane-chatit.jpeg',role:'Prospection & Outreach',text:'Aymane manages user data, preparing contact lists to enable efficient communication and promotional efforts.'},{name:'Fatima Zahra Assmina',img:'fatima-zahra.png',role:'Team Coordination & Social Media',text:'Fatima Zahra oversees logistics and manages social media campaigns to ensure the event’s success and visibility.'},{name:'Hafsa Rafik',img:'hafsa-rafik.png',role:'Graphic Design & Prospection',text:'Hafsa creates graphic designs such as posters and brochures while engaging in outreach to expand the event’s reach.'},{name:'Hamza Sbiti',img:'hamza-sbiti.jpg',role:'Infographic & Event Research',text:'Hamza researches other events’ visual strategies and user traction techniques while providing infographics for our event.'},{name:'Hermann Agossou',img:'hermann-agossou.jpg',role:'Website & Registration ETL',text:'Hermann develops and manages the system that integrates data from registrations, payments, and accommodations into a comprehensive platform.'},{name:'Ismail Fathi',img:'ismail-fathi.png',role:'Event Research & Branding',text:'Ismail analyzes branding strategies and event techniques to strengthen the identity and appeal of our event.'},{name:'Mouad Khaznaoui',img:'mouad-k.png',role:'Outreach',text:'Mouad provides expert advice and consultation on key aspects of the event to ensure its overall success.'}];
-
+    - var Chairs = [{name: "Eric Moulines", img: "eric-moulines.png", role: "Chair", affiliation: "X, MBZUAI, Academy of Sciences"}, {name: "Mohamed Tabaa", img: "default.png", role: "Chair", affiliation: "Research Director EMSI"}]
+    - var HonoraryCommittee = [{name: "Nicolas Cheimanoff", img: "nicolas-c.png", role: "Director", affiliation: "EMINES"}, {name: "Mohammed El Rhabi", img: "mohammed-elrhabi.png", role: "General Director", affiliation: "EMSI group"}]
+    - var ScientificCommittee = [{name: "Abdelati Reha", img: "default.png", role: "Scientific Committee", affiliation: "EMSI"}, {name: "Safae Merzouk", img: "default.png", role: "Scientific Committee", affiliation: "EMSI"}, {name: "Mohammed El Machkouri", img: "default.png", role: "Scientific Committee", affiliation: "Emines"}, {name: "Mohamed Tabaa", img: "default.png", role: "Scientific Committee", affiliation: "EMSI"}, {name: "Eric Moulines", img: "eric-moulines.png", role: "Scientific Committee", affiliation: "X, MBZUAI, Academy of Sciences"}, {name: "Mohammed El Rhabi", img: "mohammed-elrhabi.png", role: "Scientific Committee", affiliation: "General Director EMSI group"}]
+    - var OrganizingCommittee = [{name: "Mohamed Fihir", img: "default.png", role: "Organizing Committee", affiliation: "EMSI"}, {name: "Lamyae Serhane", img: "default.png", role: "Organizing Committee", affiliation: "EMSI"}, {name: "Zineb Hidila", img: "default.png", role: "Organizing Committee", affiliation: "EMSI"}, {name: "Meryem Abid", img: "default.png", role: "Organizing Committee", affiliation: "EMSI"}, {name: "Saad El Khattab", img: "default.png", role: "Organizing Committee", affiliation: "Emines-UM6P"}, {name: "Khadija Ait-Haddouch", img: "default.png", role: "Organizing Committee", affiliation: "Emines-UM6P"}, {name: "Reda Bouchikhi", img: "default.png", role: "Organizing Committee", affiliation: "Emines-UM6P"}]
 
 block content
     .container.d-flex.min-vh-100
@@ -16,41 +17,110 @@ block content
         .col-12.col-lg-10.emp1.mt-3
             include includes/page-header.pug
 
-            // Organizers Section
+            // Chairs Section
             .m-4.text-dark
-                h2.text-light Organizing and Scientific Committee
+                h2.text-light.text-center Chairs
                 .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
-                    each organizer in OrganisersList
+                    each person in Chairs
                         .col-md-4.mb-4
                             .card.shadow.border-0.feature-hover
-                                if organizer.img
-                                    img.card-img-top(style="height: 200px; object-position: top", src=`assets/team/${organizer.img}`, alt=organizer.name)
-                                else
-                                    img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src="assets/team/default.png", alt=organizer.name)
+                                img.card-img-top(
+                                    style="height: 200px; object-fit: cover; object-position: top;", 
+                                    src=`assets/team/${person.img || 'default.png'}`, 
+                                    alt=person.name
+                                )
                                 .card-body
-                                    h6.card-title= organizer.name
-                                    //- p.card-subtitle.mb-2.text-muted= organizer.role
-                                    p.card-text= organizer.text
+                                    h6.card-title= person.name
+                                    p.card-subtitle.text-muted= person.role
+                                    p.card-text= person.affiliation
 
-            // Additional Team Members Section
+            // Honorary Committee Section
             .m-4.text-dark
-                h2.text-light And the Team Behind the Scenes
-                .row.team-section.team2-section.hover-effect.d-flex.justify-content-center.mt-4
-                    each teamMember in TeamMembersList
+                h2.text-light.text-center Honorary Committee
+                .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
+                    each person in HonoraryCommittee
+                        .col-md-4.mb-4
+                            .card.shadow.border-0.feature-hover
+                                img.card-img-top(
+                                    style="height: 200px; object-fit: cover; object-position: top;", 
+                                    src=`assets/team/${person.img || 'default.png'}`, 
+                                    alt=person.name
+                                )
+                                .card-body
+                                    h6.card-title= person.name
+                                    p.card-subtitle.text-muted= person.role
+                                    if person.affiliation
+                                        p.card-text= person.affiliation
+
+            // Scientific Committee Section
+            .m-4.text-dark
+                h2.text-light.text-center Scientific Committee
+                .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
+                    each person in ScientificCommittee
+                        .col-md-4.mb-4
+                            .card.shadow.border-0.feature-hover-scale
+                                img.card-img-top.rounded-circle(
+                                    style="height: min(150px, 80%); width: auto; object-fit: cover; margin: 0 auto;",
+                                    src=`assets/team/${person.img || 'default.png'}`, 
+                                    alt=person.name
+                                )
+                                .card-body.text-center
+                                    h6.card-title= person.name
+                                    p.card-subtitle.text-muted= person.role
+                                    p.card-text= person.affiliation
+
+            // Organizing Committee Section
+            .m-4.text-dark
+                h2.text-light.text-center Organizing Committee
+                .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
+                    each person in OrganizingCommittee
                         .col-md-3.mb-4
                             .card.shadow.border-0.feature-hover-scale
-                                if teamMember.img
-                                    img.card-img-top.rounded-circle(
-                                        style="height: min(150px,80%); width: auto; object-fit: cover; margin: 0 auto;", 
-                                        src=`assets/team/${teamMember.img}`, 
-                                        alt=teamMember.name
-                                    )
-                                //- else
-                                //-     img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src="assets/team/default.png", alt=organizer.name)
+                                img.card-img-top.rounded-circle(
+                                    style="height: min(150px, 80%); width: auto; object-fit: cover; margin: 0 auto;",
+                                    src=`assets/team/${person.img || 'default.png'}`, 
+                                    alt=person.name
+                                )
                                 .card-body.text-center
-                                    h6.card-title= teamMember.name
-                                    //- p.card-subtitle.mb-2.text-muted= teamMember.role
-                                    //- p.card-text= teamMember.text
+                                    h6.card-title= person.name
+                                    p.card-subtitle.text-muted= person.role
+                                    p.card-text= person.affiliation
+
+            //- // Organizers Section
+            //- .m-4.text-dark
+            //-     h2.text-light Organizing and Scientific Committee
+            //-     .row.team-section.hover-effect.d-flex.justify-content-center.mt-4
+            //-         each organizer in OrganisersList
+            //-             .col-md-4.mb-4
+            //-                 .card.shadow.border-0.feature-hover
+            //-                     if organizer.img
+            //-                         img.card-img-top(style="height: 200px; object-position: top", src=`assets/team/${organizer.img}`, alt=organizer.name)
+            //-                     else
+            //-                         img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src="assets/team/default.png", alt=organizer.name)
+            //-                     .card-body
+            //-                         h6.card-title= organizer.name
+            //-                         //- p.card-subtitle.mb-2.text-muted= organizer.role
+            //-                         p.card-text= organizer.text
+
+            //- // Additional Team Members Section
+            //- .m-4.text-dark
+            //-     h2.text-light And the Team Behind the Scenes
+            //-     .row.team-section.team2-section.hover-effect.d-flex.justify-content-center.mt-4
+            //-         each teamMember in TeamMembersList
+            //-             .col-md-3.mb-4
+            //-                 .card.shadow.border-0.feature-hover-scale
+            //-                     if teamMember.img
+            //-                         img.card-img-top.rounded-circle(
+            //-                             style="height: min(150px,80%); width: auto; object-fit: cover; margin: 0 auto;", 
+            //-                             src=`assets/team/${teamMember.img}`, 
+            //-                             alt=teamMember.name
+            //-                         )
+            //-                     //- else
+            //-                     //-     img.card-img-top(style="height: 200px; object-fit: cover;object-position: top", src="assets/team/default.png", alt=organizer.name)
+            //-                     .card-body.text-center
+            //-                         h6.card-title= teamMember.name
+            //-                         //- p.card-subtitle.mb-2.text-muted= teamMember.role
+            //-                         //- p.card-text= teamMember.text
             
             // Call to Action Buttons Section
             .row.justify-content-center.mt-4

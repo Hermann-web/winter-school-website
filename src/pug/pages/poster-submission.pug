@@ -4,9 +4,9 @@ block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Poster Submissions'
     - var pageMainTitle = 'Poster Submissions'
-    - var pageSubTitle = 'Showcase Your Research at the Winter School: Next-Generation AI and Economic Applications!'
+    - var pageSubTitle = 'Showcase Your Research at the Spring School: Artificial Intelligence & Health!'
     - var sidenavStyle = 'sb-sidenav-dark'
-    - var JuryMembersList = [{ name: 'Jawad Alaoui', img: "jawad-alaoui.jpg", text: 'Co-founder and CTO of NORMA'}, { name: 'Omar Layachi', img: "omar-layachi.jpeg", text: 'Co-Director of Founder Institute Morocco'}, { name: 'Athmane Bakhta', img: "athmane-bakthta.jpeg", text: 'PhD, Expert in Data Science & R&D'}]
+    - var JuryMembersList = [{ name: 'Abdelati Reha', text: 'EMSI'}, { name: 'Safae Merzouk', text: 'EMSI'}, { name: 'Mohammed El Machkouri', text: 'Emines'}, { name: 'Mohamed Tabaa', text: 'EMSI'}, { name: 'Eric Moulines', text: 'X, MBZUAI, Academy of Sciences'}, { name: 'Mohammed El Rhabi', text: 'General Director EMSI group'}]
 
 block content
     .container.d-flex.min-vh-100
@@ -17,8 +17,8 @@ block content
             // Submission Details Section
             .row.submission-details.text-dark.mt-5.hover-effect
                 .col-12.text-center
-                    p The Winter School: Next-Generation AI and Economic Applications invites participants to submit posters. 
-                    p.text-muted Posters should highlight innovative research, real-world applications, or groundbreaking methodologies in AI, particularly in economic and societal contexts.
+                    p The Spring School: Artificial Intelligence & Health invites participants to submit posters. 
+                    p.text-muted Posters shall present innovative research, practical applications, or pioneering methodologies in artificial intelligence, data science, and their intersection with healthcare and beyond.
 
                     .row.justify-content-center.mt-4
                         .col-md-8.text-center.feature-hover.pt-1
@@ -26,28 +26,30 @@ block content
                             h3 Topics of Interest
                             p We encourage submissions that explore:
                             ul.text-start.list-unstyled.d-flex.align-items-center.flex-column
-                                li AI and Machine Learning
-                                li Data Science and Big Data
-                                li Industrial Applications of AI
-                                li Economic and Societal Impact of AI
+                                li AI for Health: diagnosis, treatment planning, digital health, etc.
+                                li Machine Learning and Deep Learning methods
+                                li Data Science in Biomedical, Social, or Industrial contexts
+                                li Ethics, Bias, and Interpretability in AI
+                                li Multimodal and Large Language Models
+                                li Real-world AI Applications across sectors
                     
                     .row.justify-content-center.mt-4
                         .col-md-6.text-center.feature-hover.pt-1
                             i.fa-solid.fa-calendar-days.fa-3x.mb-3(style="color: #ff6347;") // Calendar icon
                             h3 Submission Deadline
                             p All submissions must be received by 
-                                span.text-primary January 31, 2025.
+                                span.text-primary February 15, 2025.
 
                         .col-md-6.text-center.feature-hover.pt-1
                             i.fa-solid.fa-award.fa-3x.mb-3(style="color: #28a745;") // Award icon
                             h3 Selection Process
                             p 
-                                | A prestigious jury of experts will evaluate all posters based on 
+                                | A jury of experts will evaluate all posters based on 
                                 span.fw-bold innovation,
                                 span.fw-bold scientific rigor
                                 span and
-                                span.fw-bold relevance to AI and its applications. 
-                                span.text-primary 15 posters 
+                                span.fw-bold relevance to AI and its applications especially healhcare. 
+                                span.text-primary xx posters 
                                 | will be selected for the event.
 
                     .row.justify-content-center.mt-4
@@ -68,18 +70,18 @@ block content
                         .col-md-6.text-center.feature-hover.pt-1
                             i.fa-solid.fa-download.fa-3x.mb-3(style="color: #007bff;") // Download icon
                             h3 Download the Template
-                            p 
-                                | Use our 
-                                a(target="_blank", href="assets/templates/template-poster.pptx") template 
-                                | to ensure consistent formatting and build a visually engaging design summarizing your work.
+                            //- p 
+                            //-     | Use our 
+                            //-     a(target="_blank", href="assets/templates/template-poster.pptx") template 
+                            //-     | to ensure consistent formatting and build a visually engaging design summarizing your work.
 
-                        .col-md-6.text-center.feature-hover.pt-1
-                            i.fa-solid.fa-paper-plane.fa-3x.mb-3(style="color: #007bff;") // Submission icon
-                            h3 How to Submit
-                            p 
-                                | Submissions are accepted via 
-                                a(target="_blank", href="https://forms.gle/KFGKimvtXKmbazKh8") the Google Form.
-                                | Ensure all required fields are completed before submitting.
+                        //- .col-md-6.text-center.feature-hover.pt-1
+                        //-     i.fa-solid.fa-paper-plane.fa-3x.mb-3(style="color: #007bff;") // Submission icon
+                        //-     h3 How to Submit
+                        //-     p 
+                        //-         | Submissions are accepted via 
+                        //-         a(target="_blank", href="https://forms.gle/KFGKimvtXKmbazKh8") the Google Form.
+                        //-         | Ensure all required fields are completed before submitting.
 
                     .row.justify-content-center.mt-4
                         .col-md-8.text-center.feature-hover.pt-1
@@ -90,7 +92,7 @@ block content
                                 li Include authors' names and affiliations.
                                 li Clearly present objectives, methods, and results.
                                 li Highlight key bibliography/references.
-            
+
             // Jury Section
             .row.text-dark.mt-5
                 .col-12.text-center
@@ -105,10 +107,10 @@ block content
                                             src=`assets/team/${teamMember.img}`, 
                                             alt=teamMember.name
                                         )
-                                        .card-body
-                                            //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
-                                            h4.card-title.text-dark= teamMember.name
-                                            p.card-text.text-muted= teamMember.text
+                                    .card-body
+                                        //- i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #ff4500;") // Icon for Jawad ALAOUI
+                                        h4.card-title.text-dark= teamMember.name
+                                        p.card-text.text-muted= teamMember.text
             //- // Important Notes Section
             //- .row.important-notes.text-dark.mt-5
             //-     .col-12.text-center
@@ -149,14 +151,14 @@ block content
                                     | Selected participants will receive an email confirmation by February 15, 2025.
                                 li Strictly adhere to the provided template.
 
-            // Call to Action
-            .row.call-to-action.text-dark.mt-5
-                .col-12.text-center
-                    h2.text-primary.mb-4 Ready to Submit?
-                    p.text-dark Don’t miss this opportunity to Showcase your poster at a cutting-edge AI event, gain valuable feedback from AI thought leaders and expand your professional network in Ben Guerir, Morocco.
-                    .cta-buttons.mt-4
-                        a.btn.btn-primary.btn-lg(target="_blank", href="assets/templates/template-poster.pptx") Download Template (PPTX)
-                        a.btn.btn-success.btn-lg(target="_blank", href="https://forms.gle/KFGKimvtXKmbazKh8") Submit Your Poster
+            //- // Call to Action
+            //- .row.call-to-action.text-dark.mt-5
+            //-     .col-12.text-center
+            //-         h2.text-primary.mb-4 Ready to Submit?
+            //-         p.text-dark Don’t miss this opportunity to Showcase your poster at a cutting-edge AI event, gain valuable feedback from AI thought leaders and expand your professional network in Ben Guerir, Morocco.
+            //-         .cta-buttons.mt-4
+            //-             a.btn.btn-primary.btn-lg(target="_blank", href="assets/templates/template-poster.pptx") Download Template (PPTX)
+            //-             a.btn.btn-success.btn-lg(target="_blank", href="https://forms.gle/KFGKimvtXKmbazKh8") Submit Your Poster
 
             // Optional Contact Us Section
             .row.contact-us.text-dark.mt-5
