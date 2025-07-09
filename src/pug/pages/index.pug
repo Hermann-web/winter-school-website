@@ -2,7 +2,7 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'Home'
+    - var pageTitle = 'Spring School 2026 – AI & Health'
     - var index = true
     - var sidenavStyle = 'sb-sidenav-dark'
 
@@ -11,31 +11,26 @@ block content
         // Hero Section with Video Background and Image Fallback
         .row.hero-section.text-white.d-flex.align-items-center.justify-content-center(style="position: relative; height: 100vh;top: -56px;")
             
-            // Background Video with Image Fallback
-            .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/teaser-thumbnail.png') center/cover no-repeat; z-index: -3")
-            video.background-video(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover; object-position: center; width: 100%; height: 100%; padding: 0" autoplay="autoplay" loop muted playsInline poster="assets/visual/teaser-thumbnail.png")
-                source(src="assets/visual/teaser-v5.mp4" type="video/mp4")
-                source(src="assets/visual/teaser-v5.webm" type="video/webm")
-                source(src="assets/visual/teaser-v5.ogv" type="video/ogg")
-
-            //- // Content Over Video
-            //- .overlay-content.text-center(style="z-index: 1")
-            //-     h1.text-uppercase.fw-bold Welcome to the Winter School 2025
-            //-     p.lead Join us for a journey into the future of AI and Economics.
+            //- // Background Video with Image Fallback
+            //- .background-image(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/visual/teaser-thumbnail.png') center/cover no-repeat; z-index: -3")
+            //- video.background-video(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; object-fit: cover; object-position: center; width: 100%; height: 100%; padding: 0" autoplay="autoplay" loop muted playsInline poster="assets/visual/teaser-thumbnail.png")
+            //-     source(src="assets/visual/teaser-v5.mp4" type="video/mp4")
+            //-     source(src="assets/visual/teaser-v5.webm" type="video/webm")
+            //-     source(src="assets/visual/teaser-v5.ogv" type="video/ogg")
 
             // Dark Overlay
             .background-overlay(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background-color: rgba(0, 0, 0, 0.6);")
         
             // Text Overlay (Positioned Above Video)
             .col-12.text-center.py-5.overlay(style="position: relative; z-index: 1;")
-                h1.mt-5.font-weight-bold Master Next Generation AI at the Winter Data Science School 2025
-                p.lead Explore cutting-edge techniques, network with industry leaders, and gain practical skills to accelerate your career
+                h1.mt-5.font-weight-bold Spring School – Artificial Intelligence & Health
+                p.lead Explore the future of AI in healthcare with leading experts, hands-on workshops, and interdisciplinary sessions in Ben Guerir, March 23-25, 2026.
 
                 // Practical Info: Date, Venue, and Contact
                 .row.justify-content-center.mt-4
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-calendar-alt.fa-2x.mb-2
-                        p February 24-25, 2025
+                        p March 23-25, 2026
 
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-map-marker-alt.fa-2x.mb-2
@@ -44,7 +39,7 @@ block content
 
                     .col-md-3.text-center.feature-hover
                         i.fas.fa-phone-alt.fa-2x.mb-2
-                        p winterschooldatascience@gmail.com
+                        p xxxx@xxxx.com
 
                 // Call to Action Buttons
                 .cta-buttons.mt-4
@@ -64,55 +59,45 @@ block content
         // Key Features Section - Grid Layout with Icons and Descriptions
         .row.features-section.hover-effect.text-white.bg-primary.mt-5
             .col-12.text-center.py-5.text-light
-                h2 Highlights of the Next-Gen AI Winter School
+                h2 Highlights of the AI & Health Spring School
             .col-md-3.text-center.feature-hover
-                i.fas.fa-chalkboard-teacher.fa-3x.mb-3
+                i.fas.fa-microscope.fa-3x.mb-3
                 h3 Keynote Presentations
-                p Explore the latest advancements in Next Generation AI and economic applications and gain insights from globally recognized speakers.
-            .col-md-3.text-center.feature-hover
-                i.fas.fa-briefcase.fa-3x.mb-3
-                h3 Business Case Studies
-                p Discover how Next Generation AI is revolutionizing industries through impactful real-world examples.
-            .col-md-3.text-center.feature-hover
-                i.fas.fa-users.fa-3x.mb-3
-                h3 Dynamic Panel Discussions
-                p Engage with experts in lively discussions about economic applications of Next Generation AI and its transformative impact on society.
+                p Explore the latest advancements in AI for Healthcare and gain insights from globally recognized speakers.
             .col-md-3.text-center.feature-hover
                 i.fas.fa-podcast.fa-3x.mb-3
                 h3 Networking Opportunities
-                p Connect with researchers, industry leaders, and innovators while exploring groundbreaking AI research and ideas in our interactive poster sessions.
+                p Be where leading minds in AI and healthcare converge — and discuss with innovators in our poster sessions.
+            .col-md-3.text-center.feature-hover
+                i.fas.fa-users.fa-3x.mb-3
+                h3 Dynamic Panel Discussions
+                p Join thought-provoking roundtables on ethical, clinical, and technical dimensions of AI in health.
+            .col-md-3.text-center.feature-hover
+                i.fas.fa-tools.fa-3x.mb-3
+                h3 Hands-on Workshops
+                p Attend workshops using real or synthetic datasets to experiment with AI techniques applied to health.
 
         // Audience Section with Creative Layout and Icons
         .row.audience-section.hover-effect.mt-5.text-dark
             .col-12
                 h2.text-center.text-light.mb-4 Who Should Attend
-                p.text-center.mb-4 This Next-Gen AI Winter School is designed for anyone passionate about the future of AI and its Economic Applications. Whether you're looking to dive deep into Next Generation AI or expand your network, this is the perfect opportunity.
+                p.text-center.mb-4 This AI & Health Spring School is designed for anyone passionate about the intersection of artificial intelligence and healthcare. Whether you're looking to deepen your technical knowledge or explore business applications, this is the perfect opportunity.
                 
                 .row.justify-content-center
-                    .col-md-4.text-center.feature-hover.pt-2
+                    .col-md-6.text-center.feature-hover.pt-2
                         i.fa-solid.fa-graduation-cap.fa-3x.mb-3(style="color: #f5c542;")
-                        h3 PhD and Master's Students
-                        p.text-muted Stay ahead of the curve in AI research and innovations.
+                        h3 Medical & PhD Students
+                        p.text-muted Deepen your knowledge in AI and health through practical and theoretical programs.
                     .col-md-4.text-center.feature-hover.pt-2
-                        i.fa-solid.fa-user-tie.fa-3x.mb-3(style="color: #1e90ff;")
-                        h3 Engineers & Data Scientists
-                        p.text-muted Engage with cutting-edge technologies and apply them to real-world problems.
+                        i.fa-solid.fa-user-doctor.fa-3x.mb-3(style="color: #1e90ff;")
+                        h3 Health Practionners & Entrepreneurs
+                        p.text-muted Network with leading AI professionals and discover the future of AI in healthcare.
                     .col-md-4.text-center.feature-hover.pt-2
-                        i.fa-solid.fa-lightbulb.fa-3x.mb-3(style="color: #28a745;")
-                        h3 Entrepreneurs & Innovators
-                        p.text-muted Learn how AI is transforming industries and how to leverage it for new ventures.
+                        i.fa-solid.fa-building.fa-3x.mb-3(style="color: #28a745;")
+                        h3 Data Scientists & Researchers
+                        p.text-muted Learn the recent AI and data analytics solutions to tackle complex health challenges.
+                        // Discover concrete AI applications in health and build strategic partnerships.
                 
-                .row.justify-content-center.mt-4
-                    .col-md-4.text-center.feature-hover.pt-2
-                        i.fa-solid.fa-business-time.fa-3x.mb-3(style="color: #ff6347;")
-                        h3 Industry Professionals
-                        p.text-muted Network with leading AI professionals and discover the future of AI in business.
-                    //- .col-md-4.text-center
-                    //-     i.fa-solid.fa-users.fa-3x.mb-3(style="color: #6f42c1;")
-                    //-     h3 Academics & Students
-                    //-     p.text-muted Explore new AI methodologies and enhance your learning journey.
-
-
         // Venue Section with Modern Typography and Interactive Map
         .row.venue-section.hover-effect.mt-5.text-dark
             .col-12.feature-hover
