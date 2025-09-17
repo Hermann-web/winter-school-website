@@ -1,0 +1,8 @@
+{
+  "name": "WinterSchool - container",
+  "image": "node:22",
+  "workspaceFolder": "/app",
+  "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"],
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
