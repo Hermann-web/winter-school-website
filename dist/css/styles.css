@@ -10,6 +10,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://rsms.me/inter/inter.css");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -3144,7 +3145,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #6c757d;
   --bs-btn-disabled-border-color: transparent;
   --bs-btn-box-shadow: none;
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-focus-shadow-rgb: 50, 111, 209;
   text-decoration: underline;
 }
 .btn-link:focus-visible {
@@ -10841,63 +10842,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-:root {
-  --bs-primary-rgb: 114, 13, 168;
-  --bs-primary: rgb(114, 13, 168);
-  --bs-secondary-rgb: 92, 225, 230;
-  --bs-secondary: rgb(92, 225, 230);
-  --bs-info-rgb: 92, 225, 230;
-  --bs-info: rgb(92, 225, 230);
-  --bs-light-rgb: 255, 87, 87;
-  --bs-light: rgb(255, 87, 87);
-  --bs-dark-rgb: 140, 82, 255;
-  --bs-dark: rgb(140, 82, 255);
-  --bs-lighter-rgb: 217, 230, 232;
-  --bs-lighter: rgb(217, 230, 232);
-}
-
-.btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: var(--bs-dark);
-  --bs-btn-border-color: var(--bs-dark);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: var(--bs-primary);
-  --bs-btn-hover-border-color: var(--bs-primary);
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: var(--bs-primary);
-  --bs-btn-active-border-color: #0a53be;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: var(--bs-dark);
-  --bs-btn-disabled-border-color: var(--bs-dark);
-}
-
-.btn-outline-secondary {
-  --bs-btn-color: var(--bs-secondary);
-  --bs-btn-border-color: var(--bs-secondary);
-  --bs-btn-hover-color: var(--bs-light);
-  --bs-btn-hover-bg: var(--bs-secondary);
-  --bs-btn-hover-border-color: var(--bs-secondary);
-  --bs-btn-focus-shadow-rgb: 108, 117, 125;
-  --bs-btn-active-color: var(--bs-light);
-  --bs-btn-active-bg: var(--bs-secondary);
-  --bs-btn-active-border-color: var(--bs-secondary);
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: var(--bs-secondary);
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: var(--bs-secondary);
-  --bs-gradient: none;
-}
-
 html,
 body {
   height: 100%;
-  color: var(--bs-dark);
+}
+
+body {
+  background: linear-gradient(to right, #F9FAFB, #E5E7EB);
+  color: #1F2937;
+  font-family: "Inter", sans-serif;
 }
 
 #layoutSidenav_content {
-  background: radial-gradient(circle, rgba(var(--bs-light-rgb), 0.15) 0%, var(--bs-white) 100%);
   z-index: 0;
 }
 
@@ -11337,6 +11293,8 @@ body {
   padding-left: 0;
   height: 56px;
   z-index: 1039;
+  background-color: #1F2937;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 41, 55, 0.15);
 }
 .sb-topnav .navbar-brand {
   width: 225px;
@@ -11346,7 +11304,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-topnav.navbar-light #sidebarToggle {
-  color: #212529;
+  color: #adb5bd;
 }
 
 .sb-sidenav {
@@ -11396,7 +11354,7 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
+  background-color: #1F2937;
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -11425,14 +11383,14 @@ body {
 }
 
 .sb-sidenav-light {
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: #F9FAFB;
+  color: #1F2937;
 }
 .sb-sidenav-light .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: #adb5bd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link {
-  color: var(--bs-primary);
+  color: #1F2937;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
   color: #adb5bd;
@@ -11441,13 +11399,13 @@ body {
   color: #adb5bd;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
-  color: var(--bs-primary);
+  color: #3B82F6;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link.active {
-  color: var(--bs-primary);
+  color: #3B82F6;
 }
 .sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
-  color: var(--bs-primary);
+  color: #3B82F6;
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;

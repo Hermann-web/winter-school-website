@@ -6,6 +6,8 @@
     padding-left: 0;
     height: $topnav-base-height;
     z-index: $zindex-topnav;
+    background-color: $dark;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 41, 55, 0.15);
 
     .navbar-brand {
         width: $sidenav-base-width;
@@ -16,13 +18,13 @@
 
     &.navbar-dark {
         #sidebarToggle {
-            color: $topnav-dark-toggler-color;
+            color: rgba(255, 255, 255, 0.5);
         }
     }
 
     &.navbar-light {
         #sidebarToggle {
-            color: $topnav-light-toggler-color;
+            color: $gray-500;
         }
     }
 }

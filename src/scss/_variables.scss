@@ -6,6 +6,12 @@
 @import "bootstrap/scss/functions.scss";
 @import "bootstrap/scss/variables.scss";
 
+// Custom Color Overrides
+$primary: #3B82F6;
+$secondary: #6B7280;
+$light: #F9FAFB;
+$dark: #1F2937;
+
 // Import spacing variables
 @import "./variables/spacing.scss";
 

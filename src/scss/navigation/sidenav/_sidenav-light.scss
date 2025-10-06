@@ -6,40 +6,40 @@
 // Append .sb-sidenav-light to .sb-sidenav to use
 
 .sb-sidenav-light {
-    background-color: $sidenav-light-bg;
-    color: $sidenav-light-color;
+    background-color: $light;
+    color: $dark;
 
     .sb-sidenav-menu {
         .sb-sidenav-menu-heading {
-            color: $sidenav-light-heading-color;
+            color: $gray-500;
         }
 
         .nav-link {
-            color: $sidenav-light-link-color;
+            color: $dark;
 
             .sb-nav-link-icon {
-                color: $sidenav-light-icon-color;
+                color: $gray-500;
             }
 
             .sb-sidenav-collapse-arrow {
-                color: $sidenav-light-icon-color;
+                color: $gray-500;
             }
 
             &:hover {
-                color: $sidenav-light-link-active-color;
+                color: $primary;
             }
 
             &.active {
-                color: $sidenav-light-link-active-color;
+                color: $primary;
 
                 .sb-nav-link-icon {
-                    color: $sidenav-light-link-active-color;
+                    color: $primary;
                 }
             }
         }
     }
 
     .sb-sidenav-footer {
-        background-color: $sidenav-light-footer-bg;
+        background-color: $gray-200;
     }
 }

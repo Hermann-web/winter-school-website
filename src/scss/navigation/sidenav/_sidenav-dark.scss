@@ -6,40 +6,40 @@
 // Append .sb-sidenav-dark to .sb-sidenav to use
 
 .sb-sidenav-dark {
-    background-color: $sidenav-dark-bg;
-    color: $sidenav-dark-color;
+    background-color: $dark;
+    color: rgba(255, 255, 255, 0.5);
 
     .sb-sidenav-menu {
         .sb-sidenav-menu-heading {
-            color: $sidenav-dark-heading-color;
+            color: rgba(255, 255, 255, 0.25);
         }
 
         .nav-link {
-            color: $sidenav-dark-link-color;
+            color: rgba(255, 255, 255, 0.5);
 
             .sb-nav-link-icon {
-                color: $sidenav-dark-icon-color;
+                color: rgba(255, 255, 255, 0.25);
             }
 
             .sb-sidenav-collapse-arrow {
-                color: $sidenav-dark-icon-color;
+                color: rgba(255, 255, 255, 0.25);
             }
 
             &:hover {
-                color: $sidenav-dark-link-active-color;
+                color: #fff;
             }
 
             &.active {
-                color: $sidenav-dark-link-active-color;
+                color: #fff;
 
                 .sb-nav-link-icon {
-                    color: $sidenav-dark-link-active-color;
+                    color: #fff;
                 }
             }
         }
     }
 
     .sb-sidenav-footer {
-        background-color: $sidenav-dark-footer-bg;
+        background-color: #343a40;
     }
 }

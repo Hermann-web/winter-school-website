@@ -1,91 +1,21 @@
+@import url('https://rsms.me/inter/inter.css');
+
 // 
 // Global
 // 
 
-// :root {
-//   --bs-dark-rgb:255, 87, 87;
-//   --bs-bg-opacity: 0.5;
-//  }
-
-:root {
-    --bs-primary-rgb: 114, 13, 168;
-    --bs-primary: rgb(114, 13, 168);
-    --bs-secondary-rgb: 92, 225, 230;
-    --bs-secondary: rgb(92, 225, 230);
-    --bs-info-rgb: 92, 225, 230;
-    --bs-info: rgb(92, 225, 230);
-    --bs-light-rgb: 255, 87, 87;
-    --bs-light: rgb(255, 87, 87);
-    --bs-dark-rgb: 140, 82, 255;
-    --bs-dark: rgb(140, 82, 255);
-    --bs-lighter-rgb: 217, 230, 232;
-    --bs-lighter: rgb(217, 230, 232);
-    // --bs-link-color: #5b57a6;
-}
-
-
-.btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: var(--bs-dark);
-    --bs-btn-border-color: var(--bs-dark);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--bs-primary);
-    --bs-btn-hover-border-color: var(--bs-primary);
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--bs-primary);
-    --bs-btn-active-border-color: #0a53be;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: var(--bs-dark);
-    --bs-btn-disabled-border-color: var(--bs-dark);
-  }
-
-.btn-outline-secondary {
-    --bs-btn-color: var(--bs-secondary);
-    --bs-btn-border-color: var(--bs-secondary);
-    --bs-btn-hover-color: var(--bs-light);
-    --bs-btn-hover-bg: var(--bs-secondary);
-    --bs-btn-hover-border-color: var(--bs-secondary);
-    --bs-btn-focus-shadow-rgb: 108, 117, 125;
-    --bs-btn-active-color: var(--bs-light);
-    --bs-btn-active-bg: var(--bs-secondary);
-    --bs-btn-active-border-color: var(--bs-secondary);
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: var(--bs-secondary);
-    --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: var(--bs-secondary);
-    --bs-gradient: none;
-}
-
-// :root {
-//     --bs-secondary-rgb: 255, 87, 87;
-//     --bs-primary-rgb: 114, 13, 168;
-//     --bs-light-rgb: 255, 87, 87y
-//     --bs-dark-rgb: 114, 13, 168;
-    
-//     --bs-light: rgb(255, 255, 255);
-//     --bs-dark: rgb(114, 13, 168);
-//     --bs-primary: rgb(114, 13, 168); #volet
-//     --bs-secondary: rgb(255, 87, 87); #orange
-// 255, 87, 87
-    
-//     /* Removed the comment on the following line to activate the link color */
-//     // --bs-link-color: #5b57a6;
-// }
-// 255, 87, 87 (vert) --> 255, 87, 87 (orange)
-// 78, 196, 169 --> 92, 225, 230 (vert)
-// 114, 13, 168 (ancien) --> 114, 13, 168 (violet)
-// --> 140, 82, 255 (violet ligh)
 html,
 body {
     height: 100%;
-    color: var(--bs-dark);
+}
+
+body {
+    background: linear-gradient(to right, #F9FAFB, #E5E7EB);
+    color: $dark;
+    font-family: 'Inter', sans-serif;
 }
 
 #layoutSidenav_content {
-    background: radial-gradient(circle,rgba(var(--bs-light-rgb), 0.15) 0%,  var(--bs-white) 100%);
-    // background-color: rgba(var(--bs-lighter-rgb), 0.15);
     z-index: 0;
 }
 
