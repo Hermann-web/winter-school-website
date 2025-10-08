@@ -125,93 +125,520 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
+                    <style>
+                        .schedule-hero {
+                            background: linear-gradient(135deg, var(--bs-dark) 0%, var(--bs-primary) 100%);
+                            padding: 3rem 2rem;
+                            border-radius: 16px;
+                            margin-bottom: 2rem;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .schedule-hero::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            right: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+                            background-size: 30px 30px;
+                            animation: gridMove 20s linear infinite;
+                        }
+                        @keyframes gridMove {
+                            0% {
+                                transform: translate(0, 0);
+                            }
+                            100% {
+                                transform: translate(30px, 30px);
+                            }
+                        }
+                        .schedule-hero-content {
+                            position: relative;
+                            z-index: 1;
+                        }
+                        .schedule-hero-title {
+                            color: #ffffff;
+                            font-size: 2.5rem;
+                            font-weight: 700;
+                            margin-bottom: 0.5rem;
+                            letter-spacing: -0.02em;
+                        }
+                        .schedule-hero-subtitle {
+                            color: rgba(255, 255, 255, 0.9);
+                            font-size: 1.1rem;
+                        }
+                        .schedule-info-banner {
+                            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-info) 100%);
+                            border-radius: 12px;
+                            padding: 1.25rem 1.5rem;
+                            margin-bottom: 2.5rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 1rem;
+                        }
+                        .schedule-info-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            color: var(--bs-dark);
+                            font-weight: 600;
+                        }
+                        .schedule-day-card {
+                            margin-bottom: 3rem;
+                            opacity: 0;
+                            animation: fadeInUp 0.6s ease forwards;
+                        }
+                        .schedule-day-card:nth-child(1) {
+                            animation-delay: 0.1s;
+                        }
+                        .schedule-day-card:nth-child(2) {
+                            animation-delay: 0.2s;
+                        }
+                        .schedule-day-card:nth-child(3) {
+                            animation-delay: 0.3s;
+                        }
+                        @keyframes fadeInUp {
+                            from {
+                                opacity: 0;
+                                transform: translateY(20px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                        .schedule-day-header {
+                            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-dark) 100%);
+                            border-radius: 12px 12px 0 0;
+                            padding: 1.75rem 2rem;
+                        }
+                        .day-1 .schedule-day-header {
+                            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-light) 100%);
+                        }
+                        .day-2 .schedule-day-header {
+                            background: linear-gradient(135deg, var(--bs-info) 0%, var(--bs-secondary) 100%);
+                        }
+                        .day-3 .schedule-day-header {
+                            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-primary) 100%);
+                        }
+                        .schedule-day-number {
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                            opacity: 0.8;
+                            margin-bottom: 0.25rem;
+                        }
+                        .schedule-day-title {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            margin-bottom: 0.25rem;
+                        }
+                        .schedule-day-theme {
+                            font-size: 0.95rem;
+                            opacity: 0.9;
+                            font-weight: 500;
+                        }
+                        .schedule-sessions {
+                            background: #ffffff;
+                            border-radius: 0 0 12px 12px;
+                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                        }
+                        .schedule-session {
+                            padding: 1.75rem 2rem;
+                            border-bottom: 1px solid #e8eaed;
+                            display: grid;
+                            grid-template-columns: 140px 1fr;
+                            gap: 2rem;
+                            align-items: start;
+                            transition: all 0.3s ease;
+                            position: relative;
+                        }
+                        .schedule-session::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 0;
+                            height: 100%;
+                            background: linear-gradient(90deg, rgba(var(--bs-primary-rgb), 0.05) 0%, transparent 100%);
+                            transition: width 0.4s ease;
+                        }
+                        .schedule-session:hover::before {
+                            width: 100%;
+                        }
+                        .schedule-session:hover {
+                            background: rgba(var(--bs-secondary-rgb), 0.02);
+                            transform: translateX(4px);
+                        }
+                        .schedule-session:last-child {
+                            border-bottom: none;
+                        }
+                        .schedule-time {
+                            font-size: 0.95rem;
+                            font-weight: 600;
+                            color: var(--bs-primary);
+                            white-space: nowrap;
+                            padding-top: 0.25rem;
+                        }
+                        .schedule-content {
+                            min-width: 0;
+                        }
+                        .schedule-title {
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                            color: var(--bs-dark);
+                            margin-bottom: 0.5rem;
+                            line-height: 1.4;
+                        }
+                        .schedule-speaker {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            margin-top: 0.75rem;
+                        }
+                        .schedule-speaker-name {
+                            font-size: 0.95rem;
+                            font-weight: 600;
+                            color: var(--bs-primary);
+                        }
+                        .schedule-speaker-org {
+                            font-size: 0.875rem;
+                            color: #5f6368;
+                        }
+                        .schedule-tag {
+                            display: inline-block;
+                            padding: 0.375rem 0.875rem;
+                            border-radius: 20px;
+                            font-size: 0.8rem;
+                            font-weight: 600;
+                            margin-top: 0.75rem;
+                            margin-right: 0.5rem;
+                        }
+                        .tag-keynote {
+                            background: var(--bs-dark);
+                            color: white;
+                        }
+                        .tag-panel {
+                            background: var(--bs-lighter);
+                            color: var(--bs-primary);
+                        }
+                        .tag-workshop {
+                            background: rgba(var(--bs-secondary-rgb), 0.2);
+                            color: var(--bs-dark);
+                        }
+                        .tag-special {
+                            background: var(--bs-secondary);
+                            color: var(--bs-dark);
+                        }
+                        .tag-closing {
+                            background: var(--bs-light);
+                            color: white;
+                        }
+                        .tag-tbc {
+                            background: rgba(var(--bs-light-rgb), 0.2);
+                            color: var(--bs-light);
+                            font-size: 0.75rem;
+                            padding: 0.25rem 0.625rem;
+                        }
+                        .schedule-moderator {
+                            font-size: 0.875rem;
+                            color: var(--bs-secondary);
+                            font-weight: 500;
+                            margin-top: 0.5rem;
+                        }
+                        .schedule-break {
+                            background: linear-gradient(135deg, #fafafa 0%, var(--bs-lighter) 100%);
+                            border-left: 4px solid var(--bs-secondary);
+                        }
+                        .schedule-special {
+                            background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.05) 0%, rgba(var(--bs-secondary-rgb), 0.05) 100%);
+                            border-left: 4px solid var(--bs-primary);
+                        }
+                        @media (max-width: 768px) {
+                            .schedule-session {
+                                grid-template-columns: 1fr;
+                                gap: 1rem;
+                            }
+                            .schedule-hero-title {
+                                font-size: 1.75rem;
+                            }
+                            .schedule-day-title {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    </style>
                     <div class="container-fluid min-vh-100">
                         <div class="row mt-5">
                             <div class="col-0 col-lg-1">&nbsp;</div>
-                            <div class="col-12 col-lg-10 mt-3 card mb-4 border-0">
-                                <h1 class="h1 text-center text-primary" align="center">Schedule</h1>
+                            <div class="col-12 col-lg-10 mt-3 mb-4">
+                                <h1 class="h1 text-center text-primary" align="center">Conference Schedule</h1>
                                 <p class="h4 text-center text-secondary"></p>
-                                <div class="card-body">
-                                    <p class="text-muted mb-3 small">
-                                        <span style="color: #ff6347">*</span>
-                                        Provisional program, subject to change.
-                                    </p>
-                                    <p class="text-muted small">All times are in UTC+1.</p>
-                                    <div class="container table-responsive">
-                                        <table class="table table-bordered table-hover text-center">
-                                            <thead>
-                                                <tr class="text-white" style="background: linear-gradient(90deg, var(--bs-dark), var(--bs-secondary)) !important">
-                                                    <th>
-                                                        March 23, 2026 (Day 1)
-                                                        <br />
-                                                        AI for Impact - Scientific Foundation
-                                                    </th>
-                                                    <th>
-                                                        March 24, 2026 (Day 2)
-                                                        <br />
-                                                        AI & Health
-                                                    </th>
-                                                    <th>
-                                                        March 25, 2026 (Day 3)
-                                                        <br />
-                                                        Hands-on Workshops & Hackathon
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">Accessible Scientific Conferences</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Morning</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">In-depth Discussions on AI in Health</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Morning</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">Hands-on Workshops</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Morning</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">Round Table</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Afternoon</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">Conference on AI Impacts by Benoît Bergeret</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Afternoon</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-dark fww-bold">Hackathon Results & Awards</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Afternoon</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-light fww-bold">Poster Session</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Evening</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-light fww-bold">Round Table</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Evening</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="conf-title fss-5 text-light fww-bold">Closing Ceremony</span>
-                                                        <br />
-                                                        <span class="conf-time text-muted p-2">Evening</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <div class="schedule-info-banner mt-5">
+                                    <div class="schedule-info-item">
+                                        <span>⚠️</span>
+                                        <span>Draft schedule subject to final confirmation</span>
+                                    </div>
+                                    <div class="schedule-info-item">
+                                        <span>🌍</span>
+                                        <span>All times in UTC+1</span>
+                                    </div>
+                                    <div class="schedule-info-item">
+                                        <span>📅</span>
+                                        <span>March 23-25, 2026</span>
+                                    </div>
+                                </div>
+                                <!-- Day 1-->
+                                <div class="schedule-day-card day-1">
+                                    <div class="schedule-day-header">
+                                        <div class="schedule-day-number">Day One</div>
+                                        <div class="schedule-day-title">March 23, 2026</div>
+                                        <div class="schedule-day-theme">Foundations & Perspectives</div>
+                                    </div>
+                                    <div class="schedule-sessions">
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">09:30 – 09:45</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Welcome & Opening Speech</div>
+                                                <div class="schedule-tag tag-special">Opening Ceremony</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">09:45 – 10:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Deep Learning: The Revolution Continues</div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">10:30 – 11:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">The Major Challenges of AI</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Joëlle Barral</div>
+                                                        <div class="schedule-speaker-org">Google DeepMind</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">11:15 – 12:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Round Table 1: Foundations</div>
+                                                <div class="schedule-moderator">Moderated by Eric Moulines</div>
+                                                <div class="schedule-tag tag-panel">Panel Discussion</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session schedule-break">
+                                            <div class="schedule-time">12:30 – 14:00</div>
+                                            <div class="schedule-content"><div class="schedule-title">Lunch Break</div></div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">14:00 – 15:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Hands-on Workshops</div>
+                                                <div class="schedule-tag tag-workshop">Parallel Tracks</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">15:30 – 16:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">AI for Society: Strategy & Impact</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Benoît Bergeret</div>
+                                                        <div class="schedule-speaker-org">Stratégies.ai</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">16:30 – 17:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Wrap-up Discussion (Day 1)</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Alon Rozen</div>
+                                                        <div class="schedule-speaker-org">École des Ponts Business School</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session schedule-special">
+                                            <div class="schedule-time">17:30 – 18:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Poster Session</div>
+                                                <div class="schedule-tag tag-special">Networking Event</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Day 2-->
+                                <div class="schedule-day-card day-2">
+                                    <div class="schedule-day-header">
+                                        <div class="schedule-day-number">Day Two</div>
+                                        <div class="schedule-day-title">March 24, 2026</div>
+                                        <div class="schedule-day-theme">Advanced AI Topics</div>
+                                    </div>
+                                    <div class="schedule-sessions">
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">09:45 – 10:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Beyond Deep Learning: Why Theory Still Matters</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Michael I. Jordan</div>
+                                                        <div class="schedule-speaker-org">UC Berkeley & Inria</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">10:30 – 11:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">From Distributed Optimization to Federated Learning</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Martin Takáč</div>
+                                                        <div class="schedule-speaker-org">MBZUAI</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">11:15 – 12:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Round Table 2: AI at Scale & Applications</div>
+                                                <div class="schedule-moderator">Moderated by Benoît Bergeret</div>
+                                                <div class="schedule-tag tag-panel">Panel Discussion</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session schedule-break">
+                                            <div class="schedule-time">12:30 – 14:00</div>
+                                            <div class="schedule-content"><div class="schedule-title">Lunch Break</div></div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">14:00 – 15:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Hands-on Workshops</div>
+                                                <div class="schedule-tag tag-workshop">Parallel Tracks</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">15:30 – 16:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">AI for Women's Health: From Endometriosis to Broader Applications</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Ahmed El Bahri</div>
+                                                        <div class="schedule-speaker-org">Director General, Guyana University Hospital</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">16:30 – 17:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Wrap-up Discussion (Day 2)</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Alon Rozen</div>
+                                                        <div class="schedule-speaker-org">École des Ponts Business School</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Day 3-->
+                                <div class="schedule-day-card day-3">
+                                    <div class="schedule-day-header">
+                                        <div class="schedule-day-number">Day Three</div>
+                                        <div class="schedule-day-title">March 25, 2026</div>
+                                        <div class="schedule-day-theme">From Models to Real-World Impact</div>
+                                    </div>
+                                    <div class="schedule-sessions">
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">09:45 – 10:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">From Algorithms to Clinics: AI for Healthcare Transformation</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Nikos Paragios</div>
+                                                        <div class="schedule-speaker-org">CentraleSupélec & TheraPanacea</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">10:30 – 11:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">AI Foundation Models</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Eric Xing</div>
+                                                        <div class="schedule-speaker-org">President MBZUAI & CMU</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-keynote">Keynote</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">11:15 – 12:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Machine Learning for Medical Imaging</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Elsa Angelini</div>
+                                                        <div class="schedule-speaker-org">Télécom Paris</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session schedule-break">
+                                            <div class="schedule-time">12:30 – 14:00</div>
+                                            <div class="schedule-content"><div class="schedule-title">Lunch Break</div></div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">14:00 – 15:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Leveraging AI and Multi-Source Data to Transform Mobility Studies</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Latifa Oukhellou</div>
+                                                        <div class="schedule-speaker-org">Univ Gustave Eiffel</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session">
+                                            <div class="schedule-time">15:30 – 16:30</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Conference: Data, AI & Transport</div>
+                                                <div class="schedule-tag tag-special">Special Session</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-session schedule-special">
+                                            <div class="schedule-time">16:30 – 17:15</div>
+                                            <div class="schedule-content">
+                                                <div class="schedule-title">Closing Session: AI Beyond Boundaries</div>
+                                                <div class="schedule-speaker">
+                                                    <div>
+                                                        <div class="schedule-speaker-name">Alon Rozen</div>
+                                                        <div class="schedule-speaker-org">École des Ponts Business School</div>
+                                                    </div>
+                                                </div>
+                                                <div class="schedule-tag tag-closing">Closing Ceremony</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

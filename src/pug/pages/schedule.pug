@@ -3,246 +3,463 @@ extends ../layouts/dashboard.pug
 block config
     - var bodyClass = 'sb-nav-fixed'
     - var pageTitle = 'Programme'
-    - var pageMainTitle = 'Schedule'
-    //- - var pageSubTitle = "A preliminary schedule, subject to final approval from both speakers and organizers"
+    - var pageMainTitle = 'Conference Schedule'
     - var sidenavStyle = 'sb-sidenav-dark'
 
 block content
+    style.
+        .schedule-hero {
+            background: linear-gradient(135deg, var(--bs-dark) 0%, var(--bs-primary) 100%);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .schedule-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+        .schedule-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .schedule-hero-title {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .schedule-hero-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+        .schedule-info-banner {
+            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-info) 100%);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .schedule-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--bs-dark);
+            font-weight: 600;
+        }
+        .schedule-day-card {
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .schedule-day-card:nth-child(1) { animation-delay: 0.1s; }
+        .schedule-day-card:nth-child(2) { animation-delay: 0.2s; }
+        .schedule-day-card:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .schedule-day-header {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-dark) 100%);
+            border-radius: 12px 12px 0 0;
+            padding: 1.75rem 2rem;
+        }
+        .day-1 .schedule-day-header {
+            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-light) 100%);
+        }
+        .day-2 .schedule-day-header {
+            background: linear-gradient(135deg, var(--bs-info) 0%, var(--bs-secondary) 100%);
+        }
+        .day-3 .schedule-day-header {
+            background: linear-gradient(135deg, var(--bs-secondary) 0%, var(--bs-primary) 100%);
+        }
+        .schedule-day-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+        .schedule-day-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .schedule-day-theme {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        .schedule-sessions {
+            background: #ffffff;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .schedule-session {
+            padding: 1.75rem 2rem;
+            border-bottom: 1px solid #e8eaed;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 2rem;
+            align-items: start;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .schedule-session::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(var(--bs-primary-rgb), 0.05) 0%, transparent 100%);
+            transition: width 0.4s ease;
+        }
+        .schedule-session:hover::before {
+            width: 100%;
+        }
+        .schedule-session:hover {
+            background: rgba(var(--bs-secondary-rgb), 0.02);
+            transform: translateX(4px);
+        }
+        .schedule-session:last-child {
+            border-bottom: none;
+        }
+        .schedule-time {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--bs-primary);
+            white-space: nowrap;
+            padding-top: 0.25rem;
+        }
+        .schedule-content {
+            min-width: 0;
+        }
+        .schedule-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--bs-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .schedule-speaker {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        .schedule-speaker-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--bs-primary);
+        }
+        .schedule-speaker-org {
+            font-size: 0.875rem;
+            color: #5f6368;
+        }
+        .schedule-tag {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            margin-right: 0.5rem;
+        }
+        .tag-keynote {
+            background: var(--bs-dark);
+            color: white;
+        }
+        .tag-panel {
+            background: var(--bs-lighter);
+            color: var(--bs-primary);
+        }
+        .tag-workshop {
+            background: rgba(var(--bs-secondary-rgb), 0.2);
+            color: var(--bs-dark);
+        }
+        .tag-special {
+            background: var(--bs-secondary);
+            color: var(--bs-dark);
+        }
+        .tag-closing {
+            background: var(--bs-light);
+            color: white;
+        }
+        .tag-tbc {
+            background: rgba(var(--bs-light-rgb), 0.2);
+            color: var(--bs-light);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.625rem;
+        }
+        .schedule-moderator {
+            font-size: 0.875rem;
+            color: var(--bs-secondary);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        .schedule-break {
+            background: linear-gradient(135deg, #fafafa 0%, var(--bs-lighter) 100%);
+            border-left: 4px solid var(--bs-secondary);
+        }
+        .schedule-special {
+            background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.05) 0%, rgba(var(--bs-secondary-rgb), 0.05) 100%);
+            border-left: 4px solid var(--bs-primary);
+        }
+        @media (max-width: 768px) {
+            .schedule-session {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .schedule-hero-title {
+                font-size: 1.75rem;
+            }
+            .schedule-day-title {
+                font-size: 1.25rem;
+            }
+        }
+    
     .container-fluid.min-vh-100
         .row.mt-5
             .col-0.col-lg-1 &nbsp;
-            .col-12.col-lg-10.mt-3.card.mb-4.border-0
+            .col-12.col-lg-10.mt-3.mb-4
                 include includes/page-header.pug
-                .card-body
-                    p.text-muted.mb-3.small
-                        span(style="color: #FF6347") *
-                        | Provisional program, subject to change.
-                    p.text-muted.small All times are in UTC+1.
-                    .container.table-responsive
-                        table.table.table-bordered.table-hover.text-center
-                            thead
-                                tr.text-white(style="background: linear-gradient(90deg, var(--bs-dark), var(--bs-secondary)) !important;")
-                                    th
-                                        | March 23, 2026 (Day 1)
-                                        br
-                                        | AI for Impact - Scientific Foundation
-                                    th
-                                        | March 24, 2026 (Day 2)
-                                        br
-                                        | AI & Health
-                                    th
-                                        | March 25, 2026 (Day 3)
-                                        br
-                                        | Hands-on Workshops & Hackathon
-                            tbody
-                                tr
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold Accessible Scientific Conferences
-                                        br
-                                        span.conf-time.text-muted.p-2 Morning
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold In-depth Discussions on AI in Health
-                                        br
-                                        span.conf-time.text-muted.p-2 Morning
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold Hands-on Workshops
-                                        br
-                                        span.conf-time.text-muted.p-2 Morning
-                                tr
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold Round Table
-                                        br
-                                        span.conf-time.text-muted.p-2 Afternoon
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold Conference on AI Impacts by Benoît Bergeret
-                                        br
-                                        span.conf-time.text-muted.p-2 Afternoon
-                                    td
-                                        span.conf-title.fss-5.text-dark.fww-bold Hackathon Results & Awards
-                                        br
-                                        span.conf-time.text-muted.p-2 Afternoon
-                                tr
-                                    td
-                                        span.conf-title.fss-5.text-light.fww-bold Poster Session
-                                        br
-                                        span.conf-time.text-muted.p-2 Evening
-                                    td
-                                        span.conf-title.fss-5.text-light.fww-bold Round Table
-                                        br
-                                        span.conf-time.text-muted.p-2 Evening
-                                    td
-                                        span.conf-title.fss-5.text-light.fww-bold Closing Ceremony
-                                        br
-                                        span.conf-time.text-muted.p-2 Evening
-            //-                 tbody
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-secondary.fww-bold Welcome and Opening Speech
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 09:00 - 09:30
-            //-                         td(rowspan="2")
-            //-                             span.conf-title.fss-5.text-dark.fww-bold AI and Financial Applications
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 09:30 - 11:30
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Charles-Albert Lehalle,
-            //-                                 span.text-muted Professor, École Polytechnique (l’X)
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold How Generative AI Works: A Guided Tour of Its Key Algorithms
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 09:45 - 10:45
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Eric Moulines,
-            //-                                 span.text-muted Professor at Ecole Polytechnique, Adjunct Professor at MBZUAI
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold An Alternative View on AI: Collaborative Learning, Incentives, and Social Welfare
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 11:00 - 12:00
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Michael Jordan,
-            //-                                 span.text-muted Professor at University of California, Berkeley, Researcher at Inria
-            //-                         //- td
-            //-                         //-     span.conf-title.fss-5.text-dark.fww-bold Data and Digital Transformation @ Carrefour
-            //-                         //-     br
-            //-                         //-     span.conf-time.text-muted.p-2 11:00 - 12:00
-            //-                         //-     br
-            //-                         //-     span(style="font-size:small")
-            //-                         //-         span.speaker-name.text-secondary 
-            //-                         //-             | Emmanuel Grenier
-            //-                         //-             span(style="color: #FF6347", title="To be confirmed") *
-            //-                         //-             | ,
-            //-                         //-         span.text-muted Executive Director of E-Commerce, Data and Digital Transformation, Carrefour
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold Pioneering Next-Generation AI for Africa's Future: Insights from AI Movement-UM6P
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 11:30 - 12:30
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary 
-            //-                                     | Btissam El Khamlichi,
-            //-                                 span.text-muted Assistant Professor at AI Movement
-
-            //-                     tr
-            //-                         td(colspan="2")
-            //-                             span.conf-title.fss-5.text-secondary.fww-bold Lunch
-            //-                             span.conf-time.text-muted.p-2 12:30 - 14:00
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold Recent Advancements in AI and Major Challenges
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 14:00 - 15:00
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Yann LeCun, 
-            //-                                 span.text-muted Professor at Courant Institute NY and VP & Chief AI Scientist at Meta (ex Facebook)
-            //-                         td
-            //-                             span.conf-title.fss-5.text-light.fww-bold AI in Motion: The Future of Mobility + Best Projects Hackathon “Rail Summit” Exhibition
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 14:00 - 14:45
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Luciano Borges,
-            //-                                 span.text-muted CEO SIANA, and Young Innovators
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-light.fww-bold Round Table 1: Bridging Theory and Applications in Next-Generation AI
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 15:00 - 16:30
-            //-                             br
-            //-                             span.text-muted Panelists:
-            //-                             ul.list-unstyled.text-center.text-muted(style="font-size:small")
-            //-                                 li 
-            //-                                     span.speaker-name Yann LeCun
-            //-                                 li 
-            //-                                     span.speaker-name Michael Jordan
-            //-                                 li 
-            //-                                     span.speaker-name Laurent Daudet
-            //-                                 li 
-            //-                                     span.speaker-name Sonia Vanier
-            //-                             //- br
-            //-                             span.text-muted(style="font-size:small")
-            //-                                 span.text-muted Moderator: 
-            //-                                 span.speaker-name.text-secondary Eric Moulines
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold Socio-Economic Impact of Next-Generation AI
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 15:00 - 16:00
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Benoit Bergeret, 
-            //-                                 span.text-muted Co-founder, Hub France IA, OECD Network of Experts (ONE.AI)
-            //-                             br
-            //-                             span.text-muted Topics
-            //-                             span.text-muted(style="font-size:small")
-            //-                                 ul.list-unstyled.text-center
-            //-                                     li Transformation of Key Economic Sectors Through AI
-            //-                                     li Innovation and Economic Inequalities
-            //-                                     li Impact on Entrepreneurship and Technological Innovation
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-dark.fww-bold Agentic AI: Harnessing Generative AI for Complex Workflows
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 16:30 - 17:30
-            //-                             br
-            //-                             span(style="font-size:small")
-            //-                                 span.speaker-name.text-secondary Laurent Daudet, 
-            //-                                 span.text-muted Co-CEO and Co-Founder at LightOn
-            //-                         td(rowspan="2")
-            //-                             span.conf-title.fss-5.text-light.fww-bold Round Table 2: "Enterprise: What’s the Real Value?”
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 16:00 - 17:30
-            //-                             br
-            //-                             span.text-muted Panelists:
-            //-                             ul.list-unstyled.text-center.text-muted(style="font-size:small")
-            //-                                 //- li 
-            //-                                 //-     | E-Commerce, Data and Digital Transformation in Retail, 
-            //-                                 //-     span.speaker-name Emmanuel Grenier
-            //-                                 //-     span(style="color: #FF6347", title="To be confirmed") *
-            //-                                 //-     | ,
-            //-                                 //-     | Carrefour
-            //-                                 li 
-            //-                                     | Next-Generation AI for Africa's Future, 
-            //-                                     span.speaker-name Btissam El Khamlichi,
-            //-                                     | AI Movement
-            //-                                 li 
-            //-                                     | AI Consulting and Development Firm, 
-            //-                                     span.speaker-name Jawad Alaoui, 
-            //-                                     | Norma
-            //-                                 li 
-            //-                                     | Telecommunications and Digital Innovation Leader, 
-            //-                                     span.speaker-name Jean-François Thomas, 
-            //-                                     | Orange EMEA
-            //-                                 li 
-            //-                                     | Digital Transformation, Innovation and R&D in the railway industry, 
-            //-                                     span.speaker-name Mohamed Sedki, 
-            //-                                     | ONCF
-            //-                                 li 
-            //-                                     | Director of Digital Transformation & Data,
-            //-                                     span.speaker-name Yahia Sefraoui, 
-            //-                                     | INWI
-            //-                             //- br
-            //-                             span.text-muted(style="font-size:small")
-            //-                                 span.text-muted Moderator
-            //-                                 span.speaker-name.text-secondary Benoit Bergeret
-
-            //-                     tr
-            //-                         td
-            //-                             span.conf-title.fss-5.text-light.fww-bold Poster Session
-            //-                             br
-            //-                             span.conf-time.text-muted.p-2 17:30 - 18:00
-
-            //-             //- div
-            //-             //-     a.btn.btn-outline-primary.mt-5.w-100(href="./assets/visual/schedule-ai-conference-2025.pdf" target="_blank" download="Next-Generation-AI-2025-Programme")
-            //-             //-         i.fas.fa-file-pdf
-            //-             //-         |  Download the full schedule
-            //- .col-0.col-md-1 &nbsp;
+                
+                //- .schedule-hero
+                //-     .schedule-hero-content
+                //-         .schedule-hero-title Conference Schedule 2026
+                //-         .schedule-hero-subtitle Three Days of Innovation, Insight, and Impact
+                
+                .schedule-info-banner.mt-5
+                    .schedule-info-item
+                        span ⚠️
+                        span Draft schedule subject to final confirmation
+                    .schedule-info-item
+                        span 🌍
+                        span All times in UTC+1
+                    .schedule-info-item
+                        span 📅
+                        span March 23-25, 2026
+                
+                // Day 1
+                .schedule-day-card.day-1
+                    .schedule-day-header
+                        .schedule-day-number Day One
+                        .schedule-day-title March 23, 2026
+                        .schedule-day-theme Foundations & Perspectives
+                    .schedule-sessions
+                        .schedule-session
+                            .schedule-time 09:30 – 09:45
+                            .schedule-content
+                                .schedule-title Welcome & Opening Speech
+                                .schedule-tag.tag-special Opening Ceremony
+                        
+                        .schedule-session
+                            .schedule-time 09:45 – 10:30
+                            .schedule-content
+                                .schedule-title Deep Learning: The Revolution Continues
+                                //- .schedule-speaker
+                                //-     div
+                                //-         .schedule-speaker-name Yann LeCun 
+                                //-             span.schedule-tag.tag-tbc TBC
+                                //-         .schedule-speaker-org Meta & NYU
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 10:30 – 11:15
+                            .schedule-content
+                                .schedule-title The Major Challenges of AI
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Joëlle Barral
+                                        .schedule-speaker-org Google DeepMind
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 11:15 – 12:15
+                            .schedule-content
+                                .schedule-title Round Table 1: Foundations
+                                .schedule-moderator Moderated by Eric Moulines
+                                .schedule-tag.tag-panel Panel Discussion
+                        
+                        .schedule-session.schedule-break
+                            .schedule-time 12:30 – 14:00
+                            .schedule-content
+                                .schedule-title Lunch Break
+                        
+                        .schedule-session
+                            .schedule-time 14:00 – 15:30
+                            .schedule-content
+                                .schedule-title Hands-on Workshops
+                                .schedule-tag.tag-workshop Parallel Tracks
+                        
+                        .schedule-session
+                            .schedule-time 15:30 – 16:30
+                            .schedule-content
+                                .schedule-title AI for Society: Strategy & Impact
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Benoît Bergeret
+                                        .schedule-speaker-org Stratégies.ai
+                        
+                        .schedule-session
+                            .schedule-time 16:30 – 17:15
+                            .schedule-content
+                                .schedule-title Wrap-up Discussion (Day 1)
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Alon Rozen
+                                        .schedule-speaker-org École des Ponts Business School
+                        
+                        .schedule-session.schedule-special
+                            .schedule-time 17:30 – 18:30
+                            .schedule-content
+                                .schedule-title Poster Session
+                                .schedule-tag.tag-special Networking Event
+                
+                // Day 2
+                .schedule-day-card.day-2
+                    .schedule-day-header
+                        .schedule-day-number Day Two
+                        .schedule-day-title March 24, 2026
+                        .schedule-day-theme Advanced AI Topics
+                    .schedule-sessions
+                        .schedule-session
+                            .schedule-time 09:45 – 10:30
+                            .schedule-content
+                                .schedule-title Beyond Deep Learning: Why Theory Still Matters
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Michael I. Jordan
+                                        .schedule-speaker-org UC Berkeley & Inria
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 10:30 – 11:15
+                            .schedule-content
+                                .schedule-title From Distributed Optimization to Federated Learning
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Martin Takáč
+                                        .schedule-speaker-org MBZUAI
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 11:15 – 12:15
+                            .schedule-content
+                                .schedule-title Round Table 2: AI at Scale & Applications
+                                .schedule-moderator Moderated by Benoît Bergeret
+                                .schedule-tag.tag-panel Panel Discussion
+                        
+                        .schedule-session.schedule-break
+                            .schedule-time 12:30 – 14:00
+                            .schedule-content
+                                .schedule-title Lunch Break
+                        
+                        .schedule-session
+                            .schedule-time 14:00 – 15:30
+                            .schedule-content
+                                .schedule-title Hands-on Workshops
+                                .schedule-tag.tag-workshop Parallel Tracks
+                        
+                        .schedule-session
+                            .schedule-time 15:30 – 16:30
+                            .schedule-content
+                                .schedule-title AI for Women's Health: From Endometriosis to Broader Applications
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Ahmed El Bahri
+                                        .schedule-speaker-org Director General, Guyana University Hospital
+                        
+                        .schedule-session
+                            .schedule-time 16:30 – 17:15
+                            .schedule-content
+                                .schedule-title Wrap-up Discussion (Day 2)
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Alon Rozen
+                                        .schedule-speaker-org École des Ponts Business School
+                
+                // Day 3
+                .schedule-day-card.day-3
+                    .schedule-day-header
+                        .schedule-day-number Day Three
+                        .schedule-day-title March 25, 2026
+                        .schedule-day-theme From Models to Real-World Impact
+                    .schedule-sessions
+                        .schedule-session
+                            .schedule-time 09:45 – 10:30
+                            .schedule-content
+                                .schedule-title From Algorithms to Clinics: AI for Healthcare Transformation
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Nikos Paragios
+                                        .schedule-speaker-org CentraleSupélec & TheraPanacea
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 10:30 – 11:15
+                            .schedule-content
+                                .schedule-title AI Foundation Models
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Eric Xing
+                                        .schedule-speaker-org President MBZUAI & CMU
+                                .schedule-tag.tag-keynote Keynote
+                        
+                        .schedule-session
+                            .schedule-time 11:15 – 12:15
+                            .schedule-content
+                                .schedule-title Machine Learning for Medical Imaging
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Elsa Angelini
+                                        .schedule-speaker-org Télécom Paris
+                        
+                        .schedule-session.schedule-break
+                            .schedule-time 12:30 – 14:00
+                            .schedule-content
+                                .schedule-title Lunch Break
+                        
+                        .schedule-session
+                            .schedule-time 14:00 – 15:30
+                            .schedule-content
+                                .schedule-title Leveraging AI and Multi-Source Data to Transform Mobility Studies
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Latifa Oukhellou
+                                        .schedule-speaker-org Univ Gustave Eiffel
+                        
+                        .schedule-session
+                            .schedule-time 15:30 – 16:30
+                            .schedule-content
+                                .schedule-title Conference: Data, AI & Transport
+                                .schedule-tag.tag-special Special Session
+                        
+                        .schedule-session.schedule-special
+                            .schedule-time 16:30 – 17:15
+                            .schedule-content
+                                .schedule-title Closing Session: AI Beyond Boundaries
+                                .schedule-speaker
+                                    div
+                                        .schedule-speaker-name Alon Rozen
+                                        .schedule-speaker-org École des Ponts Business School
+                                .schedule-tag.tag-closing Closing Ceremony
